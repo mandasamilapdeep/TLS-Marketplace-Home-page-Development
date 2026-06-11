@@ -92,10 +92,15 @@
         "logo_width": 110,
         "menu_top": "",
         "menu": "main-menu",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
+        "main_menu_desktop_background_color": "#080218",
+        "main_menu_desktop_background_opacity": 30,
+        "main_menu_desktop_text_color": "#000000",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
         "enable_social": true,
         "sticky_header_type": "always",
+        "header_backround_transparent": true,
+        "header_backround_transparent_only_home_page": true,
         "enable_search": true
       }
     }
