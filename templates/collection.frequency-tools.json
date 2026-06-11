@@ -1,0 +1,307 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-collection-banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "description_products": "",
+        "overlay_opacity": 0.4,
+        "backlight_animation": true,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "popular_products_PJCk88": {
+      "type": "popular-products",
+      "name": "t:sections.popular-products.presets.name",
+      "settings": {
+        "product_list": [
+          "the-cube-mini"
+        ],
+        "collection_list": [],
+        "product_card_type": "featured",
+        "product_count": 1,
+        "enable_slider_shadow": true,
+        "section_heading": "",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "",
+        "pulse_animation_text": false,
+        "section_heading_content_alignment": "center",
+        "enable_mock_timer": false,
+        "mock_date_picker_day": 2,
+        "mock_date_picker_hours": 3,
+        "date_picker": "2026-10-01",
+        "time_picker": "00:00",
+        "completed_countdown": "show_text",
+        "countdown_heading": "Header after countdown",
+        "tabs_link_text": "Link text",
+        "tabs_link_url": "",
+        "image_ratio": "3/4",
+        "image_fit": "cover",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": true,
+        "show_swatches": true,
+        "product_heading_tag": "h2",
+        "show_tax_info": false,
+        "show_shipping": false,
+        "show_dynamic_checkout": true,
+        "show_quantity": true,
+        "show_gift_card_recipient": false,
+        "show_discount": false,
+        "picker_type": "button",
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 45,
+        "columns_mobile": "2",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "enable_filtering": false,
+        "enable_sorting": false,
+        "image_filter_ratio": "1/1",
+        "image_filter_fit": "contain",
+        "image_filter_columns": 2
+      }
+    },
+    "products_grid_VQWLqz": {
+      "type": "products-grid",
+      "disabled": true,
+      "name": "t:sections.products-grid.name",
+      "settings": {
+        "collection": "supercharged-jewelry",
+        "product_list": [],
+        "products_per_page": 46,
+        "columns_per_row": 4,
+        "sort": "products_high",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "section_heading": "Supercharged Medallions",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Precise Energetic Imprinting",
+        "pulse_animation_text": true,
+        "section_heading_content_alignment": "left",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    },
+    "products_grid_FgqEGG": {
+      "type": "products-grid",
+      "disabled": true,
+      "name": "t:sections.products-grid.name",
+      "settings": {
+        "collection": "quantum-bracelets",
+        "product_list": [],
+        "products_per_page": 46,
+        "columns_per_row": 4,
+        "sort": "alphabetical",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "section_heading": "Supercharged Bracelets",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Precise Energetic Imprinting",
+        "pulse_animation_text": true,
+        "section_heading_content_alignment": "left",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    },
+    "177204890546ae1e20": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_6b98081_qDUYEc": {
+          "type": "ai_gen_block_6b98081",
+          "settings": {
+            "desktop_width_percent": 100,
+            "columns_desktop": 4,
+            "columns_mobile": "1",
+            "grid_gap": 12,
+            "grid_gap_mobile": 44,
+            "section_padding_vertical": 40,
+            "section_padding_horizontal": 40,
+            "section_padding_horizontal_mobile": 20,
+            "card_background_color": "#200a25",
+            "card_border_radius": 16,
+            "card_padding": 0,
+            "card_gap": 16,
+            "image_ratio": "1/1",
+            "image_border_radius": 12,
+            "placeholder_bg_color": "#553052",
+            "info_gap": 4,
+            "title_font_size": 20,
+            "title_font_weight": "400",
+            "title_color": "#ffffff",
+            "description_font_size": 17,
+            "description_color": "#ffffff",
+            "button_font_size": 16,
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 24,
+            "button_border_radius": 8,
+            "button_background_color": "#07cbdc",
+            "button_hover_background_color": "#9830ff",
+            "button_text_color": "#ffffff",
+            "product_1_enabled": true,
+            "product_image_1": "shopify://shop_images/cube-feature.jpg",
+            "product_image_url_1": "https://thelightsystems.shop/products/the-cube",
+            "product_title_1": "The CUBE",
+            "product_description_1": "$6,499.00",
+            "product_1_show_button": false,
+            "product_button_text_1": "Shop now",
+            "product_button_url_1": "",
+            "product_2_enabled": true,
+            "product_image_2": "shopify://shop_images/sphere-freature2.png",
+            "product_image_url_2": "https://thelightsystems.shop/products/the-sphere",
+            "product_title_2": "The SPHERE",
+            "product_description_2": "$13,499.00",
+            "product_2_show_button": false,
+            "product_button_text_2": "Shop now",
+            "product_button_url_2": "",
+            "product_3_enabled": true,
+            "product_image_3": "shopify://shop_images/pyramid-feature_e0dacfeb-6c0e-4251-acea-075e3545f75b.jpg",
+            "product_image_url_3": "https://thelightsystems.shop/products/the-pyramid",
+            "product_title_3": "The PYRAMID",
+            "product_description_3": "$13,999.00",
+            "product_3_show_button": false,
+            "product_button_text_3": "Shop now",
+            "product_button_url_3": "",
+            "product_4_enabled": true,
+            "product_image_4": "shopify://shop_images/chair-feature.png",
+            "product_image_url_4": "https://thelightsystems.shop/products/the-chair",
+            "product_title_4": "The CHAIR",
+            "product_description_4": "$24,999.00",
+            "product_4_show_button": false,
+            "product_button_text_4": "Shop now",
+            "product_button_url_4": "",
+            "product_5_enabled": false,
+            "product_image_url_5": "",
+            "product_title_5": "Product 5",
+            "product_description_5": "Add a description for this product",
+            "product_5_show_button": true,
+            "product_button_text_5": "Shop now",
+            "product_button_url_5": "",
+            "product_6_enabled": false,
+            "product_image_url_6": "",
+            "product_title_6": "Product 6",
+            "product_description_6": "Add a description for this product",
+            "product_6_show_button": true,
+            "product_button_text_6": "Shop now",
+            "product_button_url_6": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_6b98081_qDUYEc"
+      ],
+      "settings": {}
+    },
+    "177204861603f78e0d": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "1771624825a70a96c5": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c0c13d2_JDB7WA": {
+          "type": "ai_gen_block_c0c13d2",
+          "settings": {
+            "heading": "Join our newsletter",
+            "subheading": "Get exclusive offers and updates delivered to your inbox",
+            "email_placeholder": "Enter your email",
+            "button_text": "Subscribe",
+            "success_message": "Thanks for subscribing!",
+            "desktop_width_percent": 100,
+            "content_max_width": 800,
+            "form_max_width": 600,
+            "text_alignment": "center",
+            "padding_top": 70,
+            "padding_bottom": 70,
+            "padding_horizontal": 20,
+            "heading_spacing": 15,
+            "form_spacing": 25,
+            "input_button_gap": 10,
+            "heading_size": 32,
+            "subheading_size": 16,
+            "input_font_size": 16,
+            "button_font_size": 16,
+            "background_color": "#200a25",
+            "heading_color": "#ffffff",
+            "text_color": "#e6daf6",
+            "success_color": "#18b200",
+            "error_color": "#e21200",
+            "input_background_color": "#361641",
+            "input_text_color": "#ffffff",
+            "input_placeholder_color": "#bda2df",
+            "input_border_color": "#b972ff",
+            "input_focus_border_color": "#bda2df",
+            "input_border_width": 1,
+            "input_border_radius": 8,
+            "input_padding": 14,
+            "button_background_color": "#07cbdc",
+            "button_hover_background_color": "#9830ff",
+            "button_text_color": "#ffffff",
+            "button_border_radius": 36,
+            "button_padding_horizontal": 32,
+            "border_radius": 16
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c0c13d2_JDB7WA"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main-collection-banner",
+    "popular_products_PJCk88",
+    "main-collection",
+    "products_grid_VQWLqz",
+    "products_grid_FgqEGG",
+    "177204890546ae1e20",
+    "177204861603f78e0d",
+    "1771624825a70a96c5"
+  ]
+}

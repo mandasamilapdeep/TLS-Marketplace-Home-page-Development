@@ -1,0 +1,375 @@
+{% doc %}
+  @prompt
+    make a Featured Ticker section that enables images to be added to each Ticker text. The image will appear to the left of the text with a padding of 14px and adjustable sizing
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-featured-ticker-{{ ai_gen_id }} {
+    width: 100%;
+    overflow: hidden;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_vertical }}px 0;
+    display: block;
+  }
+
+  .ai-featured-ticker-track-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.item_spacing }}px;
+    animation: ai-ticker-scroll-{{ ai_gen_id }} {{ block.settings.animation_speed }}s linear infinite;
+    will-change: transform;
+  }
+
+  .ai-featured-ticker-{{ ai_gen_id }}:hover .ai-featured-ticker-track-{{ ai_gen_id }} {
+    animation-play-state: paused;
+  }
+
+  .ai-featured-ticker-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .ai-featured-ticker-image-{{ ai_gen_id }} {
+    width: {{ block.settings.image_size }}px;
+    height: {{ block.settings.image_size }}px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-featured-ticker-image-placeholder-{{ ai_gen_id }} {
+    width: {{ block.settings.image_size }}px;
+    height: {{ block.settings.image_size }}px;
+    flex-shrink: 0;
+    background-color: {{ block.settings.placeholder_color }};
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-featured-ticker-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-featured-ticker-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    font-weight: {{ block.settings.text_weight }};
+    text-transform: {{ block.settings.text_transform }};
+  }
+
+  @keyframes ai-ticker-scroll-{{ ai_gen_id }} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-featured-ticker-image-{{ ai_gen_id }},
+    .ai-featured-ticker-image-placeholder-{{ ai_gen_id }} {
+      width: {{ block.settings.image_size | times: 0.8 }}px;
+      height: {{ block.settings.image_size | times: 0.8 }}px;
+    }
+
+    .ai-featured-ticker-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<featured-ticker-{{ ai_gen_id }} class="ai-featured-ticker-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-featured-ticker-track-{{ ai_gen_id }}">
+    {% liquid
+      assign ticker_items = ''
+      for i in (1..6)
+        assign text_key = 'ticker_text_' | append: i
+        assign image_key = 'ticker_image_' | append: i
+        assign ticker_text = block.settings[text_key]
+        assign ticker_image = block.settings[image_key]
+        
+        if ticker_text != blank
+          assign item_html = '<div class="ai-featured-ticker-item-' | append: ai_gen_id | append: '">'
+          
+          if ticker_image != blank
+            assign item_html = item_html | append: '<img src="' | append: ticker_image | image_url: width: 200 | append: '" alt="' | append: ticker_image.alt | escape | append: '" class="ai-featured-ticker-image-' | append: ai_gen_id | append: '" loading="lazy" width="' | append: block.settings.image_size | append: '" height="' | append: block.settings.image_size | append: '">'
+          else
+            assign placeholder_html = '<div class="ai-featured-ticker-image-placeholder-' | append: ai_gen_id | append: '">' | append: 'image' | placeholder_svg_tag | append: '</div>'
+            assign item_html = item_html | append: placeholder_html
+          endif
+          
+          assign item_html = item_html | append: '<span class="ai-featured-ticker-text-' | append: ai_gen_id | append: '">' | append: ticker_text | append: '</span></div>'
+          
+          assign ticker_items = ticker_items | append: item_html
+        endif
+      endfor
+    %}
+
+    {{ ticker_items }}
+    {{ ticker_items }}
+  </div>
+</featured-ticker-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FeaturedTicker{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.track = this.querySelector('.ai-featured-ticker-track-{{ ai_gen_id }}');
+        this.adjustAnimation();
+      }
+
+      adjustAnimation() {
+        if (!this.track) return;
+        
+        const firstItem = this.track.querySelector('.ai-featured-ticker-item-{{ ai_gen_id }}');
+        if (!firstItem) return;
+
+        const trackWidth = this.track.scrollWidth / 2;
+        const containerWidth = this.offsetWidth;
+        
+        if (trackWidth < containerWidth) {
+          this.track.style.animation = 'none';
+        }
+      }
+    }
+
+    customElements.define('featured-ticker-{{ ai_gen_id }}', FeaturedTicker{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Featured ticker",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Ticker items"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text_1",
+      "label": "Ticker text 1",
+      "default": "New Arrivals"
+    },
+    {
+      "type": "image_picker",
+      "id": "ticker_image_1",
+      "label": "Ticker image 1"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text_2",
+      "label": "Ticker text 2",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "image_picker",
+      "id": "ticker_image_2",
+      "label": "Ticker image 2"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text_3",
+      "label": "Ticker text 3",
+      "default": "Limited Edition"
+    },
+    {
+      "type": "image_picker",
+      "id": "ticker_image_3",
+      "label": "Ticker image 3"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text_4",
+      "label": "Ticker text 4",
+      "default": "Shop Now"
+    },
+    {
+      "type": "image_picker",
+      "id": "ticker_image_4",
+      "label": "Ticker image 4"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text_5",
+      "label": "Ticker text 5",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "image_picker",
+      "id": "ticker_image_5",
+      "label": "Ticker image 5"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text_6",
+      "label": "Ticker text 6",
+      "default": "Exclusive Deals"
+    },
+    {
+      "type": "image_picker",
+      "id": "ticker_image_6",
+      "label": "Ticker image 6"
+    },
+    {
+      "type": "header",
+      "content": "Image settings"
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "label": "Image size",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 5
+    },
+    {
+      "type": "color",
+      "id": "placeholder_color",
+      "label": "Placeholder background",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "header",
+      "content": "Text settings"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "Text weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "select",
+      "id": "text_transform",
+      "label": "Text transform",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "Lowercase"
+        },
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "label": "Item spacing",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "label": "Vertical padding",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "range",
+      "id": "animation_speed",
+      "label": "Animation speed",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured ticker"
+    }
+  ]
+}
+{% endschema %}

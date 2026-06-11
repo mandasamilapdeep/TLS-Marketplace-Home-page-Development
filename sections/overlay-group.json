@@ -1,0 +1,62 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "custom.overlay",
+  "name": "t:sections.overlay-group.name",
+  "sections": {
+    "1771976832169d2004": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_df675c4_4LXj3j": {
+          "type": "ai_gen_block_df675c4",
+          "settings": {
+            "show_on_pages": "home",
+            "popup_delay": 5,
+            "cookie_days": 0,
+            "popup_width": 80,
+            "popup_max_width": 700,
+            "border_radius": 16,
+            "layout": "row",
+            "content_padding": 40,
+            "popup_image": "shopify://shop_images/unifyd-marketplace-medallion.jpg",
+            "heading": "Receive up to $299 in credit!",
+            "heading_size": 32,
+            "description": "<p>In 60 seconds, discover the exact system your body and space actually need…</p>",
+            "text_size": 16,
+            "button_text": "Take the Assessment",
+            "button_link": "shopify://pages/unlock-up-to-299-in-store-credit",
+            "button_text_size": 16,
+            "button_padding": 14,
+            "button_border_radius": 40,
+            "popup_background_color": "#361641",
+            "heading_color": "#ffffff",
+            "text_color": "#333333",
+            "button_background_color": "#9830ff",
+            "button_hover_color": "#333333",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#0d0416",
+            "overlay_opacity": 0.5,
+            "close_button_background": "#b972ff",
+            "close_button_hover": "#9830ff",
+            "close_button_icon_color": "#000000"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_df675c4_4LXj3j"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "1771976832169d2004"
+  ]
+}

@@ -1,0 +1,139 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-list-collections": {
+      "type": "main-list-collections",
+      "disabled": true,
+      "settings": {
+        "title": "Collections",
+        "descr": "",
+        "color_scheme": "",
+        "collections_to_show": 12,
+        "columns_per_row": 3,
+        "sort": "date_reversed",
+        "heading_size": "h2",
+        "content_alignment": "center",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "image_ratio": "square",
+        "object_fit": "cover",
+        "overlay_opacity": 0.2,
+        "overlay_opacity_mobile": 0.2,
+        "btn_label": "Shop now",
+        "margin_top": "no-indent",
+        "margin_bottom": "m"
+      }
+    },
+    "categories_list_cGna9w": {
+      "type": "categories-list",
+      "blocks": {
+        "collection_item_7enrAC": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "supercharged-jewelry",
+            "heading_size": "h5",
+            "heading_tag": "h4",
+            "image": "shopify://shop_images/supercharged-jewelry-bundles.jpg",
+            "overlay_opacity": 0.3,
+            "description": ""
+          }
+        },
+        "collection_item_xV4XwB": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "supercharged-grounding-rods",
+            "heading_size": "h5",
+            "heading_tag": "h4",
+            "image": "shopify://shop_images/supercharged-rods_8ee7a71a-85ef-496a-b4ed-4ce1d180e9e6.jpg",
+            "overlay_opacity": 0.2,
+            "description": ""
+          }
+        },
+        "collection_item_4Ha3yj": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "supercharged-copper-bottles",
+            "heading_size": "h5",
+            "heading_tag": "h4",
+            "image": "shopify://shop_images/supercharged-bottle2_e4af12f6-cad1-4971-912c-a078f861ec33.jpg",
+            "overlay_opacity": 0.2,
+            "description": ""
+          }
+        },
+        "collection_item_63VczH": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "supplements",
+            "heading_size": "h5",
+            "heading_tag": "h4",
+            "image": "shopify://shop_images/supercharged-supplements.jpg",
+            "overlay_opacity": 0.2,
+            "description": ""
+          }
+        },
+        "collection_item_DEzDyA": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "relax-saunas",
+            "heading_size": "h5",
+            "heading_tag": "h4",
+            "image": "shopify://shop_images/relax-sauna.jpg",
+            "overlay_opacity": 0.2,
+            "description": ""
+          }
+        },
+        "collection_item_byNdrP": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "the-light-system™",
+            "heading_size": "h5",
+            "heading_tag": "h4",
+            "image": "shopify://shop_images/tls-pyramid.jpg",
+            "overlay_opacity": 0.3,
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_item_7enrAC",
+        "collection_item_xV4XwB",
+        "collection_item_4Ha3yj",
+        "collection_item_63VczH",
+        "collection_item_DEzDyA",
+        "collection_item_byNdrP"
+      ],
+      "name": "t:sections.categories-list.presets.name",
+      "settings": {
+        "columns_per_row": 3,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "image_ratio": "1/1",
+        "object_fit": "cover",
+        "section_heading": "Collections",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "",
+        "pulse_animation_text": false,
+        "magnetic_hover_effect": true,
+        "section_heading_content_alignment": "center",
+        "collection_list_item_content_alignment": "top",
+        "section_descr": "",
+        "button_style": "secondary",
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    }
+  },
+  "order": [
+    "main-list-collections",
+    "categories_list_cGna9w"
+  ]
+}

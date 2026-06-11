@@ -1,0 +1,137 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "h3",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "blocks_APXP8T": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_db8804b_K7Bixd": {
+          "type": "ai_gen_block_db8804b",
+          "settings": {
+            "heading": "About Us",
+            "text": "<p>We believe wellness is more than personal, <strong>it’s a powerful force for global change.</strong>That’s why we’ve built a marketplace that connects trusted products with a higher mission.</p>",
+            "content_max_width": 800,
+            "desktop_width_percent": 100,
+            "heading_font": "lato_n7",
+            "heading_size": 44,
+            "heading_color": "#ffffff",
+            "heading_spacing": 20,
+            "text_size": 18,
+            "text_color": "#e6daf6",
+            "text_line_height": 1.5,
+            "paragraph_spacing": 15,
+            "background_color": "#200a25",
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_horizontal": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_db8804b_K7Bixd"
+      ],
+      "name": "Centered text block",
+      "settings": {}
+    },
+    "blocks_KKqhkn": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_518b63b_U7DKTq": {
+          "type": "ai_gen_block_518b63b",
+          "settings": {
+            "layout": "row",
+            "desktop_width_percent": 100,
+            "gap": 40,
+            "padding": 40,
+            "border_radius": 0,
+            "background_color": "#200a25",
+            "image": "shopify://shop_images/marketplace4.jpg",
+            "image_ratio": "4 / 3",
+            "image_border_radius": 8,
+            "image_background_color": "#200a25",
+            "heading": "Our Mission",
+            "heading_font_size": 44,
+            "heading_color": "#ffffff",
+            "text": "<p>The Light System™ Marketplace is more than just a store — it’s a movement. We are your one-stop destination for the world’s most trusted, cutting-edge health and wellness products, curated with a single mission in mind: to empower humanity and give back.</p><p>From immune-boosting supplements to breakthrough technologies in energetic healing, we proudly partner with industry-leading brands like Simplicity Biome, The Light System™, and other pioneers at the forefront of holistic wellness.</p>",
+            "text_font_size": 18,
+            "text_color": "#e6daf6",
+            "text_padding": 10,
+            "text_background_color": "#200a25",
+            "text_border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_518b63b_U7DKTq"
+      ],
+      "name": "Image with text",
+      "settings": {}
+    },
+    "blocks_XzBeTR": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_db8804b_BbTdjM": {
+          "type": "ai_gen_block_db8804b",
+          "settings": {
+            "heading": "What We Offer",
+            "text": "<p>Every product we feature is hand-selected for its integrity, effectiveness, and alignment with our core values. We believe that true wellness comes from products that honor both people and planet.</p><p>Our marketplace brings together the best in holistic health, from organic superfoods and clean supplements to innovative wellness technology and sustainable lifestyle products.</p>",
+            "content_max_width": 800,
+            "desktop_width_percent": 100,
+            "heading_font": "lato_n7",
+            "heading_size": 44,
+            "heading_color": "#ffffff",
+            "heading_spacing": 20,
+            "text_size": 18,
+            "text_color": "#e6daf6",
+            "text_line_height": 1.5,
+            "paragraph_spacing": 15,
+            "background_color": "#200a25",
+            "padding_top": 30,
+            "padding_bottom": 40,
+            "padding_horizontal": 40
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_8e31c19_QFraFE": {
+          "type": "ai_gen_block_8e31c19",
+          "name": "Headline with button",
+          "settings": {
+            "padding_top": 16,
+            "padding_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_db8804b_BbTdjM",
+        "ai_gen_block_8e31c19_QFraFE"
+      ],
+      "name": "Centered text block",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "blocks_APXP8T",
+    "blocks_KKqhkn",
+    "blocks_XzBeTR"
+  ]
+}

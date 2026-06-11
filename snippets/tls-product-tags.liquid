@@ -1,0 +1,146 @@
+{% liquid
+  assign product_tag = product.metafields.custom.product_tag
+  assign tls_badge = product.metafields.custom.tls_badge
+  assign producttagcolor = product.metafields.custom.product_tag_color
+  assign producttextcolor = product.metafields.custom.product_text_color
+  assign producttaglink = product.metafields.custom.product_tag_link
+  assign tlsbadgecolor = product.metafields.custom.tls_badge_color 
+  assign tlsbadgetextcolor = product.metafields.custom.tls_badge_text_color
+  assign tlsbadgelinkcolor = product.metafields.custom.tls_badge_link
+%}
+
+
+{% if product_tag != blank or tls_badge != blank or product.product_tag != blank %}
+
+<div
+  class="tls-product-tags {% if block.settings.uppercase_text %}tls-uppercase{% endif %}"
+  style="
+    font-size: {{ block.settings.font_size }}px;
+    color: {{ block.settings.text_color }};
+  "
+>
+
+{% if producttaglink != blank %}
+  <a
+    class="tls-tag"
+    href="{{ producttaglink }}"
+     target="_blank"
+    rel="noopener noreferrer"
+    style="background:{{ producttagcolor }}; color:{{ producttextcolor }};"
+  >
+    {{ product_tag }}
+  </a>
+{% else %}
+  <span
+    class="tls-tag"
+    style="background:{{ producttagcolor }}; color:{{ producttextcolor }};"
+  >
+    {{ product_tag }}
+  </span>
+{% endif %}
+
+
+{% comment %} 
+  {% if tls_badge != blank %}
+    <span class="tls-dot">•</span> {% endcomment %}
+
+   {% if tlsbadgelinkcolor != blank %}
+  <a
+    class="tls-badge tls-tag"
+    href="{{ tlsbadgelinkcolor }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    style="background:{{ tlsbadgecolor }}; color:{{ tlsbadgetextcolor }};"
+  >
+    {{ tls_badge }}
+  </a>
+{% else %}
+  <span
+    class="tls-badge tls-tag"
+    style="background:{{ tlsbadgecolor }}; color:{{ tlsbadgetextcolor }};"
+  >
+    {{ tls_badge }}
+  </span>
+{% endif %}
+ {% comment %} {% endif %} {% endcomment %}
+
+
+ {% if product.vendor != blank %}
+    {% if product_tag != blank or tls_badge != blank %}
+      <span class="tls-divider">|</span>
+    {% endif %}
+
+    <a
+      class="tls-vendor"
+      href="/collections/vendors?q={{ product.vendor | url_encode }}"
+      aria-label="{{ product.vendor }}"
+    >
+      {{ product.vendor }}
+    </a>
+  {% endif %}
+
+</div>
+
+<style>
+.tls-product-tags{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:15px;
+  margin-bottom: 15px;
+  line-height:1.4;
+  letter-spacing:0.5px;
+}
+a.tls-tag {
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+span.tls-tag {
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+.tls-uppercase{
+  text-transform:uppercase;
+}
+
+.tls-tag{
+  color:#6b6b6b;
+  {% comment %} font-weight:500; {% endcomment %}
+}
+
+.tls-dot{
+  color:#9d9d9d;
+}
+
+.tls-badge{
+  color:#000;
+  {% comment %} font-weight:600; {% endcomment %}
+}
+
+.tls-divider{
+  color:#9d9d9d;
+}
+
+.tls-vendor{
+  color:inherit;
+  text-decoration:none;
+  {% comment %} font-weight:500; {% endcomment %}
+  transition:0.3s ease;
+}
+
+.tls-vendor:hover{
+  opacity:0.7;
+  text-decoration:underline;
+}
+
+@media screen and (max-width:749px){
+
+  .tls-product-tags{
+    gap:4px;
+  }
+
+}
+</style>
+
+{% endif %}

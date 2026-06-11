@@ -1,0 +1,284 @@
+{% comment %} {% liquid
+  assign popup_id = 'back-popup'
+%}
+
+<div id="{{ popup_id }}" class="back-popup-wrapper" style="display:none;">
+
+  <div class="back-popup-overlay"></div>
+
+  <div class="back-popup-inner">
+
+    <button class="back-popup-close" aria-label="Close">✕</button>
+
+    <div class="back-popup-content">
+
+      {% if section.settings.sub_heading != blank %}
+        <span class="popup-subheading">
+          {{ section.settings.sub_heading }}
+        </span>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="popup-heading">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <div class="popup-description">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+
+      <div class="popup-discount-wrap">
+
+        <span class="discount-code">
+          {{ section.settings.discount_code }}
+        </span>
+
+        <button class="copy-discount-btn" data-code="{{ section.settings.discount_code }}">
+          {{ section.settings.button_text }}
+        </button>
+
+      </div>
+
+      <p class="copy-success-text">
+        {{ section.settings.success_text }}
+      </p>
+
+    </div>
+
+  </div>
+</div>
+
+<style>
+
+:root{
+  --popup-bg: {{ section.settings.popup_bg }};
+  --heading-color: {{ section.settings.heading_color }};
+  --subheading-color: {{ section.settings.subheading_color }};
+  --text-color: {{ section.settings.text_color }};
+  --btn-bg: {{ section.settings.button_bg }};
+  --btn-color: {{ section.settings.button_color }};
+}
+
+.back-popup-wrapper{
+  position:fixed;
+  inset:0;
+  z-index:999999;
+}
+
+.back-popup-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.65);
+}
+
+.back-popup-inner{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:90%;
+  max-width:600px;
+  background:#361641!important;
+  border-radius:20px;
+  padding:40px;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.back-popup-content{
+  text-align:center;
+}
+
+.popup-subheading{
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--subheading-color);
+}
+
+.popup-heading{
+  font-size:34px;
+  margin:10px 0;
+  color:var(--heading-color);
+}
+
+.popup-description{
+  font-size:15px;
+  margin-bottom:25px;
+  color:var(--text-color);
+}
+
+.popup-discount-wrap{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.discount-code{
+  border:2px dashed #ddd;
+  padding:12px 18px;
+  font-weight:700;
+  border-radius:10px;
+}
+
+.copy-discount-btn{
+  padding:12px 18px;
+  border:none;
+  cursor:pointer;
+  background:var(--btn-bg);
+  color:var(--btn-color);
+  border-radius:10px;
+  font-weight:700;
+  background: #9830ff !important;
+}
+
+.copy-success-text{
+  display:none;
+  margin-top:15px;
+  color:green;
+}
+
+.back-popup-close{
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  background:#fff;
+}
+
+@media(max-width:768px){
+  .back-popup-inner{
+    padding:25px;
+  }
+  .popup-heading{
+    font-size:26px;
+  }
+}
+
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  if (window.backPopupInit) return;
+  window.backPopupInit = true;
+
+  const popup = document.getElementById('back-popup');
+  if (!popup) return;
+
+  const closeBtn = popup.querySelector('.back-popup-close');
+  const overlay = popup.querySelector('.back-popup-overlay');
+  const copyBtn = popup.querySelector('.copy-discount-btn');
+  const successText = popup.querySelector('.copy-success-text');
+
+  let shown = false;
+
+  if (sessionStorage.getItem('back_popup_seen')) return;
+
+  function openPopup(){
+    if(shown) return;
+    popup.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    shown = true;
+  }
+
+  function closePopup(){
+    popup.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  /* BACK BUTTON TRIGGER */
+  history.pushState({}, '', location.href);
+
+  window.addEventListener('popstate', function () {
+    if(!shown){
+      openPopup();
+      history.pushState({}, '', location.href);
+    }
+  });
+
+  /* EXIT INTENT */
+  document.addEventListener('mouseout', function(e){
+    if(e.clientY <= 0){
+      openPopup();
+    }
+  });
+
+  /* COPY CODE */
+  copyBtn.addEventListener('click', function(){
+
+    navigator.clipboard.writeText(this.dataset.code);
+
+    successText.style.display = 'block';
+    this.innerText = 'Copied';
+
+    sessionStorage.setItem('back_popup_seen', 'true');
+
+    setTimeout(() => {
+      closePopup();
+    }, 1200);
+
+  });
+
+  closeBtn.onclick = closePopup;
+  overlay.onclick = closePopup;
+
+});
+</script>
+
+{% schema %}
+{
+  "name": "Back Popup",
+  "settings": [
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub Heading",
+      "default": "LIMITED OFFER"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get 10% OFF"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "discount_code",
+      "label": "Discount Code",
+      "default": "FIRST10"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "COPY CODE"
+    },
+    {
+      "type": "text",
+      "id": "success_text",
+      "label": "Success Text",
+      "default": "Copied!"
+    },
+   
+  ],
+  "presets": [
+    {
+      "name": "Back Popup"
+    }
+  ]
+}
+{% endschema %} {% endcomment %}

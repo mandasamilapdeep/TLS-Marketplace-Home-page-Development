@@ -1,0 +1,472 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "177205496672b4862e": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_preview_badge_ry4L7T": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_preview_badge_ry4L7T"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "blocks_K9pJUL": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d97b95e_kLXh8Q": {
+          "type": "ai_gen_block_d97b95e",
+          "settings": {
+            "desktop_height": 20,
+            "mobile_height": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d97b95e_kLXh8Q"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "vendor_name": {
+          "type": "vendor_name",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}"
+          }
+        },
+        "product_title": {
+          "type": "product_title",
+          "settings": {
+            "badges_type": "inline",
+            "show_badges": false,
+            "section_heading_tag": "h2"
+          }
+        },
+        "judge_me_reviews_preview_badge_y77i9z": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "core_benefit": {
+          "type": "core_benefit",
+          "settings": {
+            "metafield_namespace": "custom",
+            "metafield_key": "core_benefit"
+          }
+        },
+        "short_description": {
+          "type": "short_description",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_swatches": true
+          }
+        },
+        "product_description": {
+          "type": "product_description",
+          "disabled": true,
+          "settings": {
+            "title": "The Frequency of The Light System™",
+            "subtitle": "Precision Energetic Imprinting",
+            "pulse_animation_text": true,
+            "heading_size": "h4"
+          }
+        },
+        "specs_short": {
+          "type": "specs_short",
+          "disabled": true,
+          "settings": {}
+        },
+        "specs_long": {
+          "type": "specs_long",
+          "disabled": true,
+          "settings": {
+            "title": "What makes it unique",
+            "subtitle": "",
+            "pulse_animation_text": false,
+            "heading_size": "h3"
+          }
+        },
+        "instructions": {
+          "type": "instructions",
+          "disabled": true,
+          "settings": {
+            "title": "Product Guides and Documents",
+            "subtitle": "Instructions",
+            "pulse_animation_text": false,
+            "heading_size": "h3"
+          }
+        },
+        "buy_box": {
+          "type": "buy_box",
+          "settings": {
+            "show_sticky_add_to_cart": true,
+            "show_tax_info": false,
+            "show_shipping": false,
+            "show_dynamic_checkout": true,
+            "show_quantity": true,
+            "show_gift_card_recipient": false,
+            "show_discount": true,
+            "trust_signal_one": "Free shipping",
+            "trust_signal_two": "30 days return",
+            "trust_signal_three": "secure checout"
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "settings": {
+            "contdown_heading": "Now Accepting Backorders",
+            "enable_mock_timer": true,
+            "mock_date_picker_day": 31,
+            "mock_date_picker_hours": 3,
+            "date_picker": "2026-4-01",
+            "time_picker": "11:59",
+            "completed_countdown": "show_text",
+            "text_after_countdown": ""
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "settings": {}
+        },
+        "pickup_availability": {
+          "type": "pickup_availability",
+          "settings": {}
+        },
+        "express_shipping": {
+          "type": "express_shipping",
+          "disabled": true,
+          "settings": {
+            "heading": "Shipping Info",
+            "text": "<p>Fast delivery options for your convenience</p>",
+            "pickup_title": "",
+            "pickup_text": "",
+            "pickup_price": "",
+            "standard_title": "Standard Domestic (U.S.)",
+            "standard_days": "Ships in 2 -3 business days",
+            "standard_price": "$9",
+            "standard_text": "Products that are in stock are shipped within 2 - 3 business days. (Free Shipping on U.S. orders over $100)",
+            "express_title": "Express International",
+            "express_days": "Delivers in 1 - 2 weeks",
+            "express_price": "$39",
+            "express_text": "We ship internationally; however, based on your location, shipping delays and local tariffs or fees may apply."
+          }
+        }
+      },
+      "block_order": [
+        "vendor_name",
+        "product_title",
+        "judge_me_reviews_preview_badge_y77i9z",
+        "core_benefit",
+        "short_description",
+        "variant_picker",
+        "product_description",
+        "specs_short",
+        "specs_long",
+        "instructions",
+        "buy_box",
+        "countdown",
+        "inventory",
+        "pickup_availability",
+        "express_shipping"
+      ],
+      "settings": {
+        "image_ratio": "1/1",
+        "image_fit": "cover",
+        "enable_video_looping": false,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent",
+        "padding_bottom": "no-indent"
+      }
+    },
+    "tab_JDiwcc": {
+      "type": "tab",
+      "blocks": {
+        "tab_HWfGzH": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab Title",
+            "tab_content": "<p>Add your tab content here.<br/></p>"
+          }
+        },
+        "tab_UBDTRW": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab Title",
+            "tab_content": "<p>Add your tab content here.</p>"
+          }
+        },
+        "tab_XHnyat": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab Title",
+            "tab_content": "<p>Add your tab content here.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "tab_HWfGzH",
+        "tab_UBDTRW",
+        "tab_XHnyat"
+      ],
+      "name": "Custom Tabs Section",
+      "settings": {
+        "heading": "Product Information",
+        "heading_color": "#ffffff",
+        "tab_bg": "rgba(0,0,0,0)",
+        "tab_text": "#ffffff",
+        "tab_border": "rgba(0,0,0,0)",
+        "active_tab_text": "#ffffff",
+        "content_bg": "rgba(0,0,0,0)",
+        "content_border": "rgba(0,0,0,0)",
+        "content_text": "#444444"
+      }
+    },
+    "media_aY9z9P": {
+      "type": "media",
+      "blocks": {
+        "media_card_tzckPL": {
+          "type": "media_card",
+          "settings": {
+            "heading": "EMF Shielding",
+            "heading_size": "h3",
+            "heading_tag": "h2",
+            "text": "Our Supercharged products can act as EMF shields, reducing the local effects harmful electromagnetic frequencies.",
+            "image": "shopify://shop_images/iStock-172230296.jpg",
+            "overlay_opacity": 0.8,
+            "show_video": false,
+            "video_url": "",
+            "autoplay_video": true,
+            "muted_video": true,
+            "loop_video": true,
+            "show_icon_play": true,
+            "show_icon_sound": true,
+            "description_video": ""
+          }
+        },
+        "media_card_TVAWpj": {
+          "type": "media_card",
+          "settings": {
+            "heading": "Permanent Charge",
+            "heading_size": "h3",
+            "heading_tag": "h2",
+            "text": "Supercharged Copper Bottles carry the frequency signature of Light System™, permanently imprinted using this Quantum Concentrator technology.",
+            "image": "shopify://shop_images/iStock-851795240.jpg",
+            "overlay_opacity": 0.8,
+            "show_video": false,
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay_video": true,
+            "muted_video": true,
+            "loop_video": true,
+            "show_icon_play": true,
+            "show_icon_sound": true,
+            "description_video": ""
+          }
+        },
+        "media_card_zeBWj3": {
+          "type": "media_card",
+          "settings": {
+            "heading": "High Quality Copper",
+            "heading_size": "h3",
+            "heading_tag": "h2",
+            "text": "Designed to enhance water through copper’s natural conductive properties",
+            "image": "shopify://shop_images/copper.jpg",
+            "overlay_opacity": 0.7,
+            "show_video": false,
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay_video": true,
+            "muted_video": true,
+            "loop_video": true,
+            "show_icon_play": true,
+            "show_icon_sound": true,
+            "description_video": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_card_tzckPL",
+        "media_card_TVAWpj",
+        "media_card_zeBWj3"
+      ],
+      "name": "t:sections.media.name",
+      "settings": {
+        "columns_per_row": 3,
+        "content_alignment": "left",
+        "content_position": "on_image",
+        "indent_value": "1.6rem",
+        "swipe_on_mobile": false,
+        "image_ratio": "4/3",
+        "section_heading": "Quantum Charging",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Precision Energetic Imprinting",
+        "pulse_animation_text": true,
+        "section_description": "",
+        "section_button_label": "",
+        "section_button_link": "",
+        "button_style": "link",
+        "margin_top": "m",
+        "margin_bottom": "s"
+      }
+    },
+    "blocks_yTjhxg": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_518b63b_ryY7ih": {
+          "type": "ai_gen_block_518b63b",
+          "settings": {
+            "layout": "row-reverse",
+            "desktop_width_percent": 100,
+            "gap": 40,
+            "padding": 40,
+            "border_radius": 0,
+            "background_color": "#200a25",
+            "image": "shopify://shop_images/supercharged-bottle-close.jpg",
+            "image_ratio": "4 / 3",
+            "image_border_radius": 14,
+            "image_background_color": "#200a25",
+            "heading": "Charged for Life",
+            "heading_font_size": 32,
+            "heading_color": "#ffffff",
+            "text": "<p>Quantum Charged Copper Bottles carry the frequency signature of The Light System™, permanently imprinted using this Quantum Concentrator technology.</p><p>Scalar energy systems have become a foundational tool in consciousness-based wellness technologies. The Light System™ room-sized arrays have been developed into high density scalar chambers, designed to imprint energy into objects.</p><p>When specific materials such as crystal, various types of metal and organic material are charged, they exhibit heightened energetic fields.</p>",
+            "text_font_size": 18,
+            "text_color": "#e6daf6",
+            "text_padding": 10,
+            "text_background_color": "#200a25",
+            "text_border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_518b63b_ryY7ih"
+      ],
+      "name": "Image with text",
+      "settings": {}
+    },
+    "description_grid_jYaNwb": {
+      "type": "description-grid",
+      "blocks": {
+        "column_PwPKmz": {
+          "type": "column",
+          "settings": {
+            "column_start": 1,
+            "column_end": 3,
+            "heading": "Increased Electrical Impedance in Living Cells",
+            "heading_size": "h5",
+            "heading_tag": "h5",
+            "text": "High Electrical Impedance is correlated with better cellular integrity, improved venous function, and decreased risk of swelling.",
+            "value": "4X",
+            "superscript": "Increase"
+          }
+        },
+        "column_4VawyM": {
+          "type": "column",
+          "settings": {
+            "column_start": 3,
+            "column_end": 5,
+            "heading": "Increased Electrical Impedance in Water",
+            "heading_size": "h5",
+            "heading_tag": "h5",
+            "text": "Research indicates that specialized, high-impedance environments can structure water. Water molecules organize into a more ordered, lattice-like structure.",
+            "value": "47%",
+            "superscript": "Increase"
+          }
+        }
+      },
+      "block_order": [
+        "column_PwPKmz",
+        "column_4VawyM"
+      ],
+      "name": "t:sections.all.description_grid.name",
+      "settings": {
+        "columns": 4,
+        "section_heading": "Dr. Glen Rein",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Recent Studies",
+        "pulse_animation_text": true,
+        "description": "Impedance spectroscopy (EIS) is an electro-diagnostic method used in medicine which measures cellular charge.",
+        "section_heading_content_alignment": "left",
+        "margin_top": "s",
+        "margin_bottom": "xl"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "columns_per_row": 4,
+        "products_limit": 4,
+        "swipe_on_mobile": true,
+        "section_heading": "You may also like",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "subtitle": "You Might Also Like",
+        "pulse_animation_text": false,
+        "section_button_label": "",
+        "section_button_link": "",
+        "section_button_style": "secondary",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_collection": false,
+        "show_desc": false,
+        "product_heading_tag": "h3",
+        "margin_top": "no-indent",
+        "margin_bottom": "m"
+      }
+    },
+    "1772054982ebd2f3f1": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_bNc8Va": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": true,
+            "empty_state": "hide_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_bNc8Va"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "177205496672b4862e",
+    "blocks_K9pJUL",
+    "main-product",
+    "tab_JDiwcc",
+    "media_aY9z9P",
+    "blocks_yTjhxg",
+    "description_grid_jYaNwb",
+    "product-recommendations",
+    "1772054982ebd2f3f1"
+  ]
+}

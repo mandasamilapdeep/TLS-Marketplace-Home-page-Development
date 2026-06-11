@@ -1,0 +1,241 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-collection-banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "description_products": "",
+        "overlay_opacity": 0.4,
+        "backlight_animation": true,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 39,
+        "columns_mobile": "2",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "enable_filtering": false,
+        "enable_sorting": false,
+        "image_filter_ratio": "1/1",
+        "image_filter_fit": "contain",
+        "image_filter_columns": 2
+      }
+    },
+    "products_grid_VQWLqz": {
+      "type": "products-grid",
+      "name": "t:sections.products-grid.name",
+      "settings": {
+        "collection": "supercharged-jewelry",
+        "product_list": [],
+        "products_per_page": 46,
+        "columns_per_row": 4,
+        "sort": "products_high",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "section_heading": "Supercharged Medallions",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Precise Energetic Imprinting",
+        "pulse_animation_text": true,
+        "section_heading_content_alignment": "left",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    },
+    "products_grid_FgqEGG": {
+      "type": "products-grid",
+      "name": "t:sections.products-grid.name",
+      "settings": {
+        "collection": "quantum-bracelets",
+        "product_list": [],
+        "products_per_page": 46,
+        "columns_per_row": 4,
+        "sort": "alphabetical",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "section_heading": "Supercharged Bracelets",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Precise Energetic Imprinting",
+        "pulse_animation_text": true,
+        "section_heading_content_alignment": "left",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    },
+    "card-grid": {
+      "type": "card-grid",
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "card_link": "/collections/all",
+            "overlay_opacity": 0.2,
+            "card_title": "Card 1",
+            "heading_size": "h4",
+            "heading_tag": "h4",
+            "discount": "20% OFF",
+            "image_height_option": "fit-height"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "card_link": "/collections/sale",
+            "overlay_opacity": 0.2,
+            "card_title": "Card 2",
+            "heading_size": "h4",
+            "heading_tag": "h4",
+            "discount": "Save Big",
+            "image_height_option": "overflow-top"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "card_link": "/collections/sale",
+            "overlay_opacity": 0.2,
+            "card_title": "Card 2",
+            "heading_size": "h4",
+            "heading_tag": "h4",
+            "discount": "Save Big",
+            "image_height_option": "overflow-top"
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3"
+      ],
+      "settings": {
+        "columns_per_row": 3,
+        "image_ratio": "42.85",
+        "heading": "What's New",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "subheading": "Some Subheading",
+        "pulse_animation_text": false,
+        "magnetic_hover_effect": true,
+        "margin_top": "m",
+        "margin_bottom": "m"
+      }
+    },
+    "collapsible-content": {
+      "type": "collapsible-content",
+      "blocks": {
+        "accordion1": {
+          "type": "accordion",
+          "settings": {
+            "question": "Question",
+            "question_heading_tag": "h5",
+            "answer": "Answer",
+            "default_open": false,
+            "title_size": 18
+          }
+        },
+        "accordion2": {
+          "type": "accordion",
+          "settings": {
+            "question": "Question",
+            "question_heading_tag": "h5",
+            "answer": "Answer",
+            "default_open": false,
+            "title_size": 18
+          }
+        },
+        "accordion3": {
+          "type": "accordion",
+          "settings": {
+            "question": "Question",
+            "question_heading_tag": "h5",
+            "answer": "Answer",
+            "default_open": false,
+            "title_size": 18
+          }
+        },
+        "accordion4": {
+          "type": "accordion",
+          "settings": {
+            "question": "Question",
+            "question_heading_tag": "h5",
+            "answer": "Answer",
+            "default_open": false,
+            "title_size": 18
+          }
+        }
+      },
+      "block_order": [
+        "accordion1",
+        "accordion2",
+        "accordion3",
+        "accordion4"
+      ],
+      "settings": {
+        "hide_image": false,
+        "section_layout": "row",
+        "image_position": "image_left",
+        "image_size": "16/9",
+        "section_heading": "No Confusion, Just Clear Answers",
+        "section_heading_size": "h2",
+        "section_heading_tag": "h3",
+        "section_subheading": "FAQ",
+        "pulse_animation_text": false,
+        "section_heading_content_alignment": "left",
+        "button_style": "secondary",
+        "buttons_alignment": "left",
+        "button_label": "Read all",
+        "button_link": "",
+        "link_label": "Ask support",
+        "link_link": "",
+        "margin_top": "m",
+        "margin_bottom": "m"
+      }
+    }
+  },
+  "order": [
+    "main-collection-banner",
+    "main-collection",
+    "products_grid_VQWLqz",
+    "products_grid_FgqEGG",
+    "card-grid",
+    "collapsible-content"
+  ]
+}

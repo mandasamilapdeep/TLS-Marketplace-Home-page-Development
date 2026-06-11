@@ -1,0 +1,517 @@
+{% liquid
+assign product_form_id = 'product-form-' | append: section.id
+assign variant = product.selected_or_first_available_variant
+assign show_discount_badge = false
+
+if variant.compare_at_price > variant.price and block.settings.show_discount
+assign show_discount_badge = true
+endif
+
+assign class_is_showed_discount_badge = ''
+if show_discount_badge or block.settings.show_tax_info or block.settings.show_shipping
+assign class_is_showed_discount_badge = 'is-showed-discount-badge'
+endif
+%}
+
+{% if variant != blank %}
+<div class="buy-box__wrapper">
+<div class="buy-box container {{ class_is_showed_discount_badge }}">
+<div class="buy-box-price-wrapper">
+<!-- Price is rendered inline near ATC (below) -->
+
+{% if block.settings.show_tax_info or block.settings.show_shipping %}
+<div class="product__tax">
+	{%- if cart.taxes_included and block.settings.show_tax_info -%}
+		{{ 'products.product.include_taxes' | t }}
+	{%- endif -%}
+	{%- if shop.shipping_policy.body != blank
+		and block.settings.show_shipping
+	-%}
+		{{
+			'products.product.shipping_policy_html'
+			| t: link: shop.shipping_policy.url
+		}}
+	{%- endif -%}
+</div>
+{% endif %}
+
+<div class="installment-wrapper" {{ block.shopify_attributes }}>
+{%- assign product_form_installment_id = 'product-form-installment-'
+	| append: section.id
+-%}
+{%- form 'product',
+	product,
+	id: product_form_installment_id,
+	class: 'installment caption-large'
+-%}
+	<input
+		type="hidden"
+		name="id"
+		value="{{ product.selected_or_first_available_variant.id }}"
+	>
+	{{ form | payment_terms }}
+{%- endform -%}
+</div>
+</div>
+
+<div class="product__buy-buttons" {{ block.shopify_attributes }}>
+{%- liquid
+assign gift_card_recipient_feature_active = false
+if block.settings.show_gift_card_recipient and product.gift_card?
+	assign gift_card_recipient_feature_active = true
+endif
+
+assign show_dynamic_checkout = false
+if block.settings.show_dynamic_checkout and gift_card_recipient_feature_active == false
+	assign show_dynamic_checkout = true
+endif
+-%}
+
+<product-form
+class="product-form"
+data-hide-errors="{{ gift_card_recipient_feature_active }}"
+>
+<div
+	class="product-form__error-message-wrapper"
+	role="alert"
+	hidden
+>
+	{%- render 'icon-error' -%}
+	<span class="product-form__error-message"></span>
+</div>
+{%- form 'product',
+	product,
+	id: product_form_id,
+	class: 'form',
+	novalidate: 'novalidate',
+	data-type: 'add-to-cart-form'
+-%}
+	<input
+		type="hidden"
+		name="id"
+		value="{{ product.selected_or_first_available_variant.id }}"
+		{% if product.selected_or_first_available_variant.available
+				== false
+		%}
+			disabled
+		{% endif %}
+	>
+
+	{%- if gift_card_recipient_feature_active -%}
+		{%- render 'gift-card-recipient-form',
+			product: product,
+			form: form,
+			section: section
+		-%}
+	{%- endif -%}
+
+	<div class="product-form__buttons">
+		<div class="product-form__buttons-row">
+			{% if false %}
+				<div
+					class="product-form__input product-form__quantity no-js-hidden"
+					{{ block.shopify_attributes }}
+				>
+					{%- assign cart_qty = cart
+						| item_count_for_variant: product.selected_or_first_available_variant.id
+					-%}
+					<quantity-input class="quantity">
+						<button
+							class="quantity__button quantity__button--minus no-js-hidden focus-inset "
+							name="minus"
+							type="button"
+							tabindex="0"
+						>
+							<span class="visually-hidden">
+								{{-
+									'products.product.quantity.decrease'
+									| t: product: product.title
+									| escape
+								-}}
+							</span>
+							{% render 'icon-minus' %}
+						</button>
+						<input
+							dir="ltr"
+							class="quantity__input focus-inset"
+							type="number"
+							name="quantity"
+							id="Quantity-{{ section.id }}"
+							data-cart-quantity="{{ cart_qty }}"
+							data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+							min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+							{% if product.selected_or_first_available_variant.quantity_rule.max
+									!= null
+							%}
+								data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+								max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+							{% endif %}
+							step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+							value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+							form="{{ product_form_id }}"
+							tabindex="0"
+						>
+						<label
+							class="visually-hidden"
+							for="Quantity-{{ section.id }}"
+						>
+							{{ 'products.product.quantity.label' | t }}
+						</label>
+						<button
+							class="quantity__button quantity__button--plus no-js-hidden focus-inset"
+							name="plus"
+							type="button"
+							tabindex="0"
+						>
+							<span class="visually-hidden">
+								{{-
+									'products.product.quantity.increase'
+									| t: product: product.title
+									| escape
+								-}}
+							</span>
+							{% render 'icon-plus' %}
+						</button>
+					</quantity-input>
+					<div class="quantity__rules caption">
+						{%- if product.selected_or_first_available_variant.quantity_rule.increment
+								> 1
+						-%}
+							<span class="divider">
+								{{-
+									'products.product.quantity.multiples_of'
+									| t:
+										quantity: product.selected_or_first_available_variant.quantity_rule.increment
+								-}}
+							</span>
+						{%- endif -%}
+						{%- if product.selected_or_first_available_variant.quantity_rule.min
+								> 1
+						-%}
+							<span class="divider">
+								{{-
+									'products.product.quantity.minimum_of'
+									| t:
+										quantity: product.selected_or_first_available_variant.quantity_rule.min
+								-}}
+							</span>
+						{%- endif -%}
+						{%- if product.selected_or_first_available_variant.quantity_rule.max
+								!= null
+						-%}
+							<span class="divider">
+								{{-
+									'products.product.quantity.maximum_of'
+									| t:
+										quantity: product.selected_or_first_available_variant.quantity_rule.max
+								-}}
+							</span>
+						{%- endif -%}
+					</div>
+			{% endif %}
+				<div class="product-form__atc-row">
+				<div class="product-form__price-inline">
+					<div
+						class="no-js-hidden price-wrapper"
+						id="price-{{ section.id }}"
+						{{ block.shopify_attributes }}
+					>
+						{%- render 'price',
+							product: product,
+							use_variant: true,
+							show_badges: false,
+							price_class: 'price--product'
+						-%}
+
+						{% if show_discount_badge %}
+							<div class="badge discount-badge">
+								<span class="discount-text">
+									-
+									{{-
+										variant.compare_at_price
+										| minus: variant.price
+										| times: 100.0
+										| divided_by: variant.compare_at_price
+										| round
+									-}}
+									%
+								</span>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+					{% if block.settings.show_quantity %}
+						<div
+							class="product-form__input product-form__quantity no-js-hidden"
+							{{ block.shopify_attributes }}
+						>
+							{%- assign cart_qty = cart
+								| item_count_for_variant: product.selected_or_first_available_variant.id
+							-%}
+							<quantity-input class="quantity">
+								<button
+									class="quantity__button quantity__button--minus no-js-hidden focus-inset "
+									name="minus"
+									type="button"
+									tabindex="0"
+								>
+									<span class="visually-hidden">
+										{{-
+											'products.product.quantity.decrease'
+											| t: product: product.title
+											| escape
+										-}}
+									</span>
+									{% render 'icon-minus' %}
+								</button>
+									<input
+										dir="ltr"
+										class="quantity__input focus-inset"
+										type="number"
+										name="quantity"
+										id="Quantity-{{ section.id }}"
+										data-cart-quantity="{{ cart_qty }}"
+										data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+										min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+										{% if product.selected_or_first_available_variant.quantity_rule.max
+											!= null
+										%}
+											data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+											max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+										{% endif %}
+											step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+											value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+											form="{{ product_form_id }}"
+											tabindex="0"
+										>
+										<label
+											class="visually-hidden"
+											for="Quantity-{{ section.id }}"
+										>
+											{{ 'products.product.quantity.label' | t }}
+										</label>
+										<button
+											class="quantity__button quantity__button--plus no-js-hidden focus-inset"
+											name="plus"
+											type="button"
+											tabindex="0"
+										>
+											<span class="visually-hidden">
+												{{-
+													'products.product.quantity.increase'
+													| t: product: product.title
+													| escape
+													-}}
+											</span>
+											{% render 'icon-plus' %}
+										</button>
+									</quantity-input>
+								<div class="quantity__rules caption">
+									{%- if product.selected_or_first_available_variant.quantity_rule.increment
+										> 1
+									%}
+										<span class="divider">
+											{{-
+												'products.product.quantity.multiples_of'
+												| t:
+													quantity: product.selected_or_first_available_variant.quantity_rule.increment
+											-}}
+										</span>
+										{%- endif -%}
+										{%- if product.selected_or_first_available_variant.quantity_rule.min
+											> 1
+										%}
+											<span class="divider">
+												{{-
+													'products.product.quantity.minimum_of'
+													| t:
+													quantity: product.selected_or_first_available_variant.quantity_rule.min
+											-}}
+											</span>
+										{%- endif -%}
+										{%- if product.selected_or_first_available_variant.quantity_rule.max
+											!= null
+										%}
+											<span class="divider">
+												{{-
+													'products.product.quantity.maximum_of'
+													| t:
+													quantity: product.selected_or_first_available_variant.quantity_rule.max
+											-}}
+											</span>
+										{%- endif -%}
+									</div>
+								</div>
+						{% endif %}
+				<div class="button_wrapper {% if show_dynamic_checkout == false %}custom-hover{% endif %}">
+					<!--outlink custom file--->
+					{% render 'outlink-custom', product: product, o_showOutlink: 1, o_hideCart: 1, o_classes: 'product-form__submit vv button button--primary focus-inset', o_style: '' %}
+					<div class="o_original_{{ product.id }}">
+						
+					<button
+						type="submit"
+						name="add"
+						tabindex="0"
+						class="product-form__submit nn button button--{% if show_dynamic_checkout %}secondary {% else %}primary {% endif %} focus-inset"
+						{% if product.selected_or_first_available_variant.available
+								== false
+						%}
+							disabled
+						{% else %}
+							data-button-text="{{ 'products.product.add_to_cart' | t }}"
+						{% endif %}
+					>
+						{%- if product.selected_or_first_available_variant.available -%}
+							<div class="button__content">
+								<span
+									class="button__label aa"
+									data-label="{{- 'products.product.add_to_cart' | t | escape -}}"
+								>
+								<svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none" class="new-svg">
+<g clip-path="url(#clip0_15_35)">
+<rect width="24" height="24" fill="#00000000"/>
+<path d="M5.33331 6H19.8672C20.4687 6 20.9341 6.52718 20.8595 7.12403L20.1095 13.124C20.0469 13.6245 19.6215 14 19.1172 14H16.5555H9.44442H7.99998" stroke="#ffffffff" stroke-linejoin="round"/>
+<path d="M2 4H4.23362C4.68578 4 5.08169 4.30341 5.19924 4.74003L8.30076 16.26C8.41831 16.6966 8.81422 17 9.26638 17H19" stroke="#ffffffff" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="10" cy="20" r="1" stroke="#ffffffff" stroke-linejoin="round"/>
+<circle cx="17.5" cy="20" r="1" stroke="#ffffffff" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_15_35">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>	{{ 'products.product.add_to_cart' | t }}
+								</span>
+							</div>
+						{%- else -%}
+							<div class="button__content">
+								<span
+									class="button__label zz"
+									data-label="{{- 'products.product.sold_out' | t | escape -}}"
+								>
+									{{ 'products.product.sold_out' | t }}
+								</span>
+							</div>
+						{%- endif -%}
+						<div class="loading-overlay__spinner hidden">
+							{%- render 'icon-spinner' -%}
+						</div>
+						{% if show_dynamic_checkout == false %}
+							<span class="button_circle"> </span>
+						{% endif %}
+					</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="o_original_{{ product.id }}">
+		{%- if show_dynamic_checkout -%}
+			<div
+				class="product-form__checkout no-js-hidden"
+				style="{% if product.selected_or_first_available_variant.available == false %} opacity: 0.5; pointer-events: none;{% endif %}"
+				{% if product.selected_or_first_available_variant.available
+						== false
+				%}
+					aria-disabled="true"
+				{% endif %}
+			>
+				{{ form | payment_button }}
+			</div>
+		{%- endif -%}
+		</div>
+	</div>
+<div class="new-block">
+	<div class="product-trust">
+			{% if block.settings.trust_signal_one != blank %}<div class="trust-item new-it"><span class="trust-checkmark new-mark"> <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="800px" height="800px" viewBox="0 0 1920 1920">
+    <path d="M1827.701 303.065 698.835 1431.801 92.299 825.266 0 917.564 698.835 1616.4 1919.869 395.234z" fill-rule="evenodd"/>
+</svg> </span> {{ block.settings.trust_signal_one }}</div>{% endif %}
+			{% if block.settings.trust_signal_two != blank %}<div class="trust-item new-it"><span class="trust-checkmark new-mark"> <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="800px" height="800px" viewBox="0 0 1920 1920">
+    <path d="M1827.701 303.065 698.835 1431.801 92.299 825.266 0 917.564 698.835 1616.4 1919.869 395.234z" fill-rule="evenodd"/>
+</svg> </span> {{ block.settings.trust_signal_two }}</div>{% endif %}
+			{% if block.settings.trust_signal_three != blank %}<div class="trust-item new-it"><span class="trust-checkmark new-mark"> <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="800px" height="800px" viewBox="0 0 1920 1920">
+    <path d="M1827.701 303.065 698.835 1431.801 92.299 825.266 0 917.564 698.835 1616.4 1919.869 395.234z" fill-rule="evenodd"/>
+</svg> </span> {{ block.settings.trust_signal_three }}</div>{% endif %}
+		</div>
+</div>
+		<div class="product-trust-signals">
+			{% if block.settings.trust_signal_1 != blank %}<div class="trust-item"><span class="trust-checkmark">✅</span> {{ block.settings.trust_signal_1 }}</div>{% endif %}
+			{% if block.settings.trust_signal_2 != blank %}<div class="trust-item"><span class="trust-checkmark">✅</span> {{ block.settings.trust_signal_2 }}</div>{% endif %}
+			{% if block.settings.trust_signal_3 != blank %}<div class="trust-item"><span class="trust-checkmark">✅</span> {{ block.settings.trust_signal_3 }}</div>{% endif %}
+			{% if block.settings.trust_signal_4 != blank %}<div class="trust-item"><span class="trust-checkmark">✅</span> {{ block.settings.trust_signal_4 }}</div>{% endif %}
+		</div>
+{%- endform -%}
+</product-form>
+</div>
+</div>
+</div>
+{% else %}
+<div class="buy-box__wrapper">
+<div class="buy-box product-form__buttons">
+{%- render 'price',
+product: product,
+use_variant: true,
+show_badges: false,
+price_class: 'price--product'
+-%}
+<div class="product-form__buttons-row">
+{% if block.settings.show_quantity %}
+<div class="product-form__input product-form__quantity no-js-hidden">
+	{%- assign cart_qty = 1 -%}
+	<div class="quantity">
+		<button
+			class="quantity__button no-js-hidden disabled"
+			name="minus"
+			type="button"
+			tabindex="0"
+			disabled
+		>
+			<span class="visually-hidden">
+				{{- 'products.product.quantity.increase' | escape -}}
+			</span>
+			{% render 'icon-minus' %}
+		</button>
+		<div
+			class="quantity__input"
+			style="display: flex; align-items: center; justify-content: center;"
+		>
+			1
+		</div>
+		<button
+			class="quantity__button no-js-hidden disabled"
+			name="plus"
+			type="button"
+			tabindex="0"
+			disabled
+		>
+			<span class="visually-hidden">
+				{{-
+					'products.product.quantity.increase'
+					| t: product: product.title
+					| escape
+				-}}
+			</span>
+			{% render 'icon-plus' %}
+		</button>
+	</div>
+</div>
+{% endif %}
+<div class="button_wrapper custom-hover">
+<button
+	type="submit"
+	name="add"
+	class="product-form__submit ss button button--{% if show_dynamic_checkout %}secondary {% else %}primary {% endif %} button--primary-size"
+	disabled
+	tabindex="0"
+>
+	<div class="button__content">
+		<span data-label="{{- 'products.product.add_to_cart' | t | escape -}}">
+			{{ 'products.product.add_to_cart' | t }}
+		</span>
+	</div>
+	<span class="button_circle"> </span>
+</button>
+</div>
+</div>
+</div>
+</div>
+{% endif %}

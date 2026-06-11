@@ -1,0 +1,222 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "heading_size": "h3",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "image_with_text_zxanYU": {
+      "type": "image-with-text",
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "layout": "image_right",
+        "content_alignment": "left",
+        "image_size": "4/3",
+        "subheading": "Bring high-impact wellness products to your customers",
+        "heading": "Become a Wholesale Partner",
+        "heading_size": "h3",
+        "heading_tag": "h2",
+        "text": "<p>Join a growing network of retailers, practitioners, and wellness spaces offering curated products from the TLS Marketplace.</p>",
+        "margin_top": "xs",
+        "margin_bottom": "xs"
+      }
+    },
+    "blocks_APXP8T": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_db8804b_K7Bixd": {
+          "type": "ai_gen_block_db8804b",
+          "settings": {
+            "heading": "Become a Wholesale Partner",
+            "text": "<p>Whether you’re stocking up for your healing center, online shop, or wellness practice, our wholesale program is designed to support your mission and simplify your operations.</p>",
+            "content_max_width": 800,
+            "desktop_width_percent": 100,
+            "heading_font": "lato_n7",
+            "heading_size": 44,
+            "heading_color": "#ffffff",
+            "heading_spacing": 20,
+            "text_size": 18,
+            "text_color": "#e6daf6",
+            "text_line_height": 1.5,
+            "paragraph_spacing": 15,
+            "background_color": "#200a25",
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_horizontal": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_db8804b_K7Bixd"
+      ],
+      "name": "Centered text block",
+      "settings": {}
+    },
+    "blocks_4mtf3f": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_518b63b_RpWUGf": {
+          "type": "ai_gen_block_518b63b",
+          "settings": {
+            "layout": "row",
+            "desktop_width_percent": 100,
+            "gap": 40,
+            "padding": 40,
+            "border_radius": 0,
+            "background_color": "#200a25",
+            "image": "shopify://shop_images/the-light-system-marketplace_7d84d672-9c28-48e2-b96e-fa196155b1db.jpg",
+            "image_ratio": "4 / 3",
+            "image_border_radius": 8,
+            "image_background_color": "#200a25",
+            "heading": "How It Works",
+            "heading_font_size": 32,
+            "heading_color": "#ffffff",
+            "text": "<p>We make wholesale easy. Order from multiple vendors in one place, meet minimums with ease, and get everything your space needs—fast.</p><p>• Shop from a variety of trusted brands in a single, unified cart. No juggling accounts or coordinating with multiple suppliers.</p><p>• Get access to volume-based pricing, center-only offers, and special promos designed for our wholesale customers.</p><p>• Each vendor sets their own wholesale threshold — visible right on the product pages. No guesswork, just transparency.<br/><br/>At this time, Wholesale Application's are open to UNIFYD Healing members. </p>",
+            "text_font_size": 18,
+            "text_color": "#e6daf6",
+            "text_padding": 10,
+            "text_background_color": "#200a25",
+            "text_border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_518b63b_RpWUGf"
+      ],
+      "name": "Image with text",
+      "settings": {}
+    },
+    "multicolumn_bmGGYp": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_jfP7ma": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "heading": "Curated Wellness Products",
+            "item_heading_tag": "h4",
+            "text": "We partner with brands focused on quality, formulation, and intentional design across supplements, wearables, and wellness tools.",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "link",
+            "full_link": false
+          }
+        },
+        "column_m8GTpX": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "heading": "Strong Margins Across Categories",
+            "item_heading_tag": "h4",
+            "text": "Our wholesale partners benefit from competitive pricing structures designed to support resale and long-term growth.",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "link",
+            "full_link": true
+          }
+        },
+        "column_D3RWGf": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "heading": "Multi-Brand Flexibility",
+            "item_heading_tag": "h4",
+            "text": "Order across multiple vendors in one place, with mix-and-match options depending on brand requirements.",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "link",
+            "full_link": false
+          }
+        },
+        "column_89PEAm": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "heading": "Support When You Need It",
+            "item_heading_tag": "h4",
+            "text": "From product education to launch support, our team is here to help you integrate these products into your business.",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "link",
+            "full_link": false
+          }
+        }
+      },
+      "block_order": [
+        "column_jfP7ma",
+        "column_m8GTpX",
+        "column_D3RWGf",
+        "column_89PEAm"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "section_heading": "Why Partner With TLS Marketplace",
+        "section_heading_size": "h2",
+        "section_heading_tag": "h3",
+        "section_subheading": "",
+        "pulse_animation_text": false,
+        "section_heading_content_alignment": "center",
+        "columns_per_row": 4,
+        "swipe_on_mobile": false,
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    },
+    "rich_text_kzTC9n": {
+      "type": "rich-text",
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "section_heading": "Who This is For",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Partner Access",
+        "pulse_animation_text": false,
+        "text": "<p>At this time, wholesale access is reserved for <strong>UNIFYD Healing Center owners and operators</strong>.</p><p>This ensures a consistent, high-quality experience across all locations while allowing us to provide focused support and product alignment within the UNIFYD network.</p><p>As the marketplace continues to grow, we may expand access to additional partners aligned with our standards and vision.</p>",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "17718982835c65724b": {
+      "type": "apps",
+      "blocks": {
+        "bss_b2b_solution_form_dhYeVY": {
+          "type": "shopify://apps/bss-b2b-solution/blocks/form/451233f2-9631-4c49-8b6f-057e4ebcde7f",
+          "settings": {
+            "form_id": "30931"
+          }
+        }
+      },
+      "block_order": [
+        "bss_b2b_solution_form_dhYeVY"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_zxanYU",
+    "blocks_APXP8T",
+    "blocks_4mtf3f",
+    "multicolumn_bmGGYp",
+    "rich_text_kzTC9n",
+    "17718982835c65724b"
+  ]
+}

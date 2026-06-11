@@ -1,0 +1,987 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "177151854282c95967": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_0c900e6_gGmqPC": {
+          "type": "ai_gen_block_0c900e6",
+          "settings": {
+            "image": "shopify://shop_images/tls-marketplace-header.jpg",
+            "image_mobile": "shopify://shop_images/tls-marketplace-header-mobile.jpg",
+            "desktop_width_percent": 100,
+            "banner_height": 500,
+            "banner_height_mobile": 450,
+            "border_radius": 0,
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.1,
+            "heading": "Wellness Through Innovation",
+            "subheading": "Science-backed jewelry that shields EMF, boosts clarity & supports your biofield, worn by thousands worldwide.",
+            "content_alignment": "center",
+            "content_max_width": 800,
+            "content_padding_top": 140,
+            "content_padding_bottom": 30,
+            "content_padding_horizontal": 40,
+            "content_padding_top_mobile": 25,
+            "content_padding_bottom_mobile": 25,
+            "content_padding_horizontal_mobile": 20,
+            "heading_color": "#ffffff",
+            "heading_size": 36,
+            "heading_spacing": 12,
+            "subheading_color": "#e6daf6",
+            "subheading_size": 22,
+            "subheading_max_width": 450,
+            "show_icons": true,
+            "icon_placement": "inline",
+            "icon_gap": 24,
+            "icon_text_gap": 12,
+            "icon_size": 44,
+            "icon_padding": 0,
+            "icon_border_radius": 8,
+            "icon_color": "#ffffff",
+            "icon_text_color": "#ffffff",
+            "icon_text_size": 16,
+            "icon_text_max_width": 100,
+            "icon_text_max_width_mobile": 80,
+            "icon_1_image": "shopify://shop_images/emf_ac9816b9-f287-4a85-bdc8-9f1ef72bcc29.png",
+            "icon_1_text": "EMF Shielding",
+            "icon_2_image": "shopify://shop_images/charge_8c8e0fcd-e4fb-4314-9899-8f89d48d969d.png",
+            "icon_2_text": "Energetically Charged",
+            "icon_3_image": "shopify://shop_images/tested.png",
+            "icon_3_text": "Researched & Tested",
+            "icon_4_text": ""
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_9e8da07_qBqh3q": {
+          "type": "ai_gen_block_9e8da07",
+          "settings": {
+            "heading": "What Makes Us Different?",
+            "text": "Research by Dr. Glen Rein (Stanford-trained biochemist) showed our quantum charging process increases Bioelectrical Activity by up to 382% in just 3 hours of wearing. Bioelectrical Activity (Electrical Impedance) is a proven biomarker of wellness and longevity. Every piece is energetically imprinted to shield EMF, sharpen mental clarity, and support your biofield all day.",
+            "button_label": "Read Full Study",
+            "button_link": "shopify://collections/supercharged-jewelry",
+            "content_max_width": 800,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_horizontal": 20,
+            "heading_spacing": 15,
+            "text_spacing": 20,
+            "background_color": "#000000",
+            "heading_color": "#07cbdc",
+            "text_color": "#e6daf6",
+            "heading_size": 32,
+            "text_size": 18,
+            "button_background": "#07cbdc",
+            "button_background_hover": "#9830ff",
+            "button_text_color": "#ffffff",
+            "button_font_size": 16,
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 30,
+            "button_border_radius": 50
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_8691836_Jz4fnh": {
+          "type": "ai_gen_block_8691836",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/tls-marketplace_296300c2-cf05-4e9d-a78c-90e9d9c96494.jpg",
+            "image_aspect_ratio": "21/9",
+            "border_radius": 16,
+            "desktop_width_percent": 100,
+            "mobile_image": "shopify://shop_images/the-light-system-marketplace_376255df-da78-45dd-b74e-6babb146ac78.jpg",
+            "mobile_image_aspect_ratio": "3/4",
+            "mobile_border_radius": 8,
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.2,
+            "heading": "Wellness Through Innovation",
+            "heading_font": "lato_n7",
+            "heading_size": 48,
+            "subheading": "Energetically Imprinted & Supercharged Products to Support Your Biofield",
+            "subheading_size": 20,
+            "text_color": "#ffffff",
+            "text_spacing": 12,
+            "content_padding": 40,
+            "content_max_width": 650,
+            "content_top_padding": 20,
+            "mobile_heading_size": 28,
+            "mobile_subheading_size": 18,
+            "mobile_content_top_padding": 20,
+            "button_label": "",
+            "button_link": "",
+            "button_bg_color": "#07cbdc",
+            "button_bg_hover_color": "#9830ff",
+            "button_text_color": "#ffffff",
+            "button_text_hover_color": "#ffffff",
+            "button_font_size": 16,
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 32,
+            "button_border_radius": 60,
+            "show_icons": true,
+            "icon_row_bg_color": "rgba(0,0,0,0)",
+            "icon_row_padding": 22,
+            "icon_row_border_radius": 0,
+            "icon_spacing": 50,
+            "icon_size": 65,
+            "icon_bg_color": "#361641",
+            "icon_border_radius": 8,
+            "icon_padding": 4,
+            "icon_text_size": 16,
+            "icon_text_color": "#e6daf6",
+            "icon_text_spacing": 8,
+            "icon_1_enabled": true,
+            "icon_1_image": "shopify://shop_images/emf_ac9816b9-f287-4a85-bdc8-9f1ef72bcc29.png",
+            "icon_1_text": "EMF Shielding",
+            "icon_2_enabled": true,
+            "icon_2_image": "shopify://shop_images/charge_8c8e0fcd-e4fb-4314-9899-8f89d48d969d.png",
+            "icon_2_text": "Energetically Charged",
+            "icon_3_enabled": true,
+            "icon_3_image": "shopify://shop_images/tested.png",
+            "icon_3_text": "Researched & Tested",
+            "icon_4_enabled": false,
+            "icon_4_text": "Feature 4"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_0c900e6_gGmqPC",
+        "ai_gen_block_9e8da07_qBqh3q",
+        "ai_gen_block_8691836_Jz4fnh"
+      ],
+      "settings": {}
+    },
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "block_1": {
+          "type": "slideshow_item",
+          "settings": {
+            "image": "shopify://shop_images/the-marketplace.jpg",
+            "discount": "",
+            "enable_mock_timer": false,
+            "mock_date_picker_day": 2,
+            "mock_date_picker_hours": 3,
+            "date_picker": "",
+            "time_picker": "00:00",
+            "completed_countdown": "hide_section",
+            "countdown_heading": "",
+            "subheading": "",
+            "pulse_animation_text": false,
+            "heading": "Supercharged Intention",
+            "heading_size": "h2",
+            "heading_tag": "h1",
+            "text": "",
+            "primary_button_label": "Shop Now",
+            "primary_button_link": "shopify://collections",
+            "overlay_opacity": 0.2,
+            "overlay_opacity_mobile": 0.2
+          }
+        }
+      },
+      "block_order": [
+        "block_1"
+      ],
+      "disabled": true,
+      "settings": {
+        "header_overlay": false,
+        "section_size": "full",
+        "content_alignment": "center",
+        "image_size": "21/9",
+        "image_size_mobile": "1/1",
+        "backlight_animation": false,
+        "is_loop": true,
+        "is_autoplay": false,
+        "is_hover_stop_autoplay": true,
+        "is_prereview": false,
+        "show_arrows": false,
+        "show_bullets": false,
+        "parallax": false,
+        "slideshow_speed": 1.1,
+        "slideshow_delay": 3,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "1771385653cf577a62": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "177152798541479be2": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "177152813937164db8": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_63950f3_Tzhirx": {
+          "type": "ai_gen_block_63950f3",
+          "settings": {
+            "heading": "⭐️⭐️⭐️⭐️⭐️ Trusted Worldwide",
+            "heading_size": 24,
+            "heading_weight": "700",
+            "heading_transform": "none",
+            "heading_alignment": "center",
+            "heading_spacing": 30,
+            "heading_color": "#ffffff",
+            "item_1_enabled": true,
+            "item_1_image": "shopify://shop_images/JASON-B_cea5b8cd-d625-4552-a076-9baf4a2cd17a.jpg",
+            "item_1_text": "\"This is the epitome of look good and feel good.\" - Jason B.",
+            "item_2_enabled": true,
+            "item_2_image": "shopify://shop_images/corey_9e41ed9f-3b13-4486-b12d-e59571e0e79e.jpg",
+            "item_2_text": "\"Beautiful! Just what I needed. Thank you!\" - Corey",
+            "item_3_enabled": true,
+            "item_3_image": "shopify://shop_images/megan.jpg",
+            "item_3_text": "\"I feel more of a positive effect. Would definitely recommend them.\" - Megan",
+            "item_4_enabled": true,
+            "item_4_image": "shopify://shop_images/yelena.jpg",
+            "item_4_text": "\"Love the Green Aventurine medallion!\" - Yelena L.",
+            "item_5_enabled": false,
+            "item_5_text": "Shop Now",
+            "container_width": 2000,
+            "item_spacing": 60,
+            "text_image_gap": 15,
+            "padding_top": 40,
+            "padding_bottom": 0,
+            "padding_horizontal": 20,
+            "padding_top_mobile": 40,
+            "padding_bottom_mobile": 15,
+            "padding_horizontal_mobile": 15,
+            "image_size": 50,
+            "image_border_radius": 8,
+            "placeholder_color": "#361641",
+            "text_size": 18,
+            "text_weight": "400",
+            "text_transform": "none",
+            "letter_spacing": 1,
+            "text_color": "#e6daf6",
+            "scroll_speed": 30,
+            "pause_on_hover": true,
+            "background_color": "#200a25"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_63950f3_Tzhirx"
+      ],
+      "settings": {}
+    },
+    "featured_ticker_NiaT8V": {
+      "type": "featured-ticker",
+      "blocks": {
+        "ticker_text_PVRjK4": {
+          "type": "ticker_text",
+          "settings": {
+            "block_ticker_text_first": "\"Perfect!! Enjoying the benefits as well!!\"",
+            "block_ticker_text_second": "- Elaine L."
+          }
+        },
+        "ticker_text_YVPAar": {
+          "type": "ticker_text",
+          "settings": {
+            "block_ticker_text_first": "\"Absolutely incredible! The energy just crawled through my body!\"",
+            "block_ticker_text_second": "- Denise R."
+          }
+        },
+        "ticker_text_E7Ua3L": {
+          "type": "ticker_text",
+          "settings": {
+            "block_ticker_text_first": "\"I love the energy it emits.\"",
+            "block_ticker_text_second": "- Shelly A."
+          }
+        },
+        "ticker_text_MxqPPG": {
+          "type": "ticker_text",
+          "settings": {
+            "block_ticker_text_first": "\"Totally changed my mood the first week I wore it.\"",
+            "block_ticker_text_second": "- Thomas M."
+          }
+        },
+        "ticker_text_JX4qUw": {
+          "type": "ticker_text",
+          "settings": {
+            "block_ticker_text_first": "\"It's been helping the soreness in my left hand.\"",
+            "block_ticker_text_second": "- Sharon"
+          }
+        },
+        "ticker_text_9dAeyA": {
+          "type": "ticker_text",
+          "settings": {
+            "block_ticker_text_first": "\"We feel more energy when we wear them. It is a calming energy.\"",
+            "block_ticker_text_second": "- Coy C."
+          }
+        }
+      },
+      "block_order": [
+        "ticker_text_PVRjK4",
+        "ticker_text_YVPAar",
+        "ticker_text_E7Ua3L",
+        "ticker_text_MxqPPG",
+        "ticker_text_JX4qUw",
+        "ticker_text_9dAeyA"
+      ],
+      "disabled": true,
+      "name": "t:sections.all.featured_ticker.label",
+      "settings": {
+        "trusted_text": "⭐️⭐️⭐️⭐️⭐️ Trusted Worldwide",
+        "ticker_speed": 31,
+        "pause_on_hover": true,
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    },
+    "blocks_gHNRJb": {
+      "type": "_blocks",
+      "name": "Headline with button",
+      "settings": {}
+    },
+    "1772037314fbe82219": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7de9e59_8MkkWL": {
+          "type": "ai_gen_block_7de9e59",
+          "settings": {
+            "section_padding_top": 40,
+            "section_padding_bottom": 40,
+            "section_padding_horizontal": 40,
+            "section_padding_top_mobile": 20,
+            "section_padding_bottom_mobile": 20,
+            "section_padding_horizontal_mobile": 20,
+            "card_height": 300,
+            "card_height_mobile": 300,
+            "grid_gap": 20,
+            "card_border_radius": 16,
+            "content_internal_padding": 0,
+            "content_border_width": 0,
+            "content_border_color": "#ffffff",
+            "content_border_radius": 0,
+            "content_bg_color": "rgba(0,0,0,0)",
+            "show_heading": true,
+            "heading_size": 24,
+            "heading_size_mobile": 24,
+            "heading_max_width": 500,
+            "heading_color": "#ffffff",
+            "heading_hover_color": "#07cbdc",
+            "show_button": true,
+            "button_text": "Shop now",
+            "button_font_size": 16,
+            "button_padding_vertical": 10,
+            "button_padding_horizontal": 20,
+            "button_border_radius": 20,
+            "button_bg_color": "#9830ff",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#9830ff",
+            "button_hover_text_color": "#ffffff",
+            "content_position": "top-center",
+            "content_padding": 30,
+            "content_gap": 15,
+            "show_overlay": true,
+            "overlay_opacity": 0.5,
+            "placeholder_bg_color": "#000000",
+            "collection_1": "the-light-system™",
+            "collection_image_1": "shopify://shop_images/cube-mini_lifestyle3_ca1b944f-3887-46ba-83d7-b237aaf89843.jpg",
+            "collection_1_border_width": 1,
+            "collection_1_border_color": "#553052",
+            "collection_2": "supercharged-grounding-rods",
+            "collection_image_2": "shopify://shop_images/supercharged-rods_8ee7a71a-85ef-496a-b4ed-4ce1d180e9e6.jpg",
+            "collection_2_border_width": 1,
+            "collection_2_border_color": "#553052",
+            "collection_3": "supercharged-jewelry",
+            "collection_image_3": "shopify://shop_images/supercharged-jewelry-bundles.jpg",
+            "collection_3_border_width": 1,
+            "collection_3_border_color": "#553052",
+            "collection_4": "supplements",
+            "collection_image_4": "shopify://shop_images/supercharged-supplements.jpg",
+            "collection_4_border_width": 1,
+            "collection_4_border_color": "#553052"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7de9e59_8MkkWL"
+      ],
+      "settings": {}
+    },
+    "collection_grid_YaqjTW": {
+      "type": "collection-grid",
+      "blocks": {
+        "collection_item_YnrkVM": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "supercharged-copper-bottles",
+            "description": "<p>Concentrated wellness boosts on the go.</p>",
+            "additional_image": "shopify://shop_images/supercharged-bottle2_e4af12f6-cad1-4971-912c-a078f861ec33.jpg",
+            "heading_size": "h4",
+            "heading_tag": "h3",
+            "image_ratio": "square",
+            "image_ratio_mobile": "square",
+            "overlay_opacity": 0,
+            "overlay_opacity_mobile": 0,
+            "show_descr": false,
+            "btn_label": "Shop now",
+            "btn_style": "secondary"
+          }
+        },
+        "collection_item_iB34xx": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "supercharged-grounding-rods",
+            "description": "<p>Sparkling probiotic tea for daily balance.</p>",
+            "additional_image": "shopify://shop_images/supercharged-rods_8ee7a71a-85ef-496a-b4ed-4ce1d180e9e6.jpg",
+            "heading_size": "h4",
+            "heading_tag": "h3",
+            "image_ratio": "square",
+            "image_ratio_mobile": "square",
+            "overlay_opacity": 0,
+            "overlay_opacity_mobile": 0,
+            "show_descr": false,
+            "btn_label": "Shop now",
+            "btn_style": "secondary"
+          }
+        },
+        "collection_item_wy3dTm": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "supplements",
+            "description": "<p>Bright citrus blends to refresh and restore.</p>",
+            "additional_image": "shopify://shop_images/supercharged-supplements.jpg",
+            "heading_size": "h3",
+            "heading_tag": "h3",
+            "image_ratio": "landscape",
+            "image_ratio_mobile": "square",
+            "overlay_opacity": 0,
+            "overlay_opacity_mobile": 0,
+            "show_descr": false,
+            "btn_label": "Shop now",
+            "btn_style": "secondary"
+          }
+        },
+        "collection_item_f9n73m": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "supercharged-jewelry",
+            "description": "<p>Handpicked combos to sample your favorites.</p>",
+            "additional_image": "shopify://shop_images/supercharged-jewelry-bundles.jpg",
+            "heading_size": "h3",
+            "heading_tag": "h3",
+            "image_ratio": "square",
+            "image_ratio_mobile": "square",
+            "overlay_opacity": 0,
+            "overlay_opacity_mobile": 0.1,
+            "show_descr": false,
+            "btn_label": "Shop now",
+            "btn_style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "collection_item_YnrkVM",
+        "collection_item_iB34xx",
+        "collection_item_wy3dTm",
+        "collection_item_f9n73m"
+      ],
+      "disabled": true,
+      "name": "Collection grid",
+      "settings": {
+        "heading": "",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "subheading": "",
+        "pulse_animation_text": false,
+        "magnetic_hover_effect": true,
+        "margin_top": "no-indent",
+        "margin_bottom": "m"
+      }
+    },
+    "product_slider_Mzr7ic": {
+      "type": "product-slider",
+      "disabled": true,
+      "name": "Products slider",
+      "settings": {
+        "product_list": [],
+        "show_product_count": true,
+        "enable_default_count": false,
+        "enable_slider_shadow": true,
+        "section_heading": "8 Favorite Flavors",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Top Items",
+        "pulse_animation_text": false,
+        "description": "Bold flavors, top picks — these are the sips that slap.",
+        "section_heading_content_alignment": "left",
+        "image_ratio": "3/4",
+        "image_fit": "cover",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "margin_top": "no-indent",
+        "margin_bottom": "m"
+      }
+    },
+    "popular-products-1": {
+      "type": "popular-products",
+      "disabled": true,
+      "settings": {
+        "product_list": [],
+        "collection_list": [
+          "supercharged-jewelry"
+        ],
+        "product_card_type": "simple",
+        "product_count": 10,
+        "enable_slider_shadow": true,
+        "section_heading": "",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "",
+        "pulse_animation_text": false,
+        "section_heading_content_alignment": "left",
+        "enable_mock_timer": false,
+        "mock_date_picker_day": 2,
+        "mock_date_picker_hours": 3,
+        "date_picker": "",
+        "time_picker": "",
+        "completed_countdown": "show_text",
+        "countdown_heading": "",
+        "tabs_link_text": "",
+        "tabs_link_url": "",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "show_tax_info": false,
+        "show_shipping": false,
+        "show_dynamic_checkout": true,
+        "show_quantity": false,
+        "show_gift_card_recipient": false,
+        "show_discount": false,
+        "picker_type": "dropdown",
+        "margin_top": "no-indent",
+        "margin_bottom": "m"
+      }
+    },
+    "products_grid_dKRiUk": {
+      "type": "products-grid",
+      "name": "t:sections.products-grid.name",
+      "settings": {
+        "collection": "",
+        "product_list": [
+          "pyrite-quantum-medallion",
+          "tiger-eye-medallion",
+          "rose-quartz-quantum-medallion",
+          "australia-zebra-jasper-8mm-round-bracelet",
+          "amethyst-quantum-medallion",
+          "b-weather-agate-8mm-round-bracelet",
+          "amethyst-quantum-bracelet",
+          "african-turquoise-quantum-bracelet"
+        ],
+        "products_per_page": 46,
+        "columns_per_row": 4,
+        "sort": "products_high",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "section_heading": "Most Popular",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Supercharged Jewelry",
+        "pulse_animation_text": true,
+        "section_heading_content_alignment": "left",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    },
+    "17715281593cd7b8a7": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "popular_products_LiAQCy": {
+      "type": "popular-products",
+      "disabled": true,
+      "name": "t:sections.popular-products.presets.name",
+      "settings": {
+        "product_list": [],
+        "collection_list": [
+          "quantum-bracelets"
+        ],
+        "product_card_type": "simple",
+        "product_count": 10,
+        "enable_slider_shadow": true,
+        "section_heading": "",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "",
+        "pulse_animation_text": false,
+        "section_heading_content_alignment": "left",
+        "enable_mock_timer": false,
+        "mock_date_picker_day": 2,
+        "mock_date_picker_hours": 3,
+        "date_picker": "",
+        "time_picker": "",
+        "completed_countdown": "show_text",
+        "countdown_heading": "",
+        "tabs_link_text": "",
+        "tabs_link_url": "",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "show_tax_info": false,
+        "show_shipping": false,
+        "show_dynamic_checkout": true,
+        "show_quantity": true,
+        "show_gift_card_recipient": false,
+        "show_discount": false,
+        "picker_type": "dropdown",
+        "margin_top": "no-indent",
+        "margin_bottom": "m"
+      }
+    },
+    "17716039770fdddc8a": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "177153261817f67661": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_cards_carousel_tDf8At": {
+          "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "show_sample_reviews": true,
+            "reviews_selection": "featured_reviews",
+            "products": [],
+            "star_rating": "all",
+            "show_review_media": false,
+            "display_order": "media_first",
+            "no_image_fallback": "review_text_only",
+            "max_reviews": 20,
+            "review_length": "large",
+            "text_size": "medium",
+            "image_ratio": "1",
+            "reviews_shown": 4,
+            "show_reviewer_name": true,
+            "show_product_name": true,
+            "hide_arrows_mobile": false,
+            "arrows_position": "bottom",
+            "max_width": 1100,
+            "corner_styling": "soft",
+            "header_text_color": "#ffffff",
+            "text_color": "#e6daf6",
+            "card_color": "#361641",
+            "stars_color": "",
+            "arrows_color": "#e6daf6",
+            "transition_speed": 4,
+            "header_text": "Customers are saying",
+            "show_average_rating": true
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_cards_carousel_tDf8At"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "recommended_slider_ChXd9T": {
+      "type": "recommended-slider",
+      "name": "t:sections.recommended-slider.presets.name",
+      "settings": {
+        "overlay_opacity": 0.2,
+        "overlay_opacity_mobile": 0.3,
+        "subheading": "Specialized Nutrition",
+        "pulse_animation_text": false,
+        "heading": "Natural Supplements",
+        "heading_size": "h3",
+        "heading_tag": "h2",
+        "descr": "Our global network of partners and scientists provide a pipeline of novel ingredients, evidence-based delivery forms and innovative product formulations sets us apart as global leaders in Health and wellness categories.",
+        "image_in_circle": true,
+        "author_name": "",
+        "author_position": "",
+        "product_list": [
+          "oxy-powder®",
+          "dulsa",
+          "brain-health-gummies-1",
+          "liver-cleanse-program™",
+          "biophotonic-liquid-gold"
+        ],
+        "columns_per_row": 3,
+        "is_autoplay": true,
+        "stop_autoplay": true,
+        "slideshow_speed": 2.3,
+        "slideshow_delay": 3,
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "margin_top": "s",
+        "margin_bottom": "m"
+      }
+    },
+    "image_banner_collapsible_FtpMP4": {
+      "type": "image-banner-collapsible",
+      "blocks": {
+        "accordion_VBLmAP": {
+          "type": "accordion",
+          "settings": {
+            "question": "Non-Invasive & Passive",
+            "accordion_heading_tag": "h5",
+            "answer": "Safe, effective and does not require any interaction. Simply set and forget.",
+            "default_open": true
+          }
+        },
+        "accordion_YLcFPB": {
+          "type": "accordion",
+          "settings": {
+            "question": "Researched & Studied",
+            "accordion_heading_tag": "h5",
+            "answer": "Research Has Shown Cellular Electrical Conductivity Increased By 80% In Just 1 Hour. CEC is an established bio-marker of wellness and longevity.",
+            "default_open": false
+          }
+        },
+        "accordion_aCEyK9": {
+          "type": "accordion",
+          "settings": {
+            "question": "Experienced Worldwide",
+            "accordion_heading_tag": "h5",
+            "answer": "The Light System™ is offered as a service in wellness centers across the globe.",
+            "default_open": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_VBLmAP",
+        "accordion_YLcFPB",
+        "accordion_aCEyK9"
+      ],
+      "name": "t:sections.image-banner-collapsible.name",
+      "settings": {
+        "image": "shopify://shop_images/pyramid-lifestyle.jpg",
+        "overlay_opacity": 0.4,
+        "overlay_opacity_mobile": 0.6,
+        "image_size": "21/9",
+        "section_heading": "The Light System™",
+        "section_heading_size": "h1",
+        "section_heading_tag": "h2",
+        "section_subheading": "",
+        "pulse_animation_text": false,
+        "section_descr": "Wellness does not need to be difficult or take all of your time. Experience the power of The Light System™ from the comfort of your home or office.",
+        "button_style": "primary",
+        "buttons_alignment": "left",
+        "button_label": "View Models",
+        "button_link": "shopify://collections/the-light-system™",
+        "link_label": "View Real Stories",
+        "link_link": "https://www.thelightsystems.com/real-stories",
+        "margin_top": "no-indent",
+        "margin_bottom": "m"
+      }
+    },
+    "testimonials_quote_zWheUw": {
+      "type": "testimonials-quote",
+      "blocks": {
+        "testimonial_quote_NzEYAb": {
+          "type": "testimonial_quote",
+          "settings": {
+            "image_fit": "cover",
+            "text_title": "",
+            "text": "The Light System is an incredible upgraded experience! It has helped so much in my recovery from mold toxicity.",
+            "author_name": "Kylie S.",
+            "author_social_link": "",
+            "author_position": "",
+            "enable_stars": true,
+            "rating": 5
+          }
+        },
+        "testimonial_quote_jGPpCi": {
+          "type": "testimonial_quote",
+          "settings": {
+            "image_fit": "cover",
+            "text_title": "",
+            "text": "I suffered from tinnitus in my ears for over 8 years. After just 4 hours in the Light System, I was amazed to realize the ringing was completely gone. The tinnitus simply disappeared! Highly recommended!!",
+            "author_name": "Oded B.",
+            "author_social_link": "",
+            "author_position": "",
+            "enable_stars": true,
+            "rating": 5
+          }
+        },
+        "testimonial_quote_kFgNFG": {
+          "type": "testimonial_quote",
+          "settings": {
+            "image_fit": "cover",
+            "text_title": "",
+            "text": "I had a scan of left shoulder due to 6 months pain. It showed fluid in the area. After a 1 hour session the pain went away it was a miracle.",
+            "author_name": "Anna W.",
+            "author_social_link": "",
+            "author_position": "",
+            "enable_stars": true,
+            "rating": 5
+          }
+        },
+        "testimonial_quote_nzAyYV": {
+          "type": "testimonial_quote",
+          "settings": {
+            "image_fit": "cover",
+            "text_title": "",
+            "text": "My prostate PSA level was 5.0, and after my first 100 hours it dropped to 3.13.",
+            "author_name": "Nauris C.",
+            "author_social_link": "",
+            "author_position": "",
+            "enable_stars": true,
+            "rating": 5
+          }
+        },
+        "testimonial_quote_dQDqMt": {
+          "type": "testimonial_quote",
+          "settings": {
+            "image_fit": "cover",
+            "text_title": "",
+            "text": "My arthritis in my knees has improved 90 percent . My lung capacity has improved about the same . Even my eyesight . I can write and read without glasses now. An unexpected perk!",
+            "author_name": "Artemis F.",
+            "author_social_link": "",
+            "author_position": "",
+            "enable_stars": true,
+            "rating": 5
+          }
+        },
+        "testimonial_quote_nMBczC": {
+          "type": "testimonial_quote",
+          "settings": {
+            "image_fit": "cover",
+            "text_title": "",
+            "text": "Had a lot of pain relief from the sciatica. I highly recommend these powerful experiences - something like no other you have experienced!",
+            "author_name": "Ildiko",
+            "author_social_link": "",
+            "author_position": "",
+            "enable_stars": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_quote_NzEYAb",
+        "testimonial_quote_jGPpCi",
+        "testimonial_quote_kFgNFG",
+        "testimonial_quote_nzAyYV",
+        "testimonial_quote_dQDqMt",
+        "testimonial_quote_nMBczC"
+      ],
+      "name": "t:sections.testimonials.blocks.testimonials_slide.testimonials_quote",
+      "settings": {
+        "section_heading": "Real People. Real Transformations.",
+        "section_heading_size": "h2",
+        "section_heading_tag": "h3",
+        "section_subheading": "",
+        "pulse_animation_text": false,
+        "section_descr": "What could The Light System™ do for you?",
+        "margin_top": "no-indent",
+        "margin_bottom": "m"
+      }
+    },
+    "17720414337124db30": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c67591a_6Gf6BV": {
+          "type": "ai_gen_block_c67591a",
+          "settings": {
+            "layout": "row-reverse",
+            "desktop_width_percent": 100,
+            "content_gap": 40,
+            "image": "shopify://shop_images/marketplace.jpg",
+            "image_ratio": "21/9",
+            "image_border_radius": 16,
+            "heading": "Become a Wholesaler",
+            "heading_size": 36,
+            "heading_color": "#ffffff",
+            "text": "<p>Whether you’re stocking up for your healing center, online shop, or wellness practice, our wholesale program is designed to support your mission and simplify your operations.</p>",
+            "text_size": 18,
+            "text_color": "#e6daf6",
+            "text_spacing": 20,
+            "button_label": "Apply Now",
+            "button_link": "shopify://pages/wholesale",
+            "button_text_size": 16,
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 32,
+            "button_border_radius": 40,
+            "button_background_color": "#07cbdc",
+            "button_text_color": "#ffffff",
+            "button_hover_background_color": "#9830ff",
+            "button_hover_text_color": "#ffffff",
+            "padding_top": 30,
+            "padding_bottom": 90,
+            "padding_horizontal": 40,
+            "background_color": "#200a25"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c67591a_6Gf6BV"
+      ],
+      "settings": {}
+    },
+    "back_popup_RrjaFU": {
+      "type": "back-popup",
+      "name": "Back Popup",
+      "settings": {}
+    }
+  },
+  "order": [
+    "177151854282c95967",
+    "slideshow",
+    "1771385653cf577a62",
+    "177152798541479be2",
+    "177152813937164db8",
+    "featured_ticker_NiaT8V",
+    "blocks_gHNRJb",
+    "1772037314fbe82219",
+    "collection_grid_YaqjTW",
+    "product_slider_Mzr7ic",
+    "popular-products-1",
+    "products_grid_dKRiUk",
+    "17715281593cd7b8a7",
+    "popular_products_LiAQCy",
+    "17716039770fdddc8a",
+    "177153261817f67661",
+    "recommended_slider_ChXd9T",
+    "image_banner_collapsible_FtpMP4",
+    "testimonials_quote_zWheUw",
+    "17720414337124db30",
+    "back_popup_RrjaFU"
+  ]
+}

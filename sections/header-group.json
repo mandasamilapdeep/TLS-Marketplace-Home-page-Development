@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:sections.header.settings.header-group.label",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "disabled": true,
+      "settings": {
+        "enable_mock_timer": false,
+        "mock_date_picker_day": 2,
+        "mock_date_picker_hours": 3,
+        "date_picker": "",
+        "time_picker": "",
+        "completed_countdown": "show_text",
+        "countdown_heading": "",
+        "ticker_speed": 10,
+        "marquee": true,
+        "text": "Free Shipping on Orders Over $200 (U.S. Only)",
+        "promo_link_label": "",
+        "promo_link": "",
+        "enable_border_top": false,
+        "enable_border_bottom": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "mega_menu_eMWCyL": {
+          "type": "mega_menu",
+          "disabled": true,
+          "settings": {
+            "mega_menu_trigger": "Shop",
+            "show_promo_block_1": true,
+            "image_1": "shopify://shop_images/supercharged-jewelry-bundles.jpg",
+            "button_label_1": "Supercharged Jewelry",
+            "button_link_1": "shopify://collections/supercharged-jewelry",
+            "show_promo_block_2": true,
+            "image_2": "shopify://shop_images/supercharged-rods_8ee7a71a-85ef-496a-b4ed-4ce1d180e9e6.jpg",
+            "button_label_2": "Supercharged Accessories",
+            "button_link_2": "shopify://collections/supercharged-accessories",
+            "show_promo_block_3": true,
+            "image_3": "shopify://shop_images/supercharged-supplements.jpg",
+            "button_label_3": "Natural Supplements",
+            "button_link_3": "shopify://collections/supplements",
+            "show_promo_block_4": true,
+            "image_4": "shopify://shop_images/relax.jpg",
+            "button_label_4": "Infrared Saunas",
+            "button_link_4": "shopify://collections/relax-saunas",
+            "show_promo_block_5": true,
+            "image_5": "shopify://shop_images/tls1.jpg",
+            "button_label_5": "The Light System™",
+            "button_link_5": "shopify://collections/the-light-system™"
+          }
+        },
+        "search_promo": {
+          "type": "search_promo",
+          "settings": {
+            "enable_search_promo": true,
+            "search_menu_heading": "Popular Searches",
+            "search_menu": "main-menu",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections",
+            "search_products_heading": "Products",
+            "product_list": [
+              "amethyst-quantum-medallion",
+              "supercharged-copper-bottle",
+              "supercharged-grounding-rods"
+            ],
+            "image_ratio": "3/4",
+            "image_fit": "cover",
+            "show_vendor": true,
+            "show_collection": false
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_eMWCyL",
+        "search_promo"
+      ],
+      "settings": {
+        "header_type": "left-logo-second",
+        "logo": "shopify://shop_images/TLSMarketplaceLogo-white_f2cb3638-dfe8-4481-86bf-0c040676e3fe.png",
+        "logo_width": 110,
+        "menu_top": "",
+        "menu": "main-menu",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_social": true,
+        "sticky_header_type": "always",
+        "enable_search": true
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

@@ -1,0 +1,412 @@
+{% if settings.enable_exit_popup %}
+
+<div id="ei-popup">
+
+  <div class="ei-overlay"></div>
+
+  <div class="ei-modal">
+
+    <button class="ei-close">&times;</button>
+
+    <div class="ei-grid">
+
+      <!-- LEFT IMAGE -->
+
+      <div class="ei-image">
+
+        {% if settings.ei_popup_image != blank %}
+
+          <img
+            src="{{ settings.ei_popup_image | image_url: width: 1400 }}"
+            alt="Popup Image"
+            loading="lazy"
+          >
+
+        {% endif %}
+
+      </div>
+
+      <!-- RIGHT CONTENT -->
+
+      <div class="ei-content">
+
+        <span class="ei-badge">
+          {{ settings.ei_popup_badge }}
+        </span>
+
+        <h2>
+          {{ settings.ei_popup_heading }}
+        </h2>
+
+        <p>
+          {{ settings.ei_popup_text }}
+        </p>
+
+        <div class="ei-copy-wrap">
+
+          <input
+            type="text"
+            id="eiDiscountCode"
+            value="{{ settings.ei_discount_code }}"
+            readonly
+          >
+
+          <button id="eiCopyBtn">
+            {{ settings.ei_button_text }}
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<style>
+
+#ei-popup{
+  position:fixed;
+  inset:0;
+  z-index:999999;
+  display:none;
+}
+
+#ei-popup.active{
+  display:block;
+}
+
+.ei-overlay{
+  position:absolute;
+  inset:0;
+  background: rgb(0 0 0 / 0%);
+  backdrop-filter:blur(5px);
+}
+
+.ei-modal{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:92%;
+  max-width:980px;
+  {% comment %} background:#fff; {% endcomment %}
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 15px 70px rgba(0,0,0,.25);
+  animation:eiFade .35s ease;
+}
+
+@keyframes eiFade{
+
+  from{
+    opacity:0;
+    transform:translate(-50%,-46%);
+  }
+
+  to{
+    opacity:1;
+    transform:translate(-50%,-50%);
+  }
+
+}
+
+.ei-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.ei-image{
+    min-height: auto;
+  background:#f5f5f5;
+}
+
+.ei-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.ei-content{
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background: #361641;
+}
+
+.ei-badge{
+  display:inline-flex;
+  width:max-content;
+  padding:8px 18px;
+  border-radius:100px;
+  background:#9830ff;
+  color:#fff;
+  font-size:13px;
+  margin-bottom:20px;
+  letter-spacing:.5px;
+}
+
+.ei-content h2{
+  font-size:30px;
+  line-height:1.1;
+  margin:0 0 20px;
+  color:#ffff;
+}
+
+.ei-content p{
+  margin:0 0 32px;
+  color:#ffff;
+  line-height:1.7;
+  font-size:16px;
+   color:#ffff;
+}
+
+.ei-copy-wrap{
+  display:flex;
+  gap:12px;
+}
+
+.ei-copy-wrap input{
+  flex:1;
+  height:58px;
+  border:2px dashed #ddd;
+  border-radius:14px;
+  text-align:center;
+  font-size:17px;
+  font-weight:700;
+  background:#fafafa;
+   color: #646868;
+   width: 50%;
+
+}
+
+.ei-copy-wrap button{
+  border:none;
+  background:#9830ff;
+  color:#fff;
+  border-radius:14px;
+  padding:0 30px;
+  cursor:pointer;
+  font-weight:600;
+  transition:.2s;
+}
+
+.ei-copy-wrap button:hover{
+  opacity:.9;
+}
+
+.ei-close{
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:42px;
+  height:42px;
+  border:none;
+  border-radius:100px;
+  background:#9830ff;
+  font-size:28px;
+  cursor:pointer;
+  z-index:5;
+}
+
+@media(max-width:768px){
+
+  .ei-grid{
+    grid-template-columns:1fr;
+  }
+
+  .ei-image{
+        min-height: auto;
+  }
+
+  .ei-content{
+    padding:15px 15px;
+  }
+
+  .ei-content h2{
+    font-size:20px;
+  }
+
+  .ei-copy-wrap{
+    flex-direction:column;
+  }
+
+  .ei-copy-wrap button{
+    height:54px;
+  }
+.ei-content p {
+    margin: 0 0 20px;
+    color: #ffff;
+    line-height: 1.7;
+    font-size: 16px;
+    color: #ffff;
+}
+.ei-copy-wrap input {
+    flex: auto;
+}
+.ei-copy-wrap input {
+    font-size: 16px;
+}
+.ei-copy-wrap input{
+  width: 100%;
+}
+
+</style>
+
+<script>
+
+(function(){
+
+  /* PREVENT MULTIPLE INIT */
+
+  if(window.exitIntentPopupLoaded) return;
+
+  window.exitIntentPopupLoaded = true;
+
+  const popup = document.getElementById('ei-popup');
+
+  if(!popup) return;
+
+  /* SHOW ONLY ONCE */
+
+  if(localStorage.getItem('ei_popup_closed') === 'yes'){
+    return;
+  }
+
+  let popupOpened = false;
+
+  function showPopup(){
+
+    if(popupOpened) return;
+
+    popupOpened = true;
+
+    popup.classList.add('active');
+  }
+
+  function closePopup(){
+
+    popup.classList.remove('active');
+
+    localStorage.setItem('ei_popup_closed','yes');
+  }
+
+  /* CLOSE BUTTON */
+
+  const closeBtn = popup.querySelector('.ei-close');
+
+  if(closeBtn){
+
+    closeBtn.addEventListener('click', closePopup);
+
+  }
+
+  /* OVERLAY */
+
+  const overlay = popup.querySelector('.ei-overlay');
+
+  if(overlay){
+
+    overlay.addEventListener('click', closePopup);
+
+  }
+
+  /* COPY BUTTON */
+
+  const copyBtn = document.getElementById('eiCopyBtn');
+
+  if(copyBtn){
+
+    copyBtn.addEventListener('click', function(){
+
+      const code =
+        document.getElementById('eiDiscountCode').value;
+
+      navigator.clipboard.writeText(code);
+
+      this.innerHTML = 'Copied!';
+
+      localStorage.setItem('ei_popup_closed','yes');
+
+      setTimeout(function(){
+
+        popup.classList.remove('active');
+
+      },500);
+
+    });
+
+  }
+
+  /* =========================
+     DESKTOP EXIT INTENT
+  ========================= */
+
+  if(window.innerWidth > 768){
+
+    document.addEventListener('mouseout', function(e){
+
+      if(
+        e.clientY <= 0 &&
+        !e.relatedTarget
+      ){
+
+        showPopup();
+
+      }
+
+    });
+
+  }
+
+  /* =========================
+     MOBILE EXIT INTENT
+  ========================= */
+
+  if(window.innerWidth <= 768){
+
+    /* BACK BUTTON */
+
+    history.pushState({popup:true}, '');
+
+    window.addEventListener('popstate', function(){
+
+      if(!popupOpened){
+
+        showPopup();
+
+        history.pushState({popup:true}, '');
+
+      }
+
+    });
+
+    /* FAST SCROLL UP */
+
+    let lastScroll = window.pageYOffset;
+
+    window.addEventListener('scroll', function(){
+
+      const currentScroll = window.pageYOffset;
+
+      if(lastScroll - currentScroll > 140){
+
+        showPopup();
+
+      }
+
+      lastScroll = currentScroll;
+
+    });
+
+  }
+
+})();
+
+</script>
+
+{% endif %}

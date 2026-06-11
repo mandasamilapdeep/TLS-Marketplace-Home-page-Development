@@ -1,0 +1,241 @@
+{%- assign ai_gen_id = block.id | replace: '_', '' | downcase -%}
+
+{% style %}
+/* ── Quiz Section – Enhanced Stand-Out ── */
+.quiz-section-{{ ai_gen_id }} {
+  position: relative;
+  padding: 0 20px {{ block.settings.padding_bottom }}px;
+  margin-top: {{ block.settings.padding_top }}px;
+  text-align: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Decorative divider line above quiz to separate from Trusted Worldwide */
+.quiz-section-{{ ai_gen_id }}::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00b4d8, transparent);
+  margin: 0 auto 60px;
+}
+
+/* Card container that wraps all quiz content */
+.quiz-card-{{ ai_gen_id }} {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 56px 48px 48px;
+  background: rgba(0, 180, 216, 0.04);
+  border: 1px solid rgba(0, 180, 216, 0.18);
+  border-radius: 20px;
+  box-shadow:
+    0 0 0 1px rgba(0, 180, 216, 0.06),
+    0 8px 40px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(0, 180, 216, 0.12);
+}
+
+/* Top accent bar on the card */
+.quiz-card-{{ ai_gen_id }}::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00b4d8, transparent);
+  border-radius: 0 0 4px 4px;
+}
+
+.quiz-inner-{{ ai_gen_id }} {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Eyebrow */
+.quiz-eyebrow-{{ ai_gen_id }} {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #00b4d8;
+  margin-bottom: 20px;
+}
+
+/* Headline */
+.quiz-heading-{{ ai_gen_id }} {
+  margin: 0 0 20px;
+  font-size: 42px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* Subtext */
+.quiz-sub-{{ ai_gen_id }} {
+  font-size: 16px;
+  color: #a0a0b8;
+  max-width: 480px;
+  line-height: 1.7;
+  margin: 0 0 40px;
+}
+
+/* 3-Step Row */
+.quiz-steps-{{ ai_gen_id }} {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  margin-bottom: 40px;
+}
+
+.quiz-step-{{ ai_gen_id }} {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.quiz-step-circle-{{ ai_gen_id }} {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 180, 216, 0.12);
+  border: 1px solid rgba(0, 180, 216, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.quiz-step-label-{{ ai_gen_id }} {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #a0a0b8;
+}
+
+/* CTA Button */
+.quiz-btn-{{ ai_gen_id }} {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #00b4d8;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  padding: 18px 40px;
+  border-radius: 60px;
+  box-shadow: 0 4px 24px rgba(0, 180, 216, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 16px;
+}
+
+.quiz-btn-{{ ai_gen_id }}:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 180, 216, 0.5);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Microcopy */
+.quiz-micro-{{ ai_gen_id }} {
+  display: block;
+  font-size: 12px;
+  color: #555555;
+  margin-top: 0;
+}
+
+.quiz-micro-{{ ai_gen_id }} span {
+  color: #00b4d8;
+}
+
+/* Mobile */
+@media screen and (max-width: 749px) {
+  .quiz-heading-{{ ai_gen_id }} {
+    font-size: 30px;
+  }
+  .quiz-steps-{{ ai_gen_id }} {
+    gap: 24px;
+  }
+  .quiz-card-{{ ai_gen_id }} {
+    padding: 40px 24px 36px;
+  }
+  .quiz-section-{{ ai_gen_id }} {
+    padding: 0 16px {{ block.settings.padding_bottom }}px;
+  }
+}
+{% endstyle %}
+
+<div class="quiz-section-{{ ai_gen_id }}">
+  <div class="quiz-card-{{ ai_gen_id }}">
+    <div class="quiz-inner-{{ ai_gen_id }}">
+      <span class="quiz-eyebrow-{{ ai_gen_id }}">✦ PERSONALIZED FOR YOU</span>
+      <h2 class="quiz-heading-{{ ai_gen_id }}">Which Quantum-Charged Medallion Matches Your Energy?</h2>
+      <p class="quiz-sub-{{ ai_gen_id }}">Answer 5 quick questions and we'll reveal the medallion aligned with your unique frequency.</p>
+
+      <div class="quiz-steps-{{ ai_gen_id }}">
+        <div class="quiz-step-{{ ai_gen_id }}">
+          <div class="quiz-step-circle-{{ ai_gen_id }}">✦</div>
+          <span class="quiz-step-label-{{ ai_gen_id }}">Answer</span>
+        </div>
+        <div class="quiz-step-{{ ai_gen_id }}">
+          <div class="quiz-step-circle-{{ ai_gen_id }}">◈</div>
+          <span class="quiz-step-label-{{ ai_gen_id }}">Match</span>
+        </div>
+        <div class="quiz-step-{{ ai_gen_id }}">
+          <div class="quiz-step-circle-{{ ai_gen_id }}">◉</div>
+          <span class="quiz-step-label-{{ ai_gen_id }}">Align</span>
+        </div>
+      </div>
+
+      <a href="/pages/find-your-ideal-crystal" class="quiz-btn-{{ ai_gen_id }}">Find My Energy Match →</a>
+      <span class="quiz-micro-{{ ai_gen_id }}">⏱ Takes less than <span>2 minutes</span></span>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Quiz Section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 52
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quiz Section"
+    }
+  ]
+}
+{% endschema %}

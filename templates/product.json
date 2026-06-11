@@ -1,0 +1,656 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "vendor_name": {
+          "type": "vendor_name",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}"
+          }
+        },
+        "product_title": {
+          "type": "product_title",
+          "settings": {
+            "badges_type": "inline",
+            "show_badges": false,
+            "section_heading_tag": "h2"
+          }
+        },
+        "short_description": {
+          "type": "short_description",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_swatches": true
+          }
+        },
+        "specs_short": {
+          "type": "specs_short",
+          "settings": {}
+        },
+        "core_benefit": {
+          "type": "core_benefit",
+          "settings": {
+            "metafield_namespace": "custom",
+            "metafield_key": "core_benefit"
+          }
+        },
+        "product_description": {
+          "type": "product_description",
+          "settings": {
+            "title": "The Soothing Face Cream That Calms, Softens Your Skin After Every Shave",
+            "subtitle": "Exclusive",
+            "pulse_animation_text": false,
+            "heading_size": "h3"
+          }
+        },
+        "specs_long": {
+          "type": "specs_long",
+          "settings": {
+            "title": "Main Characteristics",
+            "subtitle": "Specs",
+            "pulse_animation_text": false,
+            "heading_size": "h3"
+          }
+        },
+        "instructions": {
+          "type": "instructions",
+          "settings": {
+            "title": "Product Guides and Documents",
+            "subtitle": "Instructions",
+            "pulse_animation_text": false,
+            "heading_size": "h3"
+          }
+        },
+        "buy_box": {
+          "type": "buy_box",
+          "settings": {
+            "show_sticky_add_to_cart": false,
+            "show_tax_info": false,
+            "show_shipping": false,
+            "show_dynamic_checkout": true,
+            "show_quantity": true,
+            "show_gift_card_recipient": false,
+            "show_discount": true
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "settings": {
+            "contdown_heading": "Hurry up! Sale ends soon",
+            "enable_mock_timer": true,
+            "mock_date_picker_day": 2,
+            "mock_date_picker_hours": 3,
+            "date_picker": "2025-10-01",
+            "time_picker": "00:00",
+            "completed_countdown": "show_text",
+            "text_after_countdown": "Header after countdown"
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {}
+        },
+        "pickup_availability": {
+          "type": "pickup_availability",
+          "settings": {}
+        },
+        "express_shipping": {
+          "type": "express_shipping",
+          "settings": {
+            "heading": "Shipping Info",
+            "text": "<p>Fast delivery options for your convenience</p>",
+            "pickup_title": "Pick-Up in Store",
+            "pickup_text": "Select this option to pick up your order directly from our store. Fast and convenient!",
+            "pickup_price": "Free",
+            "standard_title": "Standard",
+            "standard_days": "(3–5 Business Days)",
+            "standard_price": "15",
+            "standard_text": "Standard delivery with in-store pickup, 3–5 business days.",
+            "express_title": "Express",
+            "express_days": "1–2 Business Days",
+            "express_price": "from $25",
+            "express_text": "For quick delivery, choose Express shipping, and get your order within 1–2 business days."
+          }
+        }
+      },
+      "block_order": [
+        "vendor_name",
+        "product_title",
+        "short_description",
+        "variant_picker",
+        "specs_short",
+        "core_benefit",
+        "product_description",
+        "specs_long",
+        "instructions",
+        "buy_box",
+        "countdown",
+        "inventory",
+        "pickup_availability",
+        "express_shipping"
+      ],
+      "settings": {
+        "image_ratio": "3/4",
+        "image_fit": "cover",
+        "enable_video_looping": false,
+        "margin_top": "no-indent",
+        "margin_bottom": "s",
+        "padding_bottom": "no-indent"
+      }
+    },
+    "media_aY9z9P": {
+      "type": "media",
+      "blocks": {
+        "media_card_tzckPL": {
+          "type": "media_card",
+          "settings": {
+            "heading": "Immersive Audio Zones",
+            "heading_size": "h3",
+            "heading_tag": "h2",
+            "text": "Experience 360° sound positioning that adapts to your environment for maximum focus and clarity.",
+            "overlay_opacity": 0.4,
+            "show_video": false,
+            "video_url": "",
+            "autoplay_video": true,
+            "muted_video": true,
+            "loop_video": true,
+            "show_icon_play": true,
+            "show_icon_sound": true,
+            "description_video": ""
+          }
+        },
+        "media_card_VQyWkU": {
+          "type": "media_card",
+          "settings": {
+            "heading": "Precision Noise Control",
+            "heading_size": "h3",
+            "heading_tag": "h2",
+            "text": "Advanced noise-canceling tech blocks out distractions—letting you hear what matters most.",
+            "overlay_opacity": 0.4,
+            "show_video": false,
+            "video_url": "",
+            "autoplay_video": true,
+            "muted_video": true,
+            "loop_video": true,
+            "show_icon_play": true,
+            "show_icon_sound": true,
+            "description_video": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_card_tzckPL",
+        "media_card_VQyWkU"
+      ],
+      "name": "t:sections.media.name",
+      "settings": {
+        "columns_per_row": 2,
+        "content_alignment": "left",
+        "content_position": "on_image",
+        "indent_value": "1.6rem",
+        "swipe_on_mobile": false,
+        "image_ratio": "4/3",
+        "section_heading": "Unique Technology",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Technology",
+        "pulse_animation_text": false,
+        "section_description": "Here can be a description of what this banner is about.",
+        "section_button_label": "Explore More",
+        "section_button_link": "",
+        "button_style": "link",
+        "margin_top": "no-indent",
+        "margin_bottom": "xl"
+      }
+    },
+    "description_grid_QLq3VE": {
+      "type": "description-grid",
+      "blocks": {
+        "column_Ugk4kw": {
+          "type": "column",
+          "settings": {
+            "column_start": 1,
+            "column_end": 3,
+            "heading": "AI Noise Suppression",
+            "heading_size": "h5",
+            "heading_tag": "h5",
+            "text": "Block out background noise and enhance voice clarity in any environment.",
+            "value": "4",
+            "superscript": "Mics"
+          }
+        },
+        "column_zDD8F3": {
+          "type": "column",
+          "settings": {
+            "column_start": 3,
+            "column_end": 5,
+            "heading": "Ultra Lightweight Design",
+            "heading_size": "h5",
+            "heading_tag": "h5",
+            "text": "Feel the difference with a featherlight build that never sacrifices comfort.",
+            "value": "3.9",
+            "superscript": "Oz"
+          }
+        },
+        "column_pGpQyc": {
+          "type": "column",
+          "settings": {
+            "column_start": 1,
+            "column_end": 2,
+            "heading": "Large Drivers and Dynamic",
+            "heading_size": "h5",
+            "heading_tag": "h5",
+            "text": "Deliver deep bass and crisp highs with oversized, high-performance drivers.",
+            "value": "1.6",
+            "superscript": "Inch"
+          }
+        },
+        "column_nYGhNY": {
+          "type": "column",
+          "settings": {
+            "column_start": 2,
+            "column_end": 3,
+            "heading": "Extended Silicone Headband",
+            "heading_size": "h5",
+            "heading_tag": "h5",
+            "text": "Flexible and durable, designed for all-day wear and personalized comfort.",
+            "value": "1.57",
+            "superscript": "Inch"
+          }
+        },
+        "column_WRH83f": {
+          "type": "column",
+          "settings": {
+            "column_start": 3,
+            "column_end": 4,
+            "heading": "Pair Up to 7 Devices",
+            "heading_size": "h5",
+            "heading_tag": "h5",
+            "text": "Switch between multiple devices with advanced multi-point connectivity.",
+            "value": "7",
+            "superscript": "Devices"
+          }
+        },
+        "column_iyn87J": {
+          "type": "column",
+          "settings": {
+            "column_start": 4,
+            "column_end": 5,
+            "heading": "Recycled Plastic",
+            "heading_size": "h5",
+            "heading_tag": "h5",
+            "text": "Built with 42% recycled materials for a greener design.",
+            "value": "42",
+            "superscript": "%"
+          }
+        }
+      },
+      "block_order": [
+        "column_Ugk4kw",
+        "column_zDD8F3",
+        "column_pGpQyc",
+        "column_nYGhNY",
+        "column_WRH83f",
+        "column_iyn87J"
+      ],
+      "name": "t:sections.all.description_grid.name",
+      "settings": {
+        "columns": 4,
+        "section_heading": "Advanced Recovery",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Performance",
+        "pulse_animation_text": false,
+        "description": "",
+        "section_heading_content_alignment": "left",
+        "margin_top": "no-indent",
+        "margin_bottom": "xl"
+      }
+    },
+    "image_with_text_PY4Gmi": {
+      "type": "image-with-text",
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "layout": "image_right",
+        "content_alignment": "left",
+        "image_size": "4/3",
+        "subheading": "Features",
+        "heading": "High-Performance Drivers Deliver Deep Bass and Crisp Highs for an Immersive Sound Experience",
+        "heading_size": "h2",
+        "heading_tag": "h2",
+        "text": "<p>Enjoy rich, detailed audio with powerful drivers tuned for clarity, depth, and balance across all frequencies.</p>",
+        "margin_top": "no-indent",
+        "margin_bottom": "xl"
+      }
+    },
+    "media_crgFHL": {
+      "type": "media",
+      "blocks": {
+        "media_card_4pix3R": {
+          "type": "media_card",
+          "settings": {
+            "heading": "The Best Sound Experience",
+            "heading_size": "h4",
+            "heading_tag": "h2",
+            "text": "Precision-tuned audio that brings out every note—rich, clear, and immersive.",
+            "overlay_opacity": 0.4,
+            "show_video": false,
+            "video_url": "",
+            "autoplay_video": true,
+            "muted_video": true,
+            "loop_video": true,
+            "show_icon_play": true,
+            "show_icon_sound": true,
+            "description_video": ""
+          }
+        },
+        "media_card_CTAHTF": {
+          "type": "media_card",
+          "settings": {
+            "heading": "No Missed Connections",
+            "heading_size": "h4",
+            "heading_tag": "h2",
+            "text": "Seamless Bluetooth pairing with stable, reliable performance across your devices.",
+            "overlay_opacity": 0.4,
+            "show_video": false,
+            "video_url": "",
+            "autoplay_video": true,
+            "muted_video": true,
+            "loop_video": true,
+            "show_icon_play": true,
+            "show_icon_sound": true,
+            "description_video": ""
+          }
+        },
+        "media_card_C7pQpk": {
+          "type": "media_card",
+          "settings": {
+            "heading": "New Listening Possibilities",
+            "heading_size": "h4",
+            "heading_tag": "h2",
+            "text": "Adaptive features and smart controls that redefine how you listen and interact.",
+            "overlay_opacity": 0.4,
+            "show_video": false,
+            "video_url": "",
+            "autoplay_video": true,
+            "muted_video": true,
+            "loop_video": true,
+            "show_icon_play": true,
+            "show_icon_sound": true,
+            "description_video": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_card_4pix3R",
+        "media_card_CTAHTF",
+        "media_card_C7pQpk"
+      ],
+      "name": "t:sections.media.name",
+      "settings": {
+        "columns_per_row": 3,
+        "content_alignment": "left",
+        "content_position": "out_of_image",
+        "indent_value": "1.6rem",
+        "swipe_on_mobile": false,
+        "image_ratio": "16/9",
+        "section_heading": "",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "",
+        "pulse_animation_text": false,
+        "section_description": "Here can be a description of what this banner is about.",
+        "section_button_label": "Explore More",
+        "section_button_link": "",
+        "button_style": "link",
+        "margin_top": "no-indent",
+        "margin_bottom": "xl"
+      }
+    },
+    "testimonials-quote": {
+      "type": "testimonials-quote",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial_quote",
+          "settings": {
+            "image_fit": "cover",
+            "text_title": "Unreal Performance",
+            "text": "I’ve been using this gaming PC for a few months now, and it’s absolutely flawless. Fast load times, smooth frame rates, and zero lag.",
+            "author_name": "Mike Johnson,",
+            "author_social_link": "",
+            "author_position": "Game Blogger",
+            "enable_stars": true,
+            "rating": 5
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial_quote",
+          "settings": {
+            "image_fit": "cover",
+            "text_title": "Immersive and Crystal Clear",
+            "text": "The sound quality is outstanding—crisp highs, deep bass, and great noise cancellation. I use them for work, music, and gaming.",
+            "author_name": "Kevin Howard,",
+            "author_social_link": "",
+            "author_position": "Game Blogger",
+            "enable_stars": true,
+            "rating": 4
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial_quote",
+          "settings": {
+            "image_fit": "cover",
+            "text_title": "Game-Changing Comfort",
+            "text": "Super supportive and fully adjustable—perfect for long gaming or work sessions. Didn’t realize how much a good chair matters until now.",
+            "author_name": "James Craig,",
+            "author_social_link": "",
+            "author_position": "Game Blogger",
+            "enable_stars": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial-1",
+        "testimonial-2",
+        "testimonial-3"
+      ],
+      "settings": {
+        "section_heading": "Feedback from Our Customers",
+        "section_heading_size": "h2",
+        "section_heading_tag": "h3",
+        "section_subheading": "Testimonials",
+        "pulse_animation_text": false,
+        "section_descr": "",
+        "margin_top": "no-indent",
+        "margin_bottom": "xl"
+      }
+    },
+    "multicolumn-services": {
+      "type": "multicolumn",
+      "blocks": {
+        "column-1": {
+          "type": "column",
+          "settings": {
+            "icon": "shipping",
+            "heading": "Express Shipping",
+            "item_heading_tag": "h4",
+            "text": "Fast shipping to your door",
+            "button_label": "Shipping Details",
+            "button_link": "",
+            "button_style": "link",
+            "full_link": false
+          }
+        },
+        "column-2": {
+          "type": "column",
+          "settings": {
+            "icon": "return",
+            "heading": "30 Days Free Returns",
+            "item_heading_tag": "h4",
+            "text": "Easy returns within 30 days",
+            "button_label": "Return Policy",
+            "button_link": "",
+            "button_style": "link",
+            "full_link": false
+          }
+        },
+        "column-3": {
+          "type": "column",
+          "settings": {
+            "icon": "globe",
+            "heading": "Worldwide Support",
+            "item_heading_tag": "h4",
+            "text": "We're here to help you",
+            "button_label": "Ask Support",
+            "button_link": "",
+            "button_style": "link",
+            "full_link": false
+          }
+        },
+        "column-4": {
+          "type": "column",
+          "settings": {
+            "icon": "settings",
+            "heading": "Individual Selection",
+            "item_heading_tag": "h4",
+            "text": "Tailored just for you",
+            "button_label": "Ask Manager",
+            "button_link": "",
+            "button_style": "link",
+            "full_link": false
+          }
+        }
+      },
+      "block_order": [
+        "column-1",
+        "column-2",
+        "column-3",
+        "column-4"
+      ],
+      "settings": {
+        "section_heading": "Make your Purchase as Comfortable as Possible",
+        "section_heading_size": "h2",
+        "section_heading_tag": "h3",
+        "section_subheading": "Additional Services",
+        "pulse_animation_text": false,
+        "section_heading_content_alignment": "left",
+        "columns_per_row": 4,
+        "swipe_on_mobile": false,
+        "margin_top": "no-indent",
+        "margin_bottom": "xl"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "columns_per_row": 4,
+        "products_limit": 4,
+        "swipe_on_mobile": true,
+        "section_heading": "You may also like",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "subtitle": "You Might Also Like",
+        "pulse_animation_text": false,
+        "section_button_label": "",
+        "section_button_link": "",
+        "section_button_style": "secondary",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_collection": false,
+        "show_desc": false,
+        "product_heading_tag": "h3",
+        "margin_top": "no-indent",
+        "margin_bottom": "xl"
+      }
+    },
+    "card_grid_eE8PYW": {
+      "type": "card-grid",
+      "blocks": {
+        "card_LwPgjh": {
+          "type": "card",
+          "settings": {
+            "card_link": "",
+            "overlay_opacity": 0.2,
+            "card_title": "Chairs with Back Support",
+            "heading_size": "h4",
+            "heading_tag": "h4",
+            "discount": "",
+            "image_height_option": "overflow-top"
+          }
+        },
+        "card_JycL4n": {
+          "type": "card",
+          "settings": {
+            "card_link": "",
+            "overlay_opacity": 0.2,
+            "card_title": "Ergonomic Keyboards",
+            "heading_size": "h4",
+            "heading_tag": "h4",
+            "discount": "Sale",
+            "image_height_option": "overflow-top"
+          }
+        },
+        "card_R7nUxB": {
+          "type": "card",
+          "settings": {
+            "card_link": "",
+            "overlay_opacity": 0.2,
+            "card_title": "Popular Headphones",
+            "heading_size": "h4",
+            "heading_tag": "h4",
+            "discount": "",
+            "image_height_option": "overflow-top"
+          }
+        }
+      },
+      "block_order": [
+        "card_LwPgjh",
+        "card_JycL4n",
+        "card_R7nUxB"
+      ],
+      "name": "Card grid",
+      "settings": {
+        "columns_per_row": 3,
+        "image_ratio": "42.85",
+        "heading": "popular collections",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "subheading": "Expert Choise",
+        "pulse_animation_text": false,
+        "magnetic_hover_effect": false,
+        "margin_top": "no-indent",
+        "margin_bottom": "xl"
+      }
+    }
+  },
+  "order": [
+    "main-product",
+    "media_aY9z9P",
+    "description_grid_QLq3VE",
+    "image_with_text_PY4Gmi",
+    "media_crgFHL",
+    "testimonials-quote",
+    "multicolumn-services",
+    "product-recommendations",
+    "card_grid_eE8PYW"
+  ]
+}

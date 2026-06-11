@@ -1,0 +1,447 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-collection-banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "description_products": "",
+        "overlay_opacity": 0.4,
+        "backlight_animation": true,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "blocks_giV9qW": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f7c8962_hLTHjF": {
+          "type": "ai_gen_block_f7c8962",
+          "settings": {
+            "desktop_width_percent": 100,
+            "section_padding": 40,
+            "bio_width": 30,
+            "gap": 40,
+            "section_padding_mobile": 20,
+            "bio_width_mobile": 30,
+            "gap_mobile": 20,
+            "bio_image": "shopify://shop_images/dr-glenn.png",
+            "image_border_radius": 8,
+            "image_border_radius_mobile": 8,
+            "bio_name": "Dr. Glen Rein",
+            "bio_name_font_size": 20,
+            "bio_name_font_size_mobile": 16,
+            "bio_name_margin_bottom": -10,
+            "bio_name_margin_bottom_mobile": 0,
+            "bio_description": "<p>Dr. Glen Rein, PhD, is a pioneering microbiologist with over 40 years of experience in bio-electro-magnetics, quantum biology, and energy medicine. With research roles at <strong>Mount Sinai</strong> and<strong> Stanford Medical Center</strong>, his work focuses on how energy and information influence human biology.</p>",
+            "description_font_size": 14,
+            "description_font_size_mobile": 15,
+            "heading": "Supercharged Medallion Study",
+            "heading_font_size": 28,
+            "heading_font_size_mobile": 22,
+            "heading_margin_bottom": -20,
+            "heading_margin_bottom_mobile": -15,
+            "subheading": "<p>Results demonstrate that the standard (uncharged) medallion produces minimal effects, while the TLS supercharged medallion delivers markedly stronger and measurable increases in bioelectric activity.</p>",
+            "subheading_font_size": 16,
+            "subheading_font_size_mobile": 16,
+            "subheading_margin_bottom": -5,
+            "subheading_margin_bottom_mobile": 5,
+            "table_image": "shopify://shop_images/Screenshot_2026-04-29_at_2.58.01_PM.png",
+            "table_image_width": 50,
+            "table_image_width_mobile": 30,
+            "table_gap": 20,
+            "table_gap_mobile": 10,
+            "table_image_border_radius": 8,
+            "table_image_border_radius_mobile": 8,
+            "table_image_margin_bottom": 0,
+            "table_image_margin_bottom_mobile": 20,
+            "column_1_header": "Increased Electrical Impedance",
+            "column_2_header": "Comparable Impact on Bioelectrical Activity",
+            "column_3_header": "Time Worn",
+            "test_1_name": "175% Increase",
+            "test_1_value": "26x Stronger",
+            "test_1_result": "1 Hour",
+            "test_2_name": "382% Increase",
+            "test_2_value": "44x Stronger",
+            "test_2_result": "3 Hours",
+            "test_3_name": "",
+            "test_3_value": "",
+            "test_3_result": "",
+            "test_4_name": "",
+            "test_4_value": "",
+            "test_4_result": "",
+            "test_5_name": "",
+            "test_5_value": "",
+            "test_5_result": "",
+            "test_6_name": "",
+            "test_6_value": "",
+            "test_6_result": "",
+            "test_7_name": "",
+            "test_7_value": "",
+            "test_7_result": "",
+            "test_8_name": "",
+            "test_8_value": "",
+            "test_8_result": "",
+            "test_9_name": "",
+            "test_9_value": "",
+            "test_9_result": "",
+            "test_10_name": "",
+            "test_10_value": "",
+            "test_10_result": "",
+            "pdf_button_label": "READ THE FULL STUDY",
+            "pdf_file": "https://cdn.shopify.com/s/files/1/0934/8182/8721/files/TLS_MEDALLION_STUDY_FINAL_PDF.pdf?v=1777498697",
+            "button_margin_top": -130,
+            "button_margin_bottom": 0,
+            "button_margin_top_mobile": 10,
+            "button_margin_bottom_mobile": 0,
+            "button_background_color": "#b972ff",
+            "button_hover_background_color": "#9830ff",
+            "button_text_color": "#ffffff",
+            "button_font_size": 14,
+            "button_font_size_mobile": 13,
+            "button_padding_mobile": 12,
+            "button_border_radius": 8,
+            "button_border_radius_mobile": 8,
+            "background_color": "#200a25",
+            "heading_color": "#ffffff",
+            "text_color": "#e6daf6",
+            "table_background_color": "#361641",
+            "table_header_background": "#0d0416",
+            "table_header_text_color": "#ffffff",
+            "table_text_color": "#e6daf6",
+            "table_border_color": "#553052",
+            "table_row_hover_color": "#240b35",
+            "table_font_size": 14,
+            "table_font_size_mobile": 12,
+            "table_padding_mobile": 8,
+            "table_border_radius": 8,
+            "table_border_radius_mobile": 8
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f7c8962_hLTHjF"
+      ],
+      "name": "Headline with button",
+      "settings": {}
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "settings": {
+        "products_per_page": 39,
+        "columns_mobile": "2",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "image_filter_ratio": "1/1",
+        "image_filter_fit": "contain",
+        "image_filter_columns": 2
+      }
+    },
+    "products_grid_VQWLqz": {
+      "type": "products-grid",
+      "disabled": true,
+      "name": "t:sections.products-grid.name",
+      "settings": {
+        "collection": "supercharged-jewelry",
+        "product_list": [],
+        "products_per_page": 46,
+        "columns_per_row": 4,
+        "sort": "products_high",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "section_heading": "Supercharged Medallions",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Precise Energetic Imprinting",
+        "pulse_animation_text": true,
+        "section_heading_content_alignment": "left",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    },
+    "products_grid_FgqEGG": {
+      "type": "products-grid",
+      "name": "t:sections.products-grid.name",
+      "settings": {
+        "collection": "quantum-bracelets",
+        "product_list": [],
+        "products_per_page": 46,
+        "columns_per_row": 4,
+        "sort": "alphabetical",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "section_heading": "Supercharged Bracelets",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Precise Energetic Imprinting",
+        "pulse_animation_text": true,
+        "section_heading_content_alignment": "left",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    },
+    "image_banner_collapsible_FgCeWH": {
+      "type": "image-banner-collapsible",
+      "blocks": {
+        "accordion_kizNpc": {
+          "type": "accordion",
+          "settings": {
+            "question": "EMF Shielding",
+            "accordion_heading_tag": "h5",
+            "answer": "Our Supercharged products can act as EMF shields, reducing the local effects harmful electromagnetic frequencies.",
+            "default_open": false
+          }
+        },
+        "accordion_6X9VPj": {
+          "type": "accordion",
+          "settings": {
+            "question": "Permanent Charge",
+            "accordion_heading_tag": "h5",
+            "answer": "Supercharged Medallions carry the frequency signature of Light System™, permanently imprinted using this Quantum Concentrator technology.",
+            "default_open": false
+          }
+        },
+        "accordion_6rbLx6": {
+          "type": "accordion",
+          "settings": {
+            "question": "Intention In Mind",
+            "accordion_heading_tag": "h5",
+            "answer": "Choose the crystal and energetic signature that is right for you.",
+            "default_open": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_kizNpc",
+        "accordion_6X9VPj",
+        "accordion_6rbLx6"
+      ],
+      "name": "t:sections.image-banner-collapsible.name",
+      "settings": {
+        "image": "shopify://shop_images/supercharged.jpg",
+        "overlay_opacity": 0.2,
+        "overlay_opacity_mobile": 0.3,
+        "image_size": "21/9",
+        "section_heading": "Charged for Life",
+        "section_heading_size": "h2",
+        "section_heading_tag": "h3",
+        "section_subheading": "",
+        "pulse_animation_text": false,
+        "section_descr": "Supercharged Jewelry carries the frequency signature of Light System™, permanently imprinted using this Quantum Concentrator technology.",
+        "button_style": "primary",
+        "buttons_alignment": "left",
+        "button_label": "Find Your Perfect Match",
+        "button_link": "shopify://pages/find-your-ideal-crystal",
+        "link_label": "",
+        "link_link": "",
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    },
+    "image_with_text_Gch8Jk": {
+      "type": "image-with-text",
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "layout": "image_right",
+        "content_alignment": "left",
+        "image": "shopify://shop_images/quantum-charger.jpg",
+        "image_size": "21/9",
+        "subheading": "",
+        "heading": "Precision Energetic Imprinting",
+        "heading_size": "h2",
+        "heading_tag": "h2",
+        "text": "<p>Scalar energy systems have become a foundational tool in consciousness based wellness technologies.</p><p>The Light System™ room-sized arrays have been developed into high density scalar chambers, designed to imprint energy into objects.</p><p>When specific materials such as crystal, various types of metal and organic material are charged, they exhibit heightened energetic fields.</p>",
+        "margin_top": "no-indent",
+        "margin_bottom": "s"
+      }
+    },
+    "description_grid_ARMtLw": {
+      "type": "description-grid",
+      "blocks": {
+        "column_mqfTai": {
+          "type": "column",
+          "settings": {
+            "column_start": 1,
+            "column_end": 3,
+            "heading": "Increased Electrical Impedance in Living Cells",
+            "heading_size": "h5",
+            "heading_tag": "h5",
+            "text": "High Electrical Impedance is correlated with better cellular integrity, improved venous function, and decreased risk of swelling.",
+            "value": "4X",
+            "superscript": "Increase"
+          }
+        },
+        "column_RwR9mU": {
+          "type": "column",
+          "settings": {
+            "column_start": 3,
+            "column_end": 5,
+            "heading": "Increased Electrical Impedance in Water",
+            "heading_size": "h5",
+            "heading_tag": "h5",
+            "text": "Research indicates that specialized, high-impedance environments can structure water. Water molecules organize into a more ordered, lattice-like structure.",
+            "value": "47%",
+            "superscript": "Increase"
+          }
+        }
+      },
+      "block_order": [
+        "column_mqfTai",
+        "column_RwR9mU"
+      ],
+      "disabled": true,
+      "name": "t:sections.all.description_grid.name",
+      "settings": {
+        "columns": 4,
+        "section_heading": "Dr. Glen Rein",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Recent Studies",
+        "pulse_animation_text": true,
+        "description": "Impedance spectroscopy (EIS) is an electro-diagnostic method used in medicine which measures cellular charge.",
+        "section_heading_content_alignment": "left",
+        "margin_top": "s",
+        "margin_bottom": "xl"
+      }
+    },
+    "17720566232d282812": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_store_summary_UYMEkL": {
+          "type": "shopify://apps/judge-me-reviews/blocks/store_summary/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "data_source": "real",
+            "theme": "expanded",
+            "button_theme_color": "#ffffff",
+            "button_theme_text_color": "#000000",
+            "show_keywords": true,
+            "keywords_visibility": "shown",
+            "show_button": true,
+            "button_visibility": "shown",
+            "alignment": "left",
+            "title_size": "large",
+            "text_size": "large",
+            "corner_styling": "round",
+            "widget_color": "#e6daf6",
+            "text_color": "#200a25",
+            "lighter_text_color": "#787878",
+            "button_color": "#9830ff",
+            "button_text_color": "#ffffff",
+            "show_sentiment_colors": false,
+            "max_width": 1100,
+            "heading_text": "",
+            "button_text": "See AI reviews summary"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_store_summary_UYMEkL"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "blocks_xnNiFx": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c0c13d2_B4YU6c": {
+          "type": "ai_gen_block_c0c13d2",
+          "settings": {
+            "heading": "Join our newsletter",
+            "subheading": "Get exclusive offers and updates delivered to your inbox",
+            "email_placeholder": "Enter your email",
+            "button_text": "Subscribe",
+            "success_message": "Thanks for subscribing!",
+            "desktop_width_percent": 100,
+            "content_max_width": 800,
+            "form_max_width": 600,
+            "text_alignment": "center",
+            "padding_top": 90,
+            "padding_bottom": 50,
+            "padding_horizontal": 20,
+            "heading_spacing": 15,
+            "form_spacing": 25,
+            "input_button_gap": 10,
+            "heading_size": 32,
+            "subheading_size": 16,
+            "input_font_size": 16,
+            "button_font_size": 16,
+            "background_color": "#200a25",
+            "heading_color": "#ffffff",
+            "text_color": "#e6daf6",
+            "success_color": "#18b200",
+            "error_color": "#e21200",
+            "input_background_color": "#361641",
+            "input_text_color": "#ffffff",
+            "input_placeholder_color": "#bda2df",
+            "input_border_color": "#b972ff",
+            "input_focus_border_color": "#bda2df",
+            "input_border_width": 1,
+            "input_border_radius": 8,
+            "input_padding": 14,
+            "button_background_color": "#07cbdc",
+            "button_hover_background_color": "#9830ff",
+            "button_text_color": "#ffffff",
+            "button_border_radius": 40,
+            "button_padding_horizontal": 32,
+            "border_radius": 16
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c0c13d2_B4YU6c"
+      ],
+      "name": "Newsletter signup",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main-collection-banner",
+    "blocks_giV9qW",
+    "main-collection",
+    "products_grid_VQWLqz",
+    "products_grid_FgqEGG",
+    "image_banner_collapsible_FgCeWH",
+    "image_with_text_Gch8Jk",
+    "description_grid_ARMtLw",
+    "17720566232d282812",
+    "blocks_xnNiFx"
+  ]
+}

@@ -1,0 +1,404 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "17720548733a479f39": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_preview_badge_nmEnDb": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_preview_badge_nmEnDb"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "blocks_nhy4Ew": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d97b95e_yMTQUL": {
+          "type": "ai_gen_block_d97b95e",
+          "settings": {
+            "desktop_height": 20,
+            "mobile_height": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d97b95e_yMTQUL"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "vendor_name": {
+          "type": "vendor_name",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}"
+          }
+        },
+        "product_title": {
+          "type": "product_title",
+          "settings": {
+            "badges_type": "inline",
+            "show_badges": false,
+            "section_heading_tag": "h2"
+          }
+        },
+        "short_description": {
+          "type": "short_description",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_swatches": true
+          }
+        },
+        "core_benefit": {
+          "type": "core_benefit",
+          "settings": {}
+        },
+        "product_description": {
+          "type": "product_description",
+          "settings": {
+            "title": "BrainIQ",
+            "subtitle": "",
+            "pulse_animation_text": false,
+            "heading_size": "h4"
+          }
+        },
+        "specs_short": {
+          "type": "specs_short",
+          "disabled": true,
+          "settings": {}
+        },
+        "specs_long": {
+          "type": "specs_long",
+          "disabled": true,
+          "settings": {
+            "title": "What makes it unique",
+            "subtitle": "",
+            "pulse_animation_text": false,
+            "heading_size": "h3"
+          }
+        },
+        "instructions": {
+          "type": "instructions",
+          "disabled": true,
+          "settings": {
+            "title": "Product Guides and Documents",
+            "subtitle": "Instructions",
+            "pulse_animation_text": false,
+            "heading_size": "h3"
+          }
+        },
+        "buy_box": {
+          "type": "buy_box",
+          "settings": {
+            "show_sticky_add_to_cart": true,
+            "show_tax_info": false,
+            "show_shipping": false,
+            "show_dynamic_checkout": true,
+            "show_quantity": true,
+            "show_gift_card_recipient": false,
+            "show_discount": true
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "disabled": true,
+          "settings": {
+            "contdown_heading": "Hurry up! Sale ends soon",
+            "enable_mock_timer": true,
+            "mock_date_picker_day": 2,
+            "mock_date_picker_hours": 3,
+            "date_picker": "2025-10-01",
+            "time_picker": "00:00",
+            "completed_countdown": "show_text",
+            "text_after_countdown": "Header after countdown"
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {}
+        },
+        "pickup_availability": {
+          "type": "pickup_availability",
+          "disabled": true,
+          "settings": {}
+        },
+        "express_shipping": {
+          "type": "express_shipping",
+          "disabled": true,
+          "settings": {
+            "heading": "Shipping Info",
+            "text": "<p>Fast delivery options for your convenience</p>",
+            "pickup_title": "",
+            "pickup_text": "",
+            "pickup_price": "",
+            "standard_title": "Standard Domestic (U.S.)",
+            "standard_days": "Ships in 2 -3 business days",
+            "standard_price": "$9",
+            "standard_text": "Products that are in stock are shipped within 2 - 3 business days. (Free Shipping on U.S. orders over $100)",
+            "express_title": "Express International",
+            "express_days": "Delivers in 1 - 2 weeks",
+            "express_price": "$39",
+            "express_text": "We ship internationally to locations that permit; however, based on your location, shipping delays and local tariffs or fees may apply."
+          }
+        }
+      },
+      "block_order": [
+        "vendor_name",
+        "product_title",
+        "core_benefit",
+        "short_description",
+        "variant_picker",
+        "product_description",
+        "specs_short",
+        "specs_long",
+        "instructions",
+        "buy_box",
+        "countdown",
+        "inventory",
+        "pickup_availability",
+        "express_shipping"
+      ],
+      "settings": {
+        "image_ratio": "1/1",
+        "image_fit": "cover",
+        "enable_video_looping": false,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent",
+        "padding_bottom": "no-indent"
+      }
+    },
+    "media_aY9z9P": {
+      "type": "media",
+      "blocks": {
+        "media_card_tzckPL": {
+          "type": "media_card",
+          "settings": {
+            "heading": "Evidence based",
+            "heading_size": "h3",
+            "heading_tag": "h2",
+            "text": "BrainIQ brings over 25 years of formulation, supply-chain management and manufacturing.",
+            "image": "shopify://shop_images/higher-standards_dd0126b0-a02e-46a3-a6a1-5f9856531b0d.jpg",
+            "overlay_opacity": 0.8,
+            "show_video": false,
+            "video_url": "",
+            "autoplay_video": true,
+            "muted_video": true,
+            "loop_video": true,
+            "show_icon_play": true,
+            "show_icon_sound": true,
+            "description_video": ""
+          }
+        },
+        "media_card_TVAWpj": {
+          "type": "media_card",
+          "settings": {
+            "heading": "Quality & Efficiency",
+            "heading_size": "h3",
+            "heading_tag": "h2",
+            "text": "Professional-grade nutritional supplement formulated and manufactured according to our “Quality First” approach.",
+            "image": "shopify://shop_images/quality_5440a378-9cb4-4de6-9f3c-bab1fcf8ed6a.jpg",
+            "overlay_opacity": 0.9,
+            "show_video": false,
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay_video": true,
+            "muted_video": true,
+            "loop_video": true,
+            "show_icon_play": true,
+            "show_icon_sound": true,
+            "description_video": ""
+          }
+        },
+        "media_card_zeBWj3": {
+          "type": "media_card",
+          "settings": {
+            "heading": "Specialization",
+            "heading_size": "h3",
+            "heading_tag": "h2",
+            "text": "Each product form requires unique machinery, expertise, quality control measures.",
+            "image": "shopify://shop_images/novelty.jpg",
+            "overlay_opacity": 0.7,
+            "show_video": false,
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay_video": true,
+            "muted_video": true,
+            "loop_video": true,
+            "show_icon_play": true,
+            "show_icon_sound": true,
+            "description_video": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_card_tzckPL",
+        "media_card_TVAWpj",
+        "media_card_zeBWj3"
+      ],
+      "disabled": true,
+      "name": "t:sections.media.name",
+      "settings": {
+        "columns_per_row": 3,
+        "content_alignment": "left",
+        "content_position": "on_image",
+        "indent_value": "1.6rem",
+        "swipe_on_mobile": false,
+        "image_ratio": "4/3",
+        "section_heading": "Higher Standards",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "",
+        "pulse_animation_text": false,
+        "section_description": "",
+        "section_button_label": "",
+        "section_button_link": "",
+        "button_style": "link",
+        "margin_top": "m",
+        "margin_bottom": "m"
+      }
+    },
+    "image_banner_collapsible_UAPKUa": {
+      "type": "image-banner-collapsible",
+      "blocks": {
+        "accordion_zYkpNB": {
+          "type": "accordion",
+          "settings": {
+            "question": "Powered by Nature, Perfected by Science",
+            "accordion_heading_tag": "h5",
+            "answer": "Harnessing the natural power of Yacon Root, Allulose, and Monk Fruit, Dulsa provides sweetness with added health benefits.",
+            "default_open": false
+          }
+        },
+        "accordion_7CcEAw": {
+          "type": "accordion",
+          "settings": {
+            "question": "Unparalleled Gut Health Support",
+            "accordion_heading_tag": "h5",
+            "answer": "Supports digestive balance with shelf-stable probiotics that survive the digestive tract",
+            "default_open": false
+          }
+        },
+        "accordion_bF3pHg": {
+          "type": "accordion",
+          "settings": {
+            "question": "Zero Guilt, All Sweetness",
+            "accordion_heading_tag": "h5",
+            "answer": "Zero calories, zero sugar, and no chemical aftertaste. Perfect for keto, vegan, paleo, and diabetic-friendly lifestyles",
+            "default_open": false
+          }
+        },
+        "accordion_QdcRxy": {
+          "type": "accordion",
+          "settings": {
+            "question": "Clinically Supported Wellness",
+            "accordion_heading_tag": "h5",
+            "answer": "Supports healthy weight management, promotes a balanced inflammatory response, and helps maintain healthy blood sugar levels",
+            "default_open": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_zYkpNB",
+        "accordion_7CcEAw",
+        "accordion_bF3pHg",
+        "accordion_QdcRxy"
+      ],
+      "name": "t:sections.image-banner-collapsible.name",
+      "settings": {
+        "image": "shopify://shop_images/dulsa-banner.jpg",
+        "overlay_opacity": 0.2,
+        "overlay_opacity_mobile": 0.6,
+        "image_size": "16/9",
+        "section_heading": "What Makes Dulsa Different?",
+        "section_heading_size": "h2",
+        "section_heading_tag": "h3",
+        "section_subheading": "",
+        "pulse_animation_text": false,
+        "section_descr": "Redefining Sweetness Naturally",
+        "button_style": "secondary",
+        "buttons_alignment": "left",
+        "button_label": "",
+        "button_link": "",
+        "link_label": "",
+        "link_link": "",
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "columns_per_row": 4,
+        "products_limit": 4,
+        "swipe_on_mobile": true,
+        "section_heading": "You may also like",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "subtitle": "You Might Also Like",
+        "pulse_animation_text": false,
+        "section_button_label": "",
+        "section_button_link": "",
+        "section_button_style": "secondary",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_collection": false,
+        "show_desc": false,
+        "product_heading_tag": "h3",
+        "margin_top": "no-indent",
+        "margin_bottom": "m"
+      }
+    },
+    "1772054936513b8ad5": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_CAPhdj": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": true,
+            "empty_state": "hide_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_CAPhdj"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "17720548733a479f39",
+    "blocks_nhy4Ew",
+    "main-product",
+    "media_aY9z9P",
+    "image_banner_collapsible_UAPKUa",
+    "product-recommendations",
+    "1772054936513b8ad5"
+  ]
+}

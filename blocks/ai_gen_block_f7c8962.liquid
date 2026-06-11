@@ -1,0 +1,1270 @@
+{% doc %}
+  @prompt
+    section displaying recent test results of product. On left is bio image and short description (size adjustable). On the right are scientific test results, add description under test results. change "results" to "Process". Change status to "Results". Instead of pass / fail. have input field that outputs green font, make "results" data column font color ; lime green, increase font size by 5 pts, add button to download PDF under Bio Description, add subheading "Dr. Glen Rein" below bio image, add controls for padding below Header and subheader, make control to edit margins below header and subheader, allow margin editor below heading and subheading to go into negative digits, add margin control to space under "Dr. Glen Rein" subheader, Allow margin control to go into negative digits, add image above table with margin controls that allow negative digits, change position of table image to left of table, move download button to underneath table, add margin controls and allow negative digits, make the Download PDF button left aligned to the to the left border of the table, add mobile controls for all editing options, on mobile layout, move bio section to the bottom, move bio section to the bottom, only on mobile layout, have download PDF button positioned 20px under the Table, allow Download PDF button margin controls on both mobile and desktop layout. Allow up 300 px in positive or negative adjustment
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-test-results-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: {{ block.settings.section_padding_mobile }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-test-results-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: {{ block.settings.bio_width_mobile }}% 1fr;
+    gap: {{ block.settings.gap_mobile }}px;
+    align-items: start;
+  }
+
+  .ai-test-results-bio-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ai-test-results-bio-image-{{ ai_gen_id }} {
+    width: 100%;
+    border-radius: {{ block.settings.image_border_radius_mobile }}px;
+    overflow: hidden;
+  }
+
+  .ai-test-results-bio-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-test-results-bio-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: {{ block.settings.image_border_radius_mobile }}px;
+  }
+
+  .ai-test-results-bio-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-test-results-bio-name-{{ ai_gen_id }} {
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.bio_name_font_size_mobile }}px;
+    font-weight: 600;
+    margin: 0 0 {{ block.settings.bio_name_margin_bottom_mobile }}px 0;
+  }
+
+  .ai-test-results-bio-description-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.description_font_size_mobile }}px;
+    line-height: 1.5;
+  }
+
+  .ai-test-results-data-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ai-test-results-heading-{{ ai_gen_id }} {
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.heading_font_size_mobile }}px;
+    margin: 0 0 {{ block.settings.heading_margin_bottom_mobile }}px 0;
+    font-weight: 600;
+  }
+
+  .ai-test-results-subheading-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.subheading_font_size_mobile }}px;
+    line-height: 1.5;
+    margin: 0 0 {{ block.settings.subheading_margin_bottom_mobile }}px 0;
+  }
+
+  .ai-test-results-table-wrapper-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: {{ block.settings.table_image_width_mobile }}% 1fr;
+    gap: {{ block.settings.table_gap_mobile }}px;
+    align-items: start;
+  }
+
+  .ai-test-results-table-image-{{ ai_gen_id }} {
+    width: 100%;
+    border-radius: {{ block.settings.table_image_border_radius_mobile }}px;
+    overflow: hidden;
+    margin-bottom: {{ block.settings.table_image_margin_bottom_mobile }}px;
+  }
+
+  .ai-test-results-table-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-test-results-table-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: {{ block.settings.table_image_border_radius_mobile }}px;
+  }
+
+  .ai-test-results-table-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-test-results-table-{{ ai_gen_id }} {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: {{ block.settings.table_background_color }};
+    border-radius: {{ block.settings.table_border_radius_mobile }}px;
+    overflow: hidden;
+  }
+
+  .ai-test-results-table-{{ ai_gen_id }} thead {
+    background-color: {{ block.settings.table_header_background }};
+  }
+
+  .ai-test-results-table-{{ ai_gen_id }} th {
+    padding: {{ block.settings.table_padding_mobile }}px;
+    text-align: left;
+    color: {{ block.settings.table_header_text_color }};
+    font-weight: 600;
+    font-size: {{ block.settings.table_font_size_mobile }}px;
+    border-bottom: 2px solid {{ block.settings.table_border_color }};
+  }
+
+  .ai-test-results-table-{{ ai_gen_id }} td {
+    padding: {{ block.settings.table_padding_mobile }}px;
+    color: {{ block.settings.table_text_color }};
+    font-size: {{ block.settings.table_font_size_mobile }}px;
+    border-bottom: 1px solid {{ block.settings.table_border_color }};
+  }
+
+  .ai-test-results-table-{{ ai_gen_id }} tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .ai-test-results-table-{{ ai_gen_id }} tbody tr:hover {
+    background-color: {{ block.settings.table_row_hover_color }};
+  }
+
+  .ai-test-results-value-{{ ai_gen_id }} {
+    font-weight: 600;
+  }
+
+  .ai-test-results-result-{{ ai_gen_id }} {
+    color: #32CD32;
+    font-weight: 600;
+    font-size: {{ block.settings.table_font_size_mobile | plus: 5 }}px;
+  }
+
+  .ai-test-results-button-wrapper-{{ ai_gen_id }} {
+    margin-top: {{ block.settings.button_margin_top_mobile }}px;
+    margin-bottom: {{ block.settings.button_margin_bottom_mobile }}px;
+    margin-left: {{ block.settings.table_image_width_mobile }}%;
+    padding-left: {{ block.settings.table_gap_mobile }}px;
+  }
+
+  .ai-test-results-bio-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: {{ block.settings.button_padding_mobile }}px {{ block.settings.button_padding_mobile | times: 2 }}px;
+    background-color: {{ block.settings.button_background_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius_mobile }}px;
+    font-size: {{ block.settings.button_font_size_mobile }}px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-test-results-bio-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background_color }};
+  }
+
+  .ai-test-results-bio-button-{{ ai_gen_id }} svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-test-results-{{ ai_gen_id }} {
+      width: {{ block.settings.desktop_width_percent }}%;
+      padding: {{ block.settings.section_padding }}px;
+    }
+
+    .ai-test-results-container-{{ ai_gen_id }} {
+      grid-template-columns: {{ block.settings.bio_width }}% 1fr;
+      gap: {{ block.settings.gap }}px;
+    }
+
+    .ai-test-results-bio-image-{{ ai_gen_id }} {
+      border-radius: {{ block.settings.image_border_radius }}px;
+    }
+
+    .ai-test-results-bio-image-placeholder-{{ ai_gen_id }} {
+      border-radius: {{ block.settings.image_border_radius }}px;
+    }
+
+    .ai-test-results-bio-name-{{ ai_gen_id }} {
+      font-size: {{ block.settings.bio_name_font_size }}px;
+      margin-bottom: {{ block.settings.bio_name_margin_bottom }}px;
+    }
+
+    .ai-test-results-bio-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_font_size }}px;
+    }
+
+    .ai-test-results-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_font_size }}px;
+      margin-bottom: {{ block.settings.heading_margin_bottom }}px;
+    }
+
+    .ai-test-results-subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subheading_font_size }}px;
+      margin-bottom: {{ block.settings.subheading_margin_bottom }}px;
+    }
+
+    .ai-test-results-table-wrapper-{{ ai_gen_id }} {
+      grid-template-columns: {{ block.settings.table_image_width }}% 1fr;
+      gap: {{ block.settings.table_gap }}px;
+    }
+
+    .ai-test-results-table-image-{{ ai_gen_id }} {
+      border-radius: {{ block.settings.table_image_border_radius }}px;
+      margin-bottom: {{ block.settings.table_image_margin_bottom }}px;
+    }
+
+    .ai-test-results-table-image-placeholder-{{ ai_gen_id }} {
+      border-radius: {{ block.settings.table_image_border_radius }}px;
+    }
+
+    .ai-test-results-table-{{ ai_gen_id }} {
+      border-radius: {{ block.settings.table_border_radius }}px;
+    }
+
+    .ai-test-results-table-{{ ai_gen_id }} th {
+      padding: 16px;
+      font-size: {{ block.settings.table_font_size }}px;
+    }
+
+    .ai-test-results-table-{{ ai_gen_id }} td {
+      padding: 16px;
+      font-size: {{ block.settings.table_font_size }}px;
+    }
+
+    .ai-test-results-result-{{ ai_gen_id }} {
+      font-size: {{ block.settings.table_font_size | plus: 5 }}px;
+    }
+
+    .ai-test-results-button-wrapper-{{ ai_gen_id }} {
+      margin-top: {{ block.settings.button_margin_top }}px;
+      margin-bottom: {{ block.settings.button_margin_bottom }}px;
+      margin-left: {{ block.settings.table_image_width }}%;
+      padding-left: {{ block.settings.table_gap }}px;
+    }
+
+    .ai-test-results-bio-button-{{ ai_gen_id }} {
+      padding: 12px 24px;
+      border-radius: {{ block.settings.button_border_radius }}px;
+      font-size: {{ block.settings.button_font_size }}px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-test-results-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+    }
+
+    .ai-test-results-bio-{{ ai_gen_id }} {
+      order: 2;
+    }
+
+    .ai-test-results-data-{{ ai_gen_id }} {
+      order: 1;
+    }
+
+    .ai-test-results-table-wrapper-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-test-results-button-wrapper-{{ ai_gen_id }} {
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+{% endstyle %}
+
+<product-test-results-{{ ai_gen_id }}
+  class="ai-test-results-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-test-results-container-{{ ai_gen_id }}">
+    <div class="ai-test-results-bio-{{ ai_gen_id }}">
+      <div class="ai-test-results-bio-image-{{ ai_gen_id }}">
+        {% if block.settings.bio_image %}
+          <img
+            src="{{ block.settings.bio_image | image_url: width: 800 }}"
+            alt="{{ block.settings.bio_image.alt | escape }}"
+            loading="lazy"
+            width="{{ block.settings.bio_image.width }}"
+            height="{{ block.settings.bio_image.height }}"
+          >
+        {% else %}
+          <div class="ai-test-results-bio-image-placeholder-{{ ai_gen_id }}">
+            {{ 'product-apparel-1' | placeholder_svg_tag }}
+          </div>
+        {% endif %}
+      </div>
+      {% if block.settings.bio_name != blank %}
+        <h3 class="ai-test-results-bio-name-{{ ai_gen_id }}">{{ block.settings.bio_name }}</h3>
+      {% endif %}
+      {% if block.settings.bio_description != blank %}
+        <div class="ai-test-results-bio-description-{{ ai_gen_id }}">
+          {{ block.settings.bio_description }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-test-results-data-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-test-results-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      {% endif %}
+
+      {% if block.settings.subheading != blank %}
+        <div class="ai-test-results-subheading-{{ ai_gen_id }}">
+          {{ block.settings.subheading }}
+        </div>
+      {% endif %}
+
+      <div class="ai-test-results-table-wrapper-{{ ai_gen_id }}">
+        <div class="ai-test-results-table-image-{{ ai_gen_id }}">
+          {% if block.settings.table_image %}
+            <img
+              src="{{ block.settings.table_image | image_url: width: 800 }}"
+              alt="{{ block.settings.table_image.alt | escape }}"
+              loading="lazy"
+              width="{{ block.settings.table_image.width }}"
+              height="{{ block.settings.table_image.height }}"
+            >
+          {% else %}
+            <div class="ai-test-results-table-image-placeholder-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+        </div>
+
+        <table class="ai-test-results-table-{{ ai_gen_id }}">
+          <thead>
+            <tr>
+              <th>{{ block.settings.column_1_header }}</th>
+              <th>{{ block.settings.column_2_header }}</th>
+              <th>{{ block.settings.column_3_header }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in (1..10) %}
+              {% liquid
+                assign test_name_key = 'test_' | append: i | append: '_name'
+                assign test_value_key = 'test_' | append: i | append: '_value'
+                assign test_result_key = 'test_' | append: i | append: '_result'
+
+                assign test_name = block.settings[test_name_key]
+                assign test_value = block.settings[test_value_key]
+                assign test_result = block.settings[test_result_key]
+              %}
+
+              {% if test_name != blank %}
+                <tr>
+                  <td>{{ test_name }}</td>
+                  <td class="ai-test-results-value-{{ ai_gen_id }}">{{ test_value }}</td>
+                  <td class="ai-test-results-result-{{ ai_gen_id }}">{{ test_result }}</td>
+                </tr>
+              {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      {% if block.settings.pdf_button_label != blank and block.settings.pdf_file != blank %}
+        <div class="ai-test-results-button-wrapper-{{ ai_gen_id }}">
+          <a
+            href="{{ block.settings.pdf_file }}"
+            class="ai-test-results-bio-button-{{ ai_gen_id }}"
+            download target="_blank" rel="noopener noreferrer"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            {{ block.settings.pdf_button_label }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</product-test-results-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ProductTestResults{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.style.display = 'block';
+      }
+    }
+
+    customElements.define('product-test-results-{{ ai_gen_id }}', ProductTestResults{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Product test results",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "bio_width",
+      "label": "Bio column width",
+      "min": 20,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Column gap",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_mobile",
+      "label": "Section padding",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "bio_width_mobile",
+      "label": "Bio column width",
+      "min": 20,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "Column gap",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Bio section"
+    },
+    {
+      "type": "image_picker",
+      "id": "bio_image",
+      "label": "Bio image"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius (desktop)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius_mobile",
+      "label": "Image border radius (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "text",
+      "id": "bio_name",
+      "label": "Name",
+      "default": "Dr. Glen Rein"
+    },
+    {
+      "type": "range",
+      "id": "bio_name_font_size",
+      "label": "Name font size (desktop)",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "bio_name_font_size_mobile",
+      "label": "Name font size (mobile)",
+      "min": 12,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "bio_name_margin_bottom",
+      "label": "Name margin bottom (desktop)",
+      "min": -60,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "bio_name_margin_bottom_mobile",
+      "label": "Name margin bottom (mobile)",
+      "min": -60,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "richtext",
+      "id": "bio_description",
+      "label": "Bio description",
+      "default": "<p>This product has been rigorously tested in certified laboratories to ensure the highest quality and safety standards.</p>"
+    },
+    {
+      "type": "range",
+      "id": "description_font_size",
+      "label": "Description font size (desktop)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "description_font_size_mobile",
+      "label": "Description font size (mobile)",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Test results section"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Scientific test results"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading font size (desktop)",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "label": "Heading font size (mobile)",
+      "min": 14,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "heading_margin_bottom",
+      "label": "Heading margin bottom (desktop)",
+      "min": -60,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "heading_margin_bottom_mobile",
+      "label": "Heading margin bottom (mobile)",
+      "min": -60,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Description",
+      "default": "<p>Our products undergo rigorous testing to ensure quality and safety.</p>"
+    },
+    {
+      "type": "range",
+      "id": "subheading_font_size",
+      "label": "Description font size (desktop)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "subheading_font_size_mobile",
+      "label": "Description font size (mobile)",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "subheading_margin_bottom",
+      "label": "Description margin bottom (desktop)",
+      "min": -60,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "subheading_margin_bottom_mobile",
+      "label": "Description margin bottom (mobile)",
+      "min": -60,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Table image"
+    },
+    {
+      "type": "image_picker",
+      "id": "table_image",
+      "label": "Image left of table"
+    },
+    {
+      "type": "range",
+      "id": "table_image_width",
+      "label": "Image width (desktop)",
+      "min": 20,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "table_image_width_mobile",
+      "label": "Image width (mobile)",
+      "min": 20,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "table_gap",
+      "label": "Gap between image and table (desktop)",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "table_gap_mobile",
+      "label": "Gap between image and table (mobile)",
+      "min": 5,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "table_image_border_radius",
+      "label": "Image border radius (desktop)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "table_image_border_radius_mobile",
+      "label": "Image border radius (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "table_image_margin_bottom",
+      "label": "Image margin bottom (desktop)",
+      "min": -60,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "table_image_margin_bottom_mobile",
+      "label": "Image margin bottom (mobile)",
+      "min": -60,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Table headers"
+    },
+    {
+      "type": "text",
+      "id": "column_1_header",
+      "label": "Column 1 header",
+      "default": "Test name"
+    },
+    {
+      "type": "text",
+      "id": "column_2_header",
+      "label": "Column 2 header",
+      "default": "Process"
+    },
+    {
+      "type": "text",
+      "id": "column_3_header",
+      "label": "Column 3 header",
+      "default": "Results"
+    },
+    {
+      "type": "header",
+      "content": "Test 1"
+    },
+    {
+      "type": "text",
+      "id": "test_1_name",
+      "label": "Test name",
+      "default": "Heavy metals screening"
+    },
+    {
+      "type": "text",
+      "id": "test_1_value",
+      "label": "Process value",
+      "default": "Below detection limit"
+    },
+    {
+      "type": "text",
+      "id": "test_1_result",
+      "label": "Result"
+    },
+    {
+      "type": "header",
+      "content": "Test 2"
+    },
+    {
+      "type": "text",
+      "id": "test_2_name",
+      "label": "Test name",
+      "default": "Microbial contamination"
+    },
+    {
+      "type": "text",
+      "id": "test_2_value",
+      "label": "Process value",
+      "default": "Negative"
+    },
+    {
+      "type": "text",
+      "id": "test_2_result",
+      "label": "Result"
+    },
+    {
+      "type": "header",
+      "content": "Test 3"
+    },
+    {
+      "type": "text",
+      "id": "test_3_name",
+      "label": "Test name",
+      "default": "pH level"
+    },
+    {
+      "type": "text",
+      "id": "test_3_value",
+      "label": "Process value",
+      "default": "7.2"
+    },
+    {
+      "type": "text",
+      "id": "test_3_result",
+      "label": "Result"
+    },
+    {
+      "type": "header",
+      "content": "Test 4"
+    },
+    {
+      "type": "text",
+      "id": "test_4_name",
+      "label": "Test name",
+      "default": "Purity analysis"
+    },
+    {
+      "type": "text",
+      "id": "test_4_value",
+      "label": "Process value",
+      "default": "99.8%"
+    },
+    {
+      "type": "text",
+      "id": "test_4_result",
+      "label": "Result"
+    },
+    {
+      "type": "header",
+      "content": "Test 5"
+    },
+    {
+      "type": "text",
+      "id": "test_5_name",
+      "label": "Test name",
+      "default": "Allergen screening"
+    },
+    {
+      "type": "text",
+      "id": "test_5_value",
+      "label": "Process value",
+      "default": "None detected"
+    },
+    {
+      "type": "text",
+      "id": "test_5_result",
+      "label": "Result"
+    },
+    {
+      "type": "header",
+      "content": "Test 6"
+    },
+    {
+      "type": "text",
+      "id": "test_6_name",
+      "label": "Test name"
+    },
+    {
+      "type": "text",
+      "id": "test_6_value",
+      "label": "Process value"
+    },
+    {
+      "type": "text",
+      "id": "test_6_result",
+      "label": "Result"
+    },
+    {
+      "type": "header",
+      "content": "Test 7"
+    },
+    {
+      "type": "text",
+      "id": "test_7_name",
+      "label": "Test name"
+    },
+    {
+      "type": "text",
+      "id": "test_7_value",
+      "label": "Process value"
+    },
+    {
+      "type": "text",
+      "id": "test_7_result",
+      "label": "Result"
+    },
+    {
+      "type": "header",
+      "content": "Test 8"
+    },
+    {
+      "type": "text",
+      "id": "test_8_name",
+      "label": "Test name"
+    },
+    {
+      "type": "text",
+      "id": "test_8_value",
+      "label": "Process value"
+    },
+    {
+      "type": "text",
+      "id": "test_8_result",
+      "label": "Result"
+    },
+    {
+      "type": "header",
+      "content": "Test 9"
+    },
+    {
+      "type": "text",
+      "id": "test_9_name",
+      "label": "Test name"
+    },
+    {
+      "type": "text",
+      "id": "test_9_value",
+      "label": "Process value"
+    },
+    {
+      "type": "text",
+      "id": "test_9_result",
+      "label": "Result"
+    },
+    {
+      "type": "header",
+      "content": "Test 10"
+    },
+    {
+      "type": "text",
+      "id": "test_10_name",
+      "label": "Test name"
+    },
+    {
+      "type": "text",
+      "id": "test_10_value",
+      "label": "Process value"
+    },
+    {
+      "type": "text",
+      "id": "test_10_result",
+      "label": "Result"
+    },
+    {
+      "type": "header",
+      "content": "PDF download button"
+    },
+    {
+      "type": "text",
+      "id": "pdf_button_label",
+      "label": "Button label",
+      "default": "Download PDF"
+    },
+    {
+      "type": "url",
+      "id": "pdf_file",
+      "label": "PDF file URL"
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top",
+      "label": "Button margin top (desktop)",
+      "min": -300,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "button_margin_bottom",
+      "label": "Button margin bottom (desktop)",
+      "min": -300,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top_mobile",
+      "label": "Button margin top (mobile)",
+      "min": -300,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "button_margin_bottom_mobile",
+      "label": "Button margin bottom (mobile)",
+      "min": -300,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background",
+      "default": "#07cbdc"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background_color",
+      "label": "Button hover background",
+      "default": "#9830ff"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button font size (desktop)",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_font_size_mobile",
+      "label": "Button font size (mobile)",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_mobile",
+      "label": "Button padding (mobile)",
+      "min": 6,
+      "max": 16,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius (desktop)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius_mobile",
+      "label": "Button border radius (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#200a25"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#e6daf6"
+    },
+    {
+      "type": "color",
+      "id": "table_background_color",
+      "label": "Table background",
+      "default": "#361641"
+    },
+    {
+      "type": "color",
+      "id": "table_header_background",
+      "label": "Table header background",
+      "default": "#0d0416"
+    },
+    {
+      "type": "color",
+      "id": "table_header_text_color",
+      "label": "Table header text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "table_text_color",
+      "label": "Table text",
+      "default": "#e6daf6"
+    },
+    {
+      "type": "color",
+      "id": "table_border_color",
+      "label": "Table border",
+      "default": "#553052"
+    },
+    {
+      "type": "color",
+      "id": "table_row_hover_color",
+      "label": "Table row hover",
+      "default": "#240b35"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "table_font_size",
+      "label": "Table font size (desktop)",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "table_font_size_mobile",
+      "label": "Table font size (mobile)",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "table_padding_mobile",
+      "label": "Table cell padding (mobile)",
+      "min": 4,
+      "max": 16,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "table_border_radius",
+      "label": "Table border radius (desktop)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "table_border_radius_mobile",
+      "label": "Table border radius (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product test results"
+    }
+  ]
+}
+{% endschema %}

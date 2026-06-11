@@ -1,0 +1,29 @@
+<div class="product-feature-grid">
+	{% if block.settings.heading != blank %}
+		<h3 class="product-feature-grid__heading">{{ block.settings.heading }}</h3>
+	{% endif %}
+
+	<div class="product-feature-grid__items">
+		{% for i in (1..4) %}
+			{%- assign image = block.settings["item_" | append: i | append: "_image"] -%}
+			{%- assign title = block.settings["item_" | append: i | append: "_title"] -%}
+			{%- assign text = block.settings["item_" | append: i | append: "_text"] -%}
+
+			{% if title != blank %}
+				<div class="product-feature-grid__item">
+					{% if image != blank %}
+						<div class="product-feature-grid__icon">
+							{{ image | img_tag: alt: title, class: 'product-feature-grid__icon-img' }}
+						</div>
+					{% endif %}
+					<div class="product-feature-grid__content">
+						<p class="product-feature-grid__title">{{ title }}</p>
+						{% if text != blank %}
+							<p class="product-feature-grid__text">{{ text }}</p>
+						{% endif %}
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

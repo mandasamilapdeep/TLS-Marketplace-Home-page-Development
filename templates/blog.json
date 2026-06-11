@@ -1,0 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-blog": {
+      "type": "main-blog",
+      "settings": {
+        "section_heading_size": "h2",
+        "description": "",
+        "backlight_animation": true,
+        "posts_per_page": 7,
+        "post_limit": 9,
+        "columns_mobile": "2",
+        "featured_article": "",
+        "color_scheme": "",
+        "overlay_image_ratio": "16/9",
+        "overlay_opacity": 0.2,
+        "show_tags_overlay": false,
+        "show_date_overlay": true,
+        "show_author_overlay": true,
+        "show_excerpt_overlay": true,
+        "show_image": true,
+        "image_ratio": "16/9",
+        "show_tags": false,
+        "show_date": true,
+        "show_author": true,
+        "show_excerpt": false,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "backlight_animation": true,
+        "align_content": "right",
+        "section_subheading": "Newsletter",
+        "pulse_animation_text": false,
+        "heading": "Here can be your newsletter title",
+        "heading_size": "h3",
+        "heading_tag": "h3",
+        "newsletter_text": "By clicking on the “Subscribe” button, I confirm my agreement with the <a href=\"/policies/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\">Privacy Policy</a> and <a href=\"/policies/terms-of-service\" target=\"_blank\" title=\"Terms of Service\">Terms of Use</a>",
+        "button_style": "secondary",
+        "margin_top": "m",
+        "margin_bottom": "no-indent",
+        "padding_top": "l",
+        "padding_bottom": "l"
+      }
+    }
+  },
+  "order": [
+    "main-blog",
+    "newsletter"
+  ]
+}

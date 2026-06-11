@@ -1,0 +1,581 @@
+{% doc %}
+  @prompt
+    section with image and short bio on left and scientific test results on right
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-bio-results-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+  }
+
+  .ai-bio-results-container-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.gap }}px;
+    align-items: flex-start;
+    padding: {{ block.settings.padding }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-bio-results-left-{{ ai_gen_id }} {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.content_gap }}px;
+  }
+
+  .ai-bio-results-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    overflow: hidden;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-bio-results-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-bio-results-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-bio-results-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .ai-bio-results-bio-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-bio-results-name-{{ ai_gen_id }} {
+    font-size: {{ block.settings.name_size }}px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-bio-results-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 500;
+    margin: 0 0 12px 0;
+    color: {{ block.settings.subheading_color }};
+  }
+
+  .ai-bio-results-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ai-bio-results-right-{{ ai_gen_id }} {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.results_gap }}px;
+  }
+
+  .ai-bio-results-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.results_heading_size }}px;
+    font-weight: 700;
+    margin: 0 0 {{ block.settings.results_gap }}px 0;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-bio-results-item-{{ ai_gen_id }} {
+    padding: {{ block.settings.result_padding }}px;
+    background-color: {{ block.settings.result_background }};
+    border-radius: {{ block.settings.result_border_radius }}px;
+    border: 1px solid {{ block.settings.result_border_color }};
+  }
+
+  .ai-bio-results-item-label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.result_label_size }}px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-bio-results-item-value-{{ ai_gen_id }} {
+    font-size: {{ block.settings.result_value_size }}px;
+    margin: 0;
+    color: {{ block.settings.text_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-bio-results-container-{{ ai_gen_id }} {
+      flex-direction: column;
+      gap: {{ block.settings.mobile_gap }}px;
+    }
+
+    .ai-bio-results-name-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.name_size }}px * 0.85);
+    }
+
+    .ai-bio-results-title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.title_size }}px * 0.85);
+    }
+
+    .ai-bio-results-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.results_heading_size }}px * 0.85);
+    }
+  }
+{% endstyle %}
+
+<bio-results-{{ ai_gen_id }} class="ai-bio-results-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-bio-results-container-{{ ai_gen_id }}">
+    <div class="ai-bio-results-left-{{ ai_gen_id }}">
+      <div class="ai-bio-results-image-wrapper-{{ ai_gen_id }}">
+        {% if block.settings.image %}
+          <img
+            src="{{ block.settings.image | image_url: width: 800 }}"
+            alt="{{ block.settings.image.alt | escape }}"
+            class="ai-bio-results-image-{{ ai_gen_id }}"
+            loading="lazy"
+            width="{{ block.settings.image.width }}"
+            height="{{ block.settings.image.height }}"
+          >
+        {% else %}
+          <div class="ai-bio-results-image-placeholder-{{ ai_gen_id }}">
+            {{ 'image' | placeholder_svg_tag }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ai-bio-results-bio-{{ ai_gen_id }}">
+        {% if block.settings.name != blank %}
+          <h3 class="ai-bio-results-name-{{ ai_gen_id }}">{{ block.settings.name }}</h3>
+        {% endif %}
+
+        {% if block.settings.job_title != blank %}
+          <p class="ai-bio-results-title-{{ ai_gen_id }}">{{ block.settings.job_title }}</p>
+        {% endif %}
+
+        {% if block.settings.bio != blank %}
+          <div class="ai-bio-results-description-{{ ai_gen_id }}">
+            {{ block.settings.bio }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-bio-results-right-{{ ai_gen_id }}">
+      {% if block.settings.results_heading != blank %}
+        <h3 class="ai-bio-results-heading-{{ ai_gen_id }}">{{ block.settings.results_heading }}</h3>
+      {% endif %}
+
+      {% if block.settings.result_1_label != blank %}
+        <div class="ai-bio-results-item-{{ ai_gen_id }}">
+          <p class="ai-bio-results-item-label-{{ ai_gen_id }}">{{ block.settings.result_1_label }}</p>
+          {% if block.settings.result_1_value != blank %}
+            <p class="ai-bio-results-item-value-{{ ai_gen_id }}">{{ block.settings.result_1_value }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if block.settings.result_2_label != blank %}
+        <div class="ai-bio-results-item-{{ ai_gen_id }}">
+          <p class="ai-bio-results-item-label-{{ ai_gen_id }}">{{ block.settings.result_2_label }}</p>
+          {% if block.settings.result_2_value != blank %}
+            <p class="ai-bio-results-item-value-{{ ai_gen_id }}">{{ block.settings.result_2_value }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if block.settings.result_3_label != blank %}
+        <div class="ai-bio-results-item-{{ ai_gen_id }}">
+          <p class="ai-bio-results-item-label-{{ ai_gen_id }}">{{ block.settings.result_3_label }}</p>
+          {% if block.settings.result_3_value != blank %}
+            <p class="ai-bio-results-item-value-{{ ai_gen_id }}">{{ block.settings.result_3_value }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if block.settings.result_4_label != blank %}
+        <div class="ai-bio-results-item-{{ ai_gen_id }}">
+          <p class="ai-bio-results-item-label-{{ ai_gen_id }}">{{ block.settings.result_4_label }}</p>
+          {% if block.settings.result_4_value != blank %}
+            <p class="ai-bio-results-item-value-{{ ai_gen_id }}">{{ block.settings.result_4_value }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if block.settings.result_5_label != blank %}
+        <div class="ai-bio-results-item-{{ ai_gen_id }}">
+          <p class="ai-bio-results-item-label-{{ ai_gen_id }}">{{ block.settings.result_5_label }}</p>
+          {% if block.settings.result_5_value != blank %}
+            <p class="ai-bio-results-item-value-{{ ai_gen_id }}">{{ block.settings.result_5_value }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</bio-results-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class BioResults{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+      }
+    }
+
+    customElements.define('bio-results-{{ ai_gen_id }}', BioResults{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Bio and test results",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between columns",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Mobile gap",
+      "min": 15,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Container padding",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Container border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Bio section"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "label": "Gap between image and bio",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Name",
+      "default": "Dr. Sarah Johnson"
+    },
+    {
+      "type": "range",
+      "id": "name_size",
+      "label": "Name size",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "text",
+      "id": "job_title",
+      "label": "Job title",
+      "default": "Lead Research Scientist"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Job title size",
+      "min": 12,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "richtext",
+      "id": "bio",
+      "label": "Bio",
+      "default": "<p>With over 15 years of experience in materials science and product testing, Dr. Johnson leads our research team in conducting rigorous scientific evaluations.</p>"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Bio text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Test results section"
+    },
+    {
+      "type": "text",
+      "id": "results_heading",
+      "label": "Results heading",
+      "default": "Scientific test results"
+    },
+    {
+      "type": "range",
+      "id": "results_heading_size",
+      "label": "Results heading size",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "results_gap",
+      "label": "Gap between results",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Result 1"
+    },
+    {
+      "type": "text",
+      "id": "result_1_label",
+      "label": "Label",
+      "default": "Durability rating"
+    },
+    {
+      "type": "text",
+      "id": "result_1_value",
+      "label": "Value",
+      "default": "9.8/10 - Exceeds industry standards"
+    },
+    {
+      "type": "header",
+      "content": "Result 2"
+    },
+    {
+      "type": "text",
+      "id": "result_2_label",
+      "label": "Label",
+      "default": "Safety certification"
+    },
+    {
+      "type": "text",
+      "id": "result_2_value",
+      "label": "Value",
+      "default": "FDA approved, ISO 9001 certified"
+    },
+    {
+      "type": "header",
+      "content": "Result 3"
+    },
+    {
+      "type": "text",
+      "id": "result_3_label",
+      "label": "Label",
+      "default": "Performance efficiency"
+    },
+    {
+      "type": "text",
+      "id": "result_3_value",
+      "label": "Value",
+      "default": "97% efficiency under standard conditions"
+    },
+    {
+      "type": "header",
+      "content": "Result 4"
+    },
+    {
+      "type": "text",
+      "id": "result_4_label",
+      "label": "Label",
+      "default": "Environmental impact"
+    },
+    {
+      "type": "text",
+      "id": "result_4_value",
+      "label": "Value",
+      "default": "Carbon neutral, 100% recyclable materials"
+    },
+    {
+      "type": "header",
+      "content": "Result 5"
+    },
+    {
+      "type": "text",
+      "id": "result_5_label",
+      "label": "Label",
+      "default": "Quality assurance"
+    },
+    {
+      "type": "text",
+      "id": "result_5_value",
+      "label": "Value",
+      "default": "Tested over 10,000 cycles with zero failures"
+    },
+    {
+      "type": "header",
+      "content": "Result card style"
+    },
+    {
+      "type": "range",
+      "id": "result_padding",
+      "label": "Result padding",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "result_border_radius",
+      "label": "Result border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "result_label_size",
+      "label": "Label size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "result_value_size",
+      "label": "Value size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Headings",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheadings",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "result_background",
+      "label": "Result background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "result_border_color",
+      "label": "Result border",
+      "default": "#e0e0e0"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bio and test results"
+    }
+  ]
+}
+{% endschema %}

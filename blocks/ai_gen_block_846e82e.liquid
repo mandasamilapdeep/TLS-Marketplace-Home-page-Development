@@ -1,0 +1,629 @@
+{% doc %}
+  @prompt
+    create pop up with text image and button
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-popup-overlay-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .ai-popup-overlay-{{ ai_gen_id }}.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .ai-popup-container-{{ ai_gen_id }} {
+    position: relative;
+    background-color: {{ block.settings.popup_background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    max-width: {{ block.settings.popup_max_width }}px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    z-index: 9999;
+    display: block;
+  }
+
+  .ai-popup-overlay-{{ ai_gen_id }}.active .ai-popup-container-{{ ai_gen_id }} {
+    transform: scale(1);
+  }
+
+  .ai-popup-close-{{ ai_gen_id }} {
+    position: absolute;
+    top: {{ block.settings.close_button_spacing }}px;
+    right: {{ block.settings.close_button_spacing }}px;
+    background-color: {{ block.settings.close_button_background }};
+    border: none;
+    width: {{ block.settings.close_button_size }}px;
+    height: {{ block.settings.close_button_size }}px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-popup-close-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.close_button_hover_background }};
+  }
+
+  .ai-popup-close-{{ ai_gen_id }} svg {
+    width: calc({{ block.settings.close_button_size }}px * 0.5);
+    height: calc({{ block.settings.close_button_size }}px * 0.5);
+    stroke: {{ block.settings.close_button_color }};
+  }
+
+  .ai-popup-content-{{ ai_gen_id }} {
+    padding: {{ block.settings.content_padding }}px;
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.content_spacing }}px;
+  }
+
+  .ai-popup-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-popup-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-popup-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-popup-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .ai-popup-text-content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.text_spacing }}px;
+  }
+
+  .ai-popup-heading-{{ ai_gen_id }} {
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.heading_size }}px;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .ai-popup-text-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .ai-popup-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_background_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_text_size }}px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+  }
+
+  .ai-popup-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background_color }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  .ai-popup-trigger-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: {{ block.settings.trigger_button_background }};
+    color: {{ block.settings.trigger_button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-popup-trigger-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.trigger_button_hover_background }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-popup-container-{{ ai_gen_id }} {
+      max-width: 100%;
+    }
+
+    .ai-popup-content-{{ ai_gen_id }} {
+      padding: {{ block.settings.content_padding | times: 0.7 }}px;
+    }
+
+    .ai-popup-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
+    }
+
+    .ai-popup-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<popup-component-{{ ai_gen_id }} class="ai-popup-wrapper-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.show_trigger_button %}
+    <button class="ai-popup-trigger-{{ ai_gen_id }}" aria-label="Open popup">
+      {{ block.settings.trigger_button_text }}
+    </button>
+  {% endif %}
+
+  <div class="ai-popup-overlay-{{ ai_gen_id }}" role="dialog" aria-modal="true" aria-labelledby="popup-heading-{{ ai_gen_id }}">
+    <div class="ai-popup-container-{{ ai_gen_id }}">
+      <button class="ai-popup-close-{{ ai_gen_id }}" aria-label="Close popup">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="ai-popup-content-{{ ai_gen_id }}">
+        <div class="ai-popup-image-wrapper-{{ ai_gen_id }}">
+          {% if block.settings.popup_image %}
+            <img
+              src="{{ block.settings.popup_image | image_url: width: 1000 }}"
+              alt="{{ block.settings.popup_image.alt | escape }}"
+              class="ai-popup-image-{{ ai_gen_id }}"
+              loading="lazy"
+              width="{{ block.settings.popup_image.width }}"
+              height="{{ block.settings.popup_image.height }}"
+            >
+          {% else %}
+            <div class="ai-popup-image-placeholder-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="ai-popup-text-content-{{ ai_gen_id }}">
+          {% if block.settings.popup_heading != blank %}
+            <h2 id="popup-heading-{{ ai_gen_id }}" class="ai-popup-heading-{{ ai_gen_id }}">
+              {{ block.settings.popup_heading }}
+            </h2>
+          {% endif %}
+
+          {% if block.settings.popup_text != blank %}
+            <div class="ai-popup-text-{{ ai_gen_id }}">
+              {{ block.settings.popup_text }}
+            </div>
+          {% endif %}
+
+          {% if block.settings.button_text != blank %}
+            <a href="{{ block.settings.button_link }}" class="ai-popup-button-{{ ai_gen_id }}">
+              {{ block.settings.button_text }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</popup-component-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class PopupComponent{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.overlay = this.querySelector('.ai-popup-overlay-{{ ai_gen_id }}');
+        this.closeButton = this.querySelector('.ai-popup-close-{{ ai_gen_id }}');
+        this.triggerButton = this.querySelector('.ai-popup-trigger-{{ ai_gen_id }}');
+        this.autoOpen = {{ block.settings.auto_open }};
+        this.autoOpenDelay = {{ block.settings.auto_open_delay }};
+
+        this.setupEventListeners();
+
+        if (this.autoOpen) {
+          setTimeout(() => {
+            this.openPopup();
+          }, this.autoOpenDelay * 1000);
+        }
+      }
+
+      setupEventListeners() {
+        if (this.triggerButton) {
+          this.triggerButton.addEventListener('click', () => {
+            this.openPopup();
+          });
+        }
+
+        this.closeButton.addEventListener('click', () => {
+          this.closePopup();
+        });
+
+        this.overlay.addEventListener('click', (e) => {
+          if (e.target === this.overlay) {
+            this.closePopup();
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && this.overlay.classList.contains('active')) {
+            this.closePopup();
+          }
+        });
+      }
+
+      openPopup() {
+        this.overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      closePopup() {
+        this.overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    customElements.define('popup-component-{{ ai_gen_id }}', PopupComponent{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Popup with image",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Popup trigger"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trigger_button",
+      "label": "Show trigger button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "trigger_button_text",
+      "label": "Trigger button text",
+      "default": "Open popup"
+    },
+    {
+      "type": "color",
+      "id": "trigger_button_background",
+      "label": "Trigger button background",
+      "default": "#07cbdc"
+    },
+    {
+      "type": "color",
+      "id": "trigger_button_hover_background",
+      "label": "Trigger button hover background",
+      "default": "#9830ff"
+    },
+    {
+      "type": "color",
+      "id": "trigger_button_text_color",
+      "label": "Trigger button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_open",
+      "label": "Auto open popup",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "auto_open_delay",
+      "label": "Auto open delay",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Popup style"
+    },
+    {
+      "type": "range",
+      "id": "popup_max_width",
+      "label": "Maximum width",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "color",
+      "id": "popup_background_color",
+      "label": "Background color",
+      "default": "#200a25"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "content_padding",
+      "label": "Content padding",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "content_spacing",
+      "label": "Content spacing",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Close button"
+    },
+    {
+      "type": "range",
+      "id": "close_button_size",
+      "label": "Size",
+      "min": 24,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "close_button_spacing",
+      "label": "Spacing from edge",
+      "min": 8,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "close_button_background",
+      "label": "Background color",
+      "default": "#361641"
+    },
+    {
+      "type": "color",
+      "id": "close_button_hover_background",
+      "label": "Hover background color",
+      "default": "#b972ff"
+    },
+    {
+      "type": "color",
+      "id": "close_button_color",
+      "label": "Icon color",
+      "default": "#e6daf6"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "popup_image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Text content"
+    },
+    {
+      "type": "richtext",
+      "id": "popup_heading",
+      "label": "Heading",
+      "default": "<p>Special offer just for you!</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "richtext",
+      "id": "popup_text",
+      "label": "Text",
+      "default": "<p>Get 15% off your first order when you sign up for our newsletter.</p>"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#e6daf6"
+    },
+    {
+      "type": "range",
+      "id": "text_spacing",
+      "label": "Text spacing",
+      "min": 8,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Button text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Button vertical padding",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Button horizontal padding",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background",
+      "default": "#07cbdc"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background_color",
+      "label": "Button hover background",
+      "default": "#9830ff"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Button hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Popup with image"
+    }
+  ]
+}
+{% endschema %}

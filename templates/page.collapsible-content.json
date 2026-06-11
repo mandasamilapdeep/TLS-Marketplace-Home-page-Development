@@ -1,0 +1,86 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "heading_size": "h3",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "collapsible-content": {
+      "type": "collapsible-content",
+      "blocks": {
+        "accordion-1": {
+          "type": "accordion",
+          "settings": {
+            "question": "Here can be a commonly asked question about your product or service.",
+            "question_heading_tag": "h5",
+            "answer": "Here can be a brief but clear response to the question, giving customers a quick answer without unnecessary details.",
+            "default_open": false,
+            "title_size": 18
+          }
+        },
+        "accordion-2": {
+          "type": "accordion",
+          "settings": {
+            "question": "Here can be a commonly asked question about your product or service.",
+            "question_heading_tag": "h5",
+            "answer": "Here can be a brief but clear response to the question, giving customers a quick answer without unnecessary details.",
+            "default_open": false,
+            "title_size": 18
+          }
+        },
+        "accordion-3": {
+          "type": "accordion",
+          "settings": {
+            "question": "Here can be a commonly asked question about your product or service.",
+            "question_heading_tag": "h5",
+            "answer": "Here can be a brief but clear response to the question, giving customers a quick answer without unnecessary details.",
+            "default_open": false,
+            "title_size": 18
+          }
+        }
+      },
+      "block_order": [
+        "accordion-1",
+        "accordion-2",
+        "accordion-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "hide_image": false,
+        "section_layout": "column",
+        "image_position": "image_left",
+        "image_size": "16/9",
+        "section_heading": "Frequently Asked Questions",
+        "section_heading_size": "h2",
+        "section_heading_tag": "h3",
+        "section_subheading": "Your FAQs Title Goes Here",
+        "pulse_animation_text": false,
+        "section_heading_content_alignment": "left",
+        "button_style": "secondary",
+        "buttons_alignment": "left",
+        "button_label": "Learn More",
+        "button_link": "",
+        "link_label": "Explore More",
+        "link_link": "",
+        "margin_top": "m",
+        "margin_bottom": "m"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "collapsible-content"
+  ]
+}

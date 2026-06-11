@@ -1,0 +1,331 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-collection-banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "description_products": "",
+        "overlay_opacity": 0.4,
+        "backlight_animation": true,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent"
+      }
+    },
+    "blocks_UH49Qq": {
+      "type": "_blocks",
+      "name": "Headline with button",
+      "settings": {}
+    },
+    "17774991935a5e0e8d": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "settings": {
+        "products_per_page": 39,
+        "columns_mobile": "2",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "image_filter_ratio": "1/1",
+        "image_filter_fit": "contain",
+        "image_filter_columns": 2
+      }
+    },
+    "products_grid_VQWLqz": {
+      "type": "products-grid",
+      "name": "t:sections.products-grid.name",
+      "settings": {
+        "collection": "supercharged-jewelry",
+        "product_list": [],
+        "products_per_page": 46,
+        "columns_per_row": 4,
+        "sort": "products_high",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "section_heading": "Supercharged Medallions",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Precise Energetic Imprinting",
+        "pulse_animation_text": true,
+        "section_heading_content_alignment": "left",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_collection": false,
+        "show_desc": false,
+        "show_swatches": false,
+        "product_heading_tag": "h3",
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    },
+    "image_banner_collapsible_wTECAa": {
+      "type": "image-banner-collapsible",
+      "blocks": {
+        "accordion_UnkDNH": {
+          "type": "accordion",
+          "settings": {
+            "question": "EMF Shielding",
+            "accordion_heading_tag": "h5",
+            "answer": "Our Supercharged products can act as EMF shields, reducing the local effects harmful electromagnetic frequencies.",
+            "default_open": false
+          }
+        },
+        "accordion_mRNAye": {
+          "type": "accordion",
+          "settings": {
+            "question": "Permanent Charge",
+            "accordion_heading_tag": "h5",
+            "answer": "Supercharged Medallions carry the frequency signature of Light System™, permanently imprinted using this Quantum Concentrator technology.",
+            "default_open": false
+          }
+        },
+        "accordion_YtfUAj": {
+          "type": "accordion",
+          "settings": {
+            "question": "Intention In Mind",
+            "accordion_heading_tag": "h5",
+            "answer": "Choose the crystal and energetic signature that is right for you.",
+            "default_open": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_UnkDNH",
+        "accordion_mRNAye",
+        "accordion_YtfUAj"
+      ],
+      "name": "t:sections.image-banner-collapsible.name",
+      "settings": {
+        "image": "shopify://shop_images/supercharged.jpg",
+        "overlay_opacity": 0.2,
+        "overlay_opacity_mobile": 0.3,
+        "image_size": "21/9",
+        "section_heading": "Charged for Life",
+        "section_heading_size": "h2",
+        "section_heading_tag": "h3",
+        "section_subheading": "",
+        "pulse_animation_text": false,
+        "section_descr": "Supercharged Jewelry carries the frequency signature of Light System™, permanently imprinted using this Quantum Concentrator technology.",
+        "button_style": "primary",
+        "buttons_alignment": "left",
+        "button_label": "Find Your Perfect Match",
+        "button_link": "shopify://pages/find-your-ideal-crystal",
+        "link_label": "",
+        "link_link": "",
+        "margin_top": "s",
+        "margin_bottom": "s"
+      }
+    },
+    "blocks_mxByrh": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_9ac81c6_DRXtXx": {
+          "type": "ai_gen_block_9ac81c6",
+          "settings": {
+            "layout": "row-reverse",
+            "desktop_width_percent": 100,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "gap": 40,
+            "padding": 40,
+            "border_radius": 0,
+            "background_color": "#200a25",
+            "image": "shopify://shop_images/quantum-charger-bracelet.jpg",
+            "image_ratio": "4 / 3",
+            "image_border_radius": 8,
+            "image_background_color": "#200a25",
+            "heading": "Charged for Life",
+            "heading_font_size": 32,
+            "heading_color": "#ffffff",
+            "text": "<p>Quantum Charged Jewelry carries the frequency signature of Light System™, permanently imprinted using this Quantum Concentrator technology.</p><p>Scalar energy systems have become a foundational tool in consciousness-based wellness technologies. The Light System™ room-sized arrays have been developed into high density scalar chambers, designed to imprint energy into objects.</p><p>When specific materials such as crystal, various types of metal and organic material are charged, they exhibit heightened energetic fields.</p>",
+            "text_font_size": 18,
+            "text_color": "#e6daf6",
+            "text_padding": 10,
+            "text_background_color": "#200a25",
+            "text_border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_9ac81c6_DRXtXx"
+      ],
+      "disabled": true,
+      "name": "Image with text",
+      "settings": {}
+    },
+    "description_grid_XJKc3r": {
+      "type": "description-grid",
+      "blocks": {
+        "column_Y7AGEi": {
+          "type": "column",
+          "settings": {
+            "column_start": 1,
+            "column_end": 3,
+            "heading": "Increased Electrical Impedance in Living Cells",
+            "heading_size": "h5",
+            "heading_tag": "h5",
+            "text": "High Electrical Impedance is correlated with better cellular integrity, improved venous function, and decreased risk of swelling.",
+            "value": "4X",
+            "superscript": "Increase"
+          }
+        },
+        "column_Aj6ABh": {
+          "type": "column",
+          "settings": {
+            "column_start": 3,
+            "column_end": 5,
+            "heading": "Increased Electrical Impedance in Water",
+            "heading_size": "h5",
+            "heading_tag": "h5",
+            "text": "Research indicates that specialized, high-impedance environments can structure water. Water molecules organize into a more ordered, lattice-like structure.",
+            "value": "47%",
+            "superscript": "Increase"
+          }
+        }
+      },
+      "block_order": [
+        "column_Y7AGEi",
+        "column_Aj6ABh"
+      ],
+      "name": "t:sections.all.description_grid.name",
+      "settings": {
+        "columns": 4,
+        "section_heading": "Dr. Glen Rein",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "section_subheading": "Recent Studies",
+        "pulse_animation_text": true,
+        "description": "Impedance spectroscopy (EIS) is an electro-diagnostic method used in medicine which measures cellular charge.",
+        "section_heading_content_alignment": "left",
+        "margin_top": "s",
+        "margin_bottom": "xl"
+      }
+    },
+    "apps_F6bLtg": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_store_summary_wGe8Ja": {
+          "type": "shopify://apps/judge-me-reviews/blocks/store_summary/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "data_source": "real",
+            "theme": "expanded",
+            "button_theme_color": "#ffffff",
+            "button_theme_text_color": "#000000",
+            "show_keywords": true,
+            "keywords_visibility": "shown",
+            "show_button": true,
+            "button_visibility": "shown",
+            "alignment": "left",
+            "title_size": "large",
+            "text_size": "large",
+            "corner_styling": "round",
+            "widget_color": "#e6daf6",
+            "text_color": "#200a25",
+            "lighter_text_color": "#787878",
+            "button_color": "#9830ff",
+            "button_text_color": "#ffffff",
+            "show_sentiment_colors": false,
+            "max_width": 1100,
+            "heading_text": "",
+            "button_text": "See AI reviews summary"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_store_summary_wGe8Ja"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "blocks_eKiPi6": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c0c13d2_8gWUww": {
+          "type": "ai_gen_block_c0c13d2",
+          "settings": {
+            "heading": "Join our newsletter",
+            "subheading": "Get exclusive offers and updates delivered to your inbox",
+            "email_placeholder": "Enter your email",
+            "button_text": "Subscribe",
+            "success_message": "Thanks for subscribing!",
+            "desktop_width_percent": 100,
+            "content_max_width": 800,
+            "form_max_width": 600,
+            "text_alignment": "center",
+            "padding_top": 90,
+            "padding_bottom": 70,
+            "padding_horizontal": 20,
+            "heading_spacing": 15,
+            "form_spacing": 25,
+            "input_button_gap": 10,
+            "heading_size": 32,
+            "subheading_size": 16,
+            "input_font_size": 16,
+            "button_font_size": 16,
+            "background_color": "#200a25",
+            "heading_color": "#ffffff",
+            "text_color": "#e6daf6",
+            "success_color": "#18b200",
+            "error_color": "#e21200",
+            "input_background_color": "#361641",
+            "input_text_color": "#ffffff",
+            "input_placeholder_color": "#bda2df",
+            "input_border_color": "#b972ff",
+            "input_focus_border_color": "#bda2df",
+            "input_border_width": 1,
+            "input_border_radius": 8,
+            "input_padding": 14,
+            "button_background_color": "#07cbdc",
+            "button_hover_background_color": "#9830ff",
+            "button_text_color": "#ffffff",
+            "button_border_radius": 8,
+            "button_padding_horizontal": 32,
+            "border_radius": 16
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c0c13d2_8gWUww"
+      ],
+      "name": "Newsletter signup",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main-collection-banner",
+    "blocks_UH49Qq",
+    "17774991935a5e0e8d",
+    "main-collection",
+    "products_grid_VQWLqz",
+    "image_banner_collapsible_wTECAa",
+    "blocks_mxByrh",
+    "description_grid_XJKc3r",
+    "apps_F6bLtg",
+    "blocks_eKiPi6"
+  ]
+}

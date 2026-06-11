@@ -1,0 +1,451 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1772056183507da0b2": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_preview_badge_RtQjM9": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_preview_badge_RtQjM9"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "blocks_3CMLtR": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d97b95e_m94zeX": {
+          "type": "ai_gen_block_d97b95e",
+          "settings": {
+            "desktop_height": 20,
+            "mobile_height": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d97b95e_m94zeX"
+      ],
+      "name": "Spacer",
+      "settings": {}
+    },
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "product_title": {
+          "type": "product_title",
+          "settings": {
+            "badges_type": "inline",
+            "show_badges": false,
+            "section_heading_tag": "h2"
+          }
+        },
+        "judge_me_reviews_preview_badge_mANkpx": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "tls_product_tags_9NFaRE": {
+          "type": "tls_product_tags",
+          "settings": {}
+        },
+        "core_benefit": {
+          "type": "core_benefit",
+          "settings": {
+            "metafield_namespace": "custom",
+            "metafield_key": "core_benefit"
+          }
+        },
+        "short_description": {
+          "type": "short_description",
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_swatches": true
+          }
+        },
+        "product_description": {
+          "type": "product_description",
+          "disabled": true,
+          "settings": {
+            "title": "Global Healing",
+            "subtitle": "",
+            "pulse_animation_text": true,
+            "heading_size": "h4"
+          }
+        },
+        "specs_short": {
+          "type": "specs_short",
+          "disabled": true,
+          "settings": {}
+        },
+        "specs_long": {
+          "type": "specs_long",
+          "disabled": true,
+          "settings": {
+            "title": "What makes it unique",
+            "subtitle": "",
+            "pulse_animation_text": false,
+            "heading_size": "h3"
+          }
+        },
+        "instructions": {
+          "type": "instructions",
+          "disabled": true,
+          "settings": {
+            "title": "Product Guides and Documents",
+            "subtitle": "Instructions",
+            "pulse_animation_text": false,
+            "heading_size": "h3"
+          }
+        },
+        "buy_box": {
+          "type": "buy_box",
+          "settings": {
+            "show_sticky_add_to_cart": true,
+            "show_tax_info": false,
+            "show_shipping": false,
+            "show_dynamic_checkout": true,
+            "show_quantity": true,
+            "show_gift_card_recipient": false,
+            "show_discount": true,
+            "trust_signal_one": "Free shipping",
+            "trust_signal_two": "30 days return",
+            "trust_signal_three": "secure checout"
+          }
+        },
+        "benefits_grid_zdLWaQ": {
+          "type": "benefits_grid",
+          "settings": {
+            "heading": "Why Customers Love It",
+            "item_1_image": "shopify://shop_images/leaf.png",
+            "item_1_title": "Supports Nstural Detox",
+            "item_1_text": "",
+            "item_2_image": "shopify://shop_images/improve-energy_copy.png",
+            "item_2_title": "Improves Energy & Digestion",
+            "item_2_text": "",
+            "item_3_image": "shopify://shop_images/science.png",
+            "item_3_title": "Science-Backed Formula",
+            "item_3_text": "",
+            "item_4_image": "shopify://shop_images/worldwide.png",
+            "item_4_title": "Trusted Worldwide",
+            "item_4_text": ""
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "disabled": true,
+          "settings": {
+            "contdown_heading": "Hurry up! Sale ends soon",
+            "enable_mock_timer": true,
+            "mock_date_picker_day": 2,
+            "mock_date_picker_hours": 3,
+            "date_picker": "2025-10-01",
+            "time_picker": "00:00",
+            "completed_countdown": "show_text",
+            "text_after_countdown": "Header after countdown"
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {}
+        },
+        "pickup_availability": {
+          "type": "pickup_availability",
+          "disabled": true,
+          "settings": {}
+        },
+        "express_shipping": {
+          "type": "express_shipping",
+          "settings": {
+            "heading": "Shipping Info",
+            "text": "<p>Fast delivery options for your convenience</p>",
+            "pickup_title": "",
+            "pickup_text": "",
+            "pickup_price": "",
+            "standard_title": "Standard Domestic (U.S.)",
+            "standard_days": "Ships in 2 -3 business days",
+            "standard_price": "$9",
+            "standard_text": "Products that are in stock are shipped within 2 - 3 business days. (Free Shipping on U.S. orders over $100)",
+            "express_title": "Express International",
+            "express_days": "Delivers in 1 - 2 weeks",
+            "express_price": "$39",
+            "express_text": "We ship internationally to locations that permit; however, based on your location, shipping delays and local tariffs or fees may apply."
+          }
+        }
+      },
+      "block_order": [
+        "product_title",
+        "judge_me_reviews_preview_badge_mANkpx",
+        "tls_product_tags_9NFaRE",
+        "core_benefit",
+        "short_description",
+        "variant_picker",
+        "product_description",
+        "specs_short",
+        "specs_long",
+        "instructions",
+        "buy_box",
+        "benefits_grid_zdLWaQ",
+        "countdown",
+        "inventory",
+        "pickup_availability",
+        "express_shipping"
+      ],
+      "settings": {
+        "image_ratio": "1/1",
+        "image_fit": "cover",
+        "enable_video_looping": false,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent",
+        "padding_bottom": "s"
+      }
+    },
+    "tab_eUetqb": {
+      "type": "tab",
+      "blocks": {
+        "tab_GgjFfX": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Benefits",
+            "tab_content": "<p>Liposomal Glutathione may help with the following:</p><ul><li>Supports gut health and healthy glutathione levels*<br/></li><li>Supports the liver's natural detoxification*<br/></li><li>Provides antioxidant support for skin health*</li></ul>"
+          }
+        },
+        "tab_J44KHX": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Third Party Testing",
+            "tab_content": "<p>Tested for purity and safety by Certified Labs. Verified absence of harmful bacteria, heavy metals, and contaminants. Product meets all quality standards, with clear labeling and stability checks for your peace of mind.</p>"
+          }
+        },
+        "tab_i4zqjc": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Description",
+            "tab_content": "<p>Support your body’s natural defenses with this advanced liposomal glutathione formula. Glutathione is often called the body’s “master antioxidant,” playing a vital role in detoxification, immune health, and protecting cells from oxidative stress. This formula uses a liposomal delivery system, which helps protect glutathione through digestion and improves absorption, making it more effective than standard supplements.</p><p>Alongside glutathione, this formula also features PQQ, a powerful antioxidant compound that helps reduce oxidative stress and supports brain and mitochondrial health. With just the right amount of vitamin B2 to meet daily needs, this formula avoids excess dosing, offering practical, targeted support you can trust. Clean, convenient, and thoughtfully formulated to help you stay resilient and energized.</p>"
+          }
+        },
+        "tab_wUXmPc": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Global Healing",
+            "tab_content": "<p>Tap into the power of gold nanoparticles and biophotonic technology to give your body exactly what it needs. Liquid Gold helps boost brain function, detoxifies your system, fights oxidative stress, and supports overall holistic wellness.</p>"
+          }
+        },
+        "tab_4nLarj": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Why This Product Works",
+            "tab_content": "<p>Uses high-quality ingredients and advanced formulation to support better daily performance so you feel healthier and more energized.</p>"
+          }
+        },
+        "tab_nnBeTr": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab Title",
+            "tab_content": "<p>Add your tab content here.</p>"
+          }
+        },
+        "tab_mn6YUq": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab Title",
+            "tab_content": "<p>Add your tab content here.</p>"
+          }
+        },
+        "tab_MwJCDi": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab Title",
+            "tab_content": "<p>Add your tab content here.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "tab_GgjFfX",
+        "tab_J44KHX",
+        "tab_i4zqjc",
+        "tab_wUXmPc",
+        "tab_4nLarj",
+        "tab_nnBeTr",
+        "tab_mn6YUq",
+        "tab_MwJCDi"
+      ],
+      "name": "Custom Tabs Section",
+      "settings": {
+        "heading": "Product Information",
+        "heading_color": "#ffffff",
+        "tab_bg": "rgba(0,0,0,0)",
+        "tab_text": "#ffffff",
+        "tab_border": "rgba(0,0,0,0)",
+        "active_tab_text": "#ffffff",
+        "content_bg": "rgba(0,0,0,0)",
+        "content_border": "rgba(0,0,0,0)",
+        "content_text": "#ffffff"
+      }
+    },
+    "product_benifit_d69Rq9": {
+      "type": "product-benifit",
+      "disabled": true,
+      "name": "Product Benefit Explain",
+      "settings": {
+        "heading": "Why This Product Works",
+        "description": "<p>Uses high-quality ingredients and advanced formulation to support better daily performance so you feel healthier and more energized.</p>",
+        "bg_color": "#f8f8f8",
+        "border_color": "#e5e5e5",
+        "heading_color": "#111111",
+        "text_color": "#444444",
+        "heading_size": 24,
+        "text_size": 18,
+        "heading_size_mobile": 20,
+        "text_size_mobile": 16
+      }
+    },
+    "blocks_fncdfA": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_eacdf6c_rGP9wc": {
+          "type": "ai_gen_block_eacdf6c",
+          "settings": {
+            "layout": "row-reverse",
+            "image_width": 50,
+            "desktop_width_percent": 90,
+            "image": "shopify://shop_images/Screenshot_2026-02-24_at_10.29.32_AM.png",
+            "image_border_radius": 8,
+            "heading": "About Global Healing",
+            "heading_size": 32,
+            "heading_color": "#ffffff",
+            "text": "<p><strong>Empowering health through purity and nature. </strong>Founded in 1998, Global Healing empowers people to take charge of their health through natural, plant-based nutrition and holistic wellness. Their philosophy centers on supporting the body’s innate ability to heal itself by cleansing, nourishing, and addressing the root causes of imbalance rather than masking symptoms.</p>",
+            "text_size": 18,
+            "text_color": "#e6daf6",
+            "button_label": "Learn more",
+            "button_link": "",
+            "button_text_size": 16,
+            "button_background": "#07cbdc",
+            "button_background_hover": "#9830ff",
+            "button_text_color": "#ffffff",
+            "button_border_radius": 4,
+            "spacing": 40,
+            "text_spacing": 20,
+            "padding_top": 40,
+            "padding_bottom": 70,
+            "padding_horizontal": 40,
+            "background_color": "#200a25",
+            "border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_eacdf6c_rGP9wc"
+      ],
+      "name": "Image with text",
+      "settings": {}
+    },
+    "blocks_qU4aUM": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_db8804b_LX4AGd": {
+          "type": "ai_gen_block_db8804b",
+          "settings": {
+            "heading": "",
+            "text": "<p><em>“I truly believe my purpose on this planet is to clean our environment and assist in the rise of consciousness so we can all live in a future filled with light, love, health, and happiness. The philosophy I follow is full body cleansing, clean, organic food, water, air, exercise, and nutritional supplementation.\"</em></p><p><em>- Dr. Edward F. Group III, DC, NP</em></p>",
+            "content_max_width": 800,
+            "desktop_width_percent": 100,
+            "heading_font": "lato_n7",
+            "heading_size": 32,
+            "heading_color": "#ffffff",
+            "heading_spacing": 20,
+            "text_size": 20,
+            "text_color": "#ffffff",
+            "text_line_height": 1.4,
+            "paragraph_spacing": 15,
+            "background_color": "#000000",
+            "padding_top": 60,
+            "padding_bottom": 60,
+            "padding_horizontal": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_db8804b_LX4AGd"
+      ],
+      "name": "Centered text block",
+      "settings": {}
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "columns_per_row": 4,
+        "products_limit": 4,
+        "swipe_on_mobile": true,
+        "section_heading": "You may also like",
+        "section_heading_size": "h3",
+        "section_heading_tag": "h3",
+        "subtitle": "You Might Also Like",
+        "pulse_animation_text": false,
+        "section_button_label": "",
+        "section_button_link": "",
+        "section_button_style": "secondary",
+        "image_ratio": "1/1",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_collection": false,
+        "show_desc": false,
+        "product_heading_tag": "h3",
+        "margin_top": "m",
+        "margin_bottom": "m"
+      }
+    },
+    "17720562004d358a5a": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_XfFbXJ": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": true,
+            "empty_state": "hide_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_XfFbXJ"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "1772056183507da0b2",
+    "blocks_3CMLtR",
+    "main-product",
+    "tab_eUetqb",
+    "product_benifit_d69Rq9",
+    "blocks_fncdfA",
+    "blocks_qU4aUM",
+    "product-recommendations",
+    "17720562004d358a5a"
+  ]
+}

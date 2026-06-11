@@ -1,0 +1,32 @@
+<div class="product-benefits-grid">
+	{% if block.settings.heading != blank %}
+		<h3 class="product-benefits-grid__heading">{{ block.settings.heading }}</h3>
+	{% endif %}
+
+	<div class="product-benefits-grid__items">
+		{% for i in (1..4) %}
+			{%- assign image_key = "item_" | append: i | append: "_image" -%}
+			{%- assign title_key = "item_" | append: i | append: "_title" -%}
+			{%- assign text_key = "item_" | append: i | append: "_text" -%}
+			{%- assign image = block.settings[image_key] -%}
+			{%- assign title = block.settings[title_key] -%}
+			{%- assign text = block.settings[text_key] -%}
+
+			{% if title != blank %}
+				<div class="product-benefits-grid__item">
+					{% if image != blank %}
+						<div class="product-benefits-grid__icon">
+							{{ image | img_tag: alt: title, class: 'product-benefits-grid__icon-img' }}
+						</div>
+					{% endif %}
+					<div class="product-benefits-grid__content">
+						<p class="product-benefits-grid__title">{{ title }}</p>
+						{% if text != blank %}
+							<p class="product-benefits-grid__text">{{ text }}</p>
+						{% endif %}
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

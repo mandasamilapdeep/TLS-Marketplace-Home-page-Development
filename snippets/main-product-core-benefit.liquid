@@ -1,0 +1,11 @@
+{%- liquid
+  assign metafield_namespace = block.settings.metafield_namespace | default: 'custom'
+  assign metafield_key = block.settings.metafield_key | default: 'core_benefit'
+  assign benefit_text = product.metafields[metafield_namespace][metafield_key].value
+-%}
+
+{%- if benefit_text != blank -%}
+  <div class="core-benefit" {{ block.shopify_attributes }}>
+    <p>{{ benefit_text }}</p>
+  </div>
+{%- endif -%}
