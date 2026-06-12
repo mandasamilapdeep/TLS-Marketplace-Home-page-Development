@@ -2,3 +2,107 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
+
+.custom_image-with-text .image-with-text__media img {
+    position: unset;
+}
+
+.custom_image-with-text .image-with-text__wrapper {
+    position: relative;
+    overflow: unset;
+}
+
+.background-image-with-text-section h5.sub_title {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 0;
+    font-weight: 100;
+}
+
+.background-image-with-text-section span.line {
+    position: absolute;
+    width: calc(100% + 25px);
+    height: 1px;
+    background: #fff;
+    left: 0;
+    bottom: -20px;
+}
+
+.background-image-with-text-section span.line span.dot {
+    position: absolute;
+    width: 100%;
+    background: transparent;
+    height: 1px;
+}
+
+.background-image-with-text-section .first_title {
+    margin-bottom: 0;
+}
+
+.background-image-with-text-section .second_title {
+    margin: 0;
+}
+
+.background-image-with-text-section .icon_with_text_box_outer {
+    overflow: hidden;
+}
+
+.background-image-with-text-section .icon_with_text_box_inner {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.background-image-with-text-section .icon_with_text_box_inner::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.background-image-with-text-section .button_box_inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.background-image-with-text-section .button_box_inner .button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1;
+    padding: 15px 20px;
+    border-radius: 50px;
+}
+
+.background-image-with-text-section-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.background-image-with-text-section-inner .image_box img {
+    width: 100%;
+    height: auto;
+}
+
+.background-image-with-text-section-inner .image_box .mobile_image_box {
+    display: none;
+}
+
+@media(max-width:768px) {
+    .background-image-with-text-section span.line {
+        width: 100%
+    }
+
+    .background-image-with-text-section-inner .image_box .mobile_image_box {
+        display: block;
+    }
+
+    .background-image-with-text-section-inner .image_box .desktop_image_box {
+        display: none;
+    }
+
+    .background-image-with-text-section .button_box_inner .button {
+        padding: 10px 20px;
+    }
+
+}

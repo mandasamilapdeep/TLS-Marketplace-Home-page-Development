@@ -89,10 +89,10 @@
       "settings": {
         "header_type": "left-logo-second",
         "logo": "shopify://shop_images/TLSMarketplaceLogo-white_f2cb3638-dfe8-4481-86bf-0c040676e3fe.png",
-        "logo_width": 110,
+        "logo_width": 140,
         "menu_top": "",
         "menu": "main-menu",
-        "main_menu_desktop_background_color": "#080218",
+        "main_menu_desktop_background_color": "#361641",
         "main_menu_desktop_background_opacity": 30,
         "main_menu_desktop_text_color": "#000000",
         "enable_country_selector": false,

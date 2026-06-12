@@ -68,6 +68,7 @@
   	{% if section.settings.header_backround_transparent_only_home_page %}
 
   	{% if template == 'index' %}
+      @media screen and (min-width: 1100px) {
   		.shopify-section-header {
   		background: transparent !important;
   		}
@@ -75,7 +76,7 @@
   		.header-wrapper {
   		background: transparent !important;
   		}
-
+    }
   		#MainContent {
   		position: relative;
   		}
