@@ -1,3 +1,12 @@
+@media(min-width:1200px) {
+    .container_full {
+        padding-left: 40px;
+        padding-right: 40px;
+        max-width: 1920px;
+        width: 100%;
+    }
+}
+
 .shopify-section-header.header-blur {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -16,7 +25,13 @@
     display: inline-block;
     position: relative;
     margin-bottom: 0;
-    font-weight: 100;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.background-image-with-text-section span.badge {
+    padding: 5px 10px;
+    border-radius: 6px;
 }
 
 .background-image-with-text-section span.line {
@@ -71,6 +86,8 @@
     line-height: 1;
     padding: 15px 20px;
     border-radius: 50px;
+    min-width: 180px;
+    justify-content: center;
 }
 
 .background-image-with-text-section-inner {
@@ -105,4 +122,7 @@
         padding: 10px 20px;
     }
 
+    .background-image-with-text-section h5.sub_title {
+        margin-top: 15px;
+    }
 }

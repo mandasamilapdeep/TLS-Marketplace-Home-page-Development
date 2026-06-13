@@ -9,8 +9,29 @@
         background-color: {{ section.settings.bg_color }};
 
       }
+      
+      #background-image-with-text-section_{{ section.id }} .container .background-image-with-text-section-inner{
+        padding-top: {{ section.settings.container_padding_top_desktop }}px;
+        padding-bottom: {{ section.settings.container_padding_bottom_desktop }}px;
+        padding-left: {{ section.settings.container_padding_left_desktop }}px;
+        padding-right: {{ section.settings.container_padding_right_desktop }}px;
+        background-image: url("{{ section.settings.container_bg_image_desktop | image_url }}");
+        background-size: contain;
+        background-position: right;
+        background-repeat: no-repeat;
+        {% if section.settings.container_border_color_show == true %}
+          border: 1px solid {{ section.settings.container_border_color }};
+          border-radius: {{ section.settings.container_border_radius_desktop }}px;
+        {% endif %}
+        overflow: hidden;
+
+      }
       #background-image-with-text-section_{{ section.id }} .text_box_outer {
         max-width: {{ section.settings.text_box_max_width }}px;
+        padding-left: {{ section.settings.text_box_padding_left_desktop }}px;
+        padding-right: {{ section.settings.text_box_padding_right_desktop }}px;
+        padding-top: {{ section.settings.text_box_padding_top_desktop }}px;
+        padding-bottom: {{ section.settings.text_box_padding_bottom_desktop }}px;
         width: 100%;
       }
       #background-image-with-text-section_{{ section.id }} .image_box {
@@ -59,6 +80,7 @@
       }
       #background-image-with-text-section_{{ section.id }} .first_title {
         max-width: {{ section.settings.first_title_max_width }}px;
+        margin-top: {{ section.settings.first_title_margin_top_dekstop }}px;
       }
       #background-image-with-text-section_{{ section.id }} .title.second_title {
         background: {{ section.settings.second_title_gradient }};
@@ -110,6 +132,10 @@
         align-items: center;
         gap: 25px;
       }
+      #background-image-with-text-section_{{ section.id }} .badge {
+        font-size: {{ section.settings.badge_font_size_dekstop }}px;
+        line-height: 1;
+      }
 
     @media(max-width: 768px) {
     #background-image-with-text-section_{{ section.id }} {
@@ -142,19 +168,54 @@
         max-width: 100%;
         width: 100%;
       }
+      #background-image-with-text-section_{{ section.id }} .first_title {
+        margin-top: {{ section.settings.first_title_margin_top_mobile }}px;
+      }
+      #background-image-with-text-section_{{ section.id }} .container .background-image-with-text-section-inner{
+        padding-top: {{ section.settings.container_padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.container_padding_bottom_mobile }}px;
+        padding-left: {{ section.settings.container_padding_left_mobile }}px;
+        padding-right: {{ section.settings.container_padding_right_mobile }}px;
+        background-image: url("{{ section.settings.container_bg_image_mobile | image_url }}");
+        background-size: contain;
+        background-position: right;
+        background-repeat: no-repeat;
+        border-radius: {{ section.settings.container_border_radius_mobile }}px;
+      }
+      #background-image-with-text-section_{{ section.id }} .text_box_outer {
+        padding-left: {{ section.settings.text_box_padding_left_mobile }}px;
+        padding-right: {{ section.settings.text_box_padding_right_mobile }}px;
+        padding-top: {{ section.settings.text_box_padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.text_box_padding_bottom_mobile }}px;
+      }
+      #background-image-with-text-section_{{ section.id }} .badge {
+        font-size: {{ section.settings.badge_font_size_mobile }}px;
+      }
   }
 {% endstyle %}
 <div id="background-image-with-text-section_{{ section.id }}" class="background-image-with-text-section">
-  <div class="container">
+  <div class="container{% if section.settings.full_width_container %} container_full{% endif %}">
     <div class="background-image-with-text-section-inner">
       <div class="text_box_outer">
         <div class="text_box">
+          {% if section.settings.badge_text != blank %} 
+          <div>  
+          <span class="badge"
+            style="background: {{ section.settings.badge_background_gradient }}; color: {{ section.settings.badge_text_color }};"
+          >
+            {{ section.settings.badge_text }}
+          </span>
+          </div>
+          {% endif %}
+
           {% if section.settings.subtitle != blank %}
             <h5 class="sub_title">
               {{ section.settings.subtitle }}
-              <span class="line" style="background: {{ section.settings.subtitle_line_gradient }};">
-                <span class="dot"></span>
-              </span>
+              {% if section.settings.subtitle_line_hide == false %}
+                <span class="line" style="background: {{ section.settings.subtitle_line_gradient }};">
+                  <span class="dot"></span>
+                </span>
+              {% endif %}
             </h5>
           {% endif %}
           {% if section.settings.first_title != blank %}
@@ -263,7 +324,6 @@
 {
   "name": "BG Image With Text",
   "tag": "section",
-  "limit": 1,
   "settings": [
     {
       "type": "color",
@@ -291,6 +351,141 @@
       "label": "Image mobile"
     },
     {
+      "type": "header",
+      "content": "Container settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width_container",
+      "label": "Full width container",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "container_bg_image_desktop",
+      "label": "Container background image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "container_bg_image_mobile",
+      "label": "Container background image mobile"
+    },
+    {
+      "type": "range",
+      "id": "container_padding_top_desktop",
+      "label": "Container padding top desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "container_padding_bottom_desktop",
+      "label": "Container padding bottom desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "container_padding_left_desktop",
+      "label": "Container padding left desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "container_padding_right_desktop",
+      "label": "Container padding right desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "container_padding_top_mobile",
+      "label": "Container padding top mobile",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "container_padding_bottom_mobile",
+      "label": "Container padding bottom mobile",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "container_padding_left_mobile",
+      "label": "Container padding left mobile",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "container_padding_right_mobile",
+      "label": "Container padding right mobile",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "container_border_color_show",
+      "label": "Container border color show",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "container_border_color",
+      "label": "Container border color"
+    },
+    {
+      "type": "range",
+      "id": "container_border_radius_desktop",
+      "label": "Container border radius desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "container_border_radius_mobile",
+      "label": "Container border radius mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Text box settings"
+    },
+    {
       "type": "range",
       "id": "text_box_max_width",
       "label": "Text box max width",
@@ -301,8 +496,129 @@
       "default": 600
     },
     {
+      "type": "range",
+      "id": "text_box_padding_left_desktop",
+      "label": "Text box padding left desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "text_box_padding_right_desktop",
+      "label": "Text box padding right desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "text_box_padding_top_desktop",
+      "label": "Text box padding top desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "text_box_padding_bottom_desktop",
+      "label": "Text box padding bottom desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "text_box_padding_left_mobile",
+      "label": "Text box padding left mobile",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "text_box_padding_right_mobile",
+      "label": "Text box padding right mobile",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "text_box_padding_top_mobile",
+      "label": "Text box padding top mobile",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "text_box_padding_bottom_mobile",
+      "label": "Text box padding bottom mobile",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
       "type": "header",
-      "content": "Sub title"
+      "content": "Badge settings"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text color",
+      "default": "#fff"
+    },
+    {
+      "type": "color_background",
+      "id": "badge_background_gradient",
+      "label": "Badge background gradient",
+      "default": "linear-gradient(90deg, #a62b48 0%, #d2768d 100%)"
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size_dekstop",
+      "label": "Badge font size dekstop",
+      "min": 8,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size_mobile",
+      "label": "Badge font size mobile",
+      "min": 8,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Sub title settings"
     },
     {
       "type": "text",
@@ -320,6 +636,12 @@
       "id": "subtitle_line_gradient",
       "label": "Subtitle line gradient",
       "default": "linear-gradient(90deg, #a62b48 0%, #d2768d 100%)"
+    },
+    {
+      "type": "checkbox",
+      "id": "subtitle_line_hide",
+      "label": "hide subtitle line",
+      "default": false
     },
     {
       "type": "color",
@@ -381,6 +703,26 @@
       "step": 20,
       "unit": "px",
       "default": 200
+    },
+    {
+      "type": "range",
+      "id": "first_title_margin_top_dekstop",
+      "label": "First title margin top dekstop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "first_title_margin_top_mobile",
+      "label": "First title margin top mobile",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0
     },
     {
       "type": "text",

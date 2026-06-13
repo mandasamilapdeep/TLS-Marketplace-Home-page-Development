@@ -33,6 +33,21 @@
 		]
 	},
 	{
+		"name": "Body",
+		"settings": [
+			{
+				"type": "range",
+				"id": "body_max_width",
+				"min": 1200,
+				"max": 2000,
+				"step": 20,
+				"unit": "px",
+				"label": "Body Max Width",
+				"default": 1920
+			}
+		]
+	},
+	{
 		"name": "t:settings_schema.colors.name",
 		"settings": [
 			{
@@ -333,61 +348,53 @@
 			}
 		]
 	},
-{
-  "name": "Exit Intent Popup",
-  "settings": [
-
-    {
-      "type": "checkbox",
-      "id": "enable_exit_popup",
-      "label": "Enable Popup",
-      "default": true
-    },
-
-    {
-      "type": "image_picker",
-      "id": "ei_popup_image",
-      "label": "Popup Image"
-    },
-
-    {
-      "type": "text",
-      "id": "ei_popup_badge",
-      "label": "Badge",
-      "default": "LIMITED OFFER"
-    },
-
-    {
-      "type": "text",
-      "id": "ei_popup_heading",
-      "label": "Heading",
-      "default": "Get 10% OFF Your First Order"
-    },
-
-    {
-      "type": "textarea",
-      "id": "ei_popup_text",
-      "label": "Text",
-      "default": "Before you leave, copy your exclusive discount code and save instantly."
-    },
-
-    {
-      "type": "text",
-      "id": "ei_discount_code",
-      "label": "Discount Code",
-      "default": "WELCOME10"
-    },
-
-    {
-      "type": "text",
-      "id": "ei_button_text",
-      "label": "Button Text",
-      "default": "Copy Code"
-    }
-
-  ]
-},
-{
+	{
+		"name": "Exit Intent Popup",
+		"settings": [
+			{
+				"type": "checkbox",
+				"id": "enable_exit_popup",
+				"label": "Enable Popup",
+				"default": true
+			},
+			{
+				"type": "image_picker",
+				"id": "ei_popup_image",
+				"label": "Popup Image"
+			},
+			{
+				"type": "text",
+				"id": "ei_popup_badge",
+				"label": "Badge",
+				"default": "LIMITED OFFER"
+			},
+			{
+				"type": "text",
+				"id": "ei_popup_heading",
+				"label": "Heading",
+				"default": "Get 10% OFF Your First Order"
+			},
+			{
+				"type": "textarea",
+				"id": "ei_popup_text",
+				"label": "Text",
+				"default": "Before you leave, copy your exclusive discount code and save instantly."
+			},
+			{
+				"type": "text",
+				"id": "ei_discount_code",
+				"label": "Discount Code",
+				"default": "WELCOME10"
+			},
+			{
+				"type": "text",
+				"id": "ei_button_text",
+				"label": "Button Text",
+				"default": "Copy Code"
+			}
+		]
+	},
+	{
 		"name": "t:settings_schema.typography.name",
 		"settings": [
 			{
