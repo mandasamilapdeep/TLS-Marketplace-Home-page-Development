@@ -1,0 +1,256 @@
+{{ 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' | stylesheet_tag }}
+
+<style>
+  #shopify-section-{{ section.id }} .icon_with_text_main {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .container {
+    background: {{ section.settings.container_bg }};
+    border: 1px solid {{ section.settings.container_border }};
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .icon_with_text_inner {
+    padding: 20px;
+  }
+
+  #shopify-section-{{ section.id }} .icon_with_text_single {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .icon_with_text_icon {
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .icon_with_text_icon img {
+    max-width: 40px;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .icon_with_text_content h3 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} .icon_with_text_content p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  #shopify-section-{{ section.id }} .swiper-button-prev,
+  #shopify-section-{{ section.id }} .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,.1);
+    border-radius: 50%;
+  }
+
+  #shopify-section-{{ section.id }} .swiper-button-prev:after,
+  #shopify-section-{{ section.id }} .swiper-button-next:after {
+    font-size: 16px;
+    color: currentColor;
+  }
+</style>
+
+<div class="icon_with_text_main">
+  <div class="container">
+    <div
+      id="{{ section.id }}_icon_with_text_inner"
+      class="swiper icon_with_text_inner"
+      data-desktop="{{ section.settings.desktop_slides }}"
+      data-tablet="{{ section.settings.tablet_slides }}"
+      data-mobile="{{ section.settings.mobile_slides }}"
+    >
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div
+            class="swiper-slide icon_with_text_single"
+            {{ block.shopify_attributes }}
+          >
+            {% if block.settings.icon != blank %}
+              <div class="icon_with_text_icon">
+                {{ block.settings.icon | image_url: width: 100 | image_tag: loading: 'lazy' }}
+              </div>
+            {% endif %}
+
+            <div class="icon_with_text_content">
+              {% if block.settings.heading != blank %}
+                <h3>{{ block.settings.heading }}</h3>
+              {% endif %}
+
+              {% if block.settings.text != blank %}
+                <p>{{ block.settings.text }}</p>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if section.blocks.size > section.settings.desktop_slides %}
+        <div class="swiper-button-prev {{ section.id }}-prev"></div>
+        <div class="swiper-button-next {{ section.id }}-next"></div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('#{{ section.id }}_icon_with_text_inner');
+
+    if (!slider) return;
+
+    const desktopSlides = Number(slider.dataset.desktop);
+    const tabletSlides = Number(slider.dataset.tablet);
+    const mobileSlides = Number(slider.dataset.mobile);
+
+    const totalSlides = slider.querySelectorAll('.swiper-slide').length;
+
+    new Swiper('#{{ section.id }}_icon_with_text_inner', {
+      slidesPerView: mobileSlides,
+      spaceBetween: 20,
+      speed: 600,
+
+      navigation:
+        totalSlides > desktopSlides
+          ? {
+              nextEl: '.{{ section.id }}-next',
+              prevEl: '.{{ section.id }}-prev',
+            }
+          : false,
+
+      breakpoints: {
+        768: {
+          slidesPerView: tabletSlides,
+        },
+        1024: {
+          slidesPerView: desktopSlides,
+        },
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Icon With Text",
+  "tag": "section",
+  "class": "section-icon-with-text",
+  "settings": [
+    {
+      "type": "range",
+      "id": "desktop_slides",
+      "label": "Desktop Slides",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "tablet_slides",
+      "label": "Tablet Slides",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "mobile_slides",
+      "label": "Mobile Slides",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "container_bg",
+      "label": "Container Background",
+      "default": "#0f0620"
+    },
+    {
+      "type": "color",
+      "id": "container_border",
+      "label": "Container Border Color",
+      "default": "#3a215c"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Icon Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "100,000+"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Happy Customers"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon With Text",
+      "blocks": [
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
