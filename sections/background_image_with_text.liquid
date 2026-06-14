@@ -16,14 +16,18 @@
         padding-left: {{ section.settings.container_padding_left_desktop }}px;
         padding-right: {{ section.settings.container_padding_right_desktop }}px;
         background-image: url("{{ section.settings.container_bg_image_desktop | image_url }}");
-        background-size: contain;
-        background-position: right;
+        background-size: {{ section.settings.container_bg_image_desktop_size }};
+        background-position: {{ section.settings.container_bg_image_desktop_postion }};
         background-repeat: no-repeat;
         {% if section.settings.container_border_color_show == true %}
           border: 1px solid {{ section.settings.container_border_color }};
           border-radius: {{ section.settings.container_border_radius_desktop }}px;
         {% endif %}
         overflow: hidden;
+        {% if section.settings.image_desktop == blank and section.settings.text_align_center == true %}
+        justify-content:center;
+        text-align:center;
+        {% endif %}
 
       }
       #background-image-with-text-section_{{ section.id }} .text_box_outer {
@@ -34,10 +38,12 @@
         padding-bottom: {{ section.settings.text_box_padding_bottom_desktop }}px;
         width: 100%;
       }
+      {% if section.settings.image_desktop != blank %}
       #background-image-with-text-section_{{ section.id }} .image_box {
         max-width: calc(100% - {{ section.settings.text_box_max_width }}px);
         width: 100%;
       }
+      {% endif %}
       #background-image-with-text-section_{{ section.id }} span.line span.dot {
           width: 100%;
           background: transparent;
@@ -77,6 +83,10 @@
       #background-image-with-text-section_{{ section.id }} .title {
         color: {{ section.settings.title_color }};
         font-size: {{ section.settings.title_font_size_dekstop }}px;
+        {% if section.settings.image_desktop == blank and section.settings.text_align_center == true %}
+        margin-left: auto;
+        margin-right: auto;
+      {% endif %}
       }
       #background-image-with-text-section_{{ section.id }} .first_title {
         max-width: {{ section.settings.first_title_max_width }}px;
@@ -92,6 +102,15 @@
         font-size: {{ section.settings.text_font_size_desktop }}px;
         max-width: {{ section.settings.text_max_width }}px;
         margin-top: {{ section.settings.text_margin_top_desktop }}px;
+        {% if section.settings.image_desktop == blank and section.settings.text_align_center == true %}
+        margin-left: auto;
+        margin-right: auto;
+      {% endif %}
+      }
+      #background-image-with-text-section_{{ section.id }} .button_box_inner {
+        {% if section.settings.image_desktop == blank and section.settings.text_align_center == true %}
+        justify-content: center;
+      {% endif %}
       }
 
       #background-image-with-text-section_{{ section.id }} .icon_with_text_box {
@@ -124,6 +143,7 @@
         justify-content: center;
         align-items: center;
       }
+
       #background-image-with-text-section_{{ section.id }} .icon_with_text svg path {
         stroke: {{ section.settings.icon_text_color }};
       }
@@ -136,6 +156,8 @@
         font-size: {{ section.settings.badge_font_size_dekstop }}px;
         line-height: 1;
       }
+      
+      
 
     @media(max-width: 768px) {
     #background-image-with-text-section_{{ section.id }} {
@@ -178,7 +200,7 @@
         padding-right: {{ section.settings.container_padding_right_mobile }}px;
         background-image: url("{{ section.settings.container_bg_image_mobile | image_url }}");
         background-size: contain;
-        background-position: right;
+        background-position: {{ section.settings.container_bg_image_mobile_postion }};
         background-repeat: no-repeat;
         border-radius: {{ section.settings.container_border_radius_mobile }}px;
       }
@@ -366,9 +388,73 @@
       "label": "Container background image desktop"
     },
     {
+      "type": "select",
+      "id": "container_bg_image_desktop_postion",
+      "label": "Container background image desktop postion",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "select",
+      "id": "container_bg_image_desktop_size",
+      "label": "Container background image desktop size",
+      "options": [
+        {
+          "value": "contain",
+          "label": "Contain"
+        },
+        {
+          "value": "cover",
+          "label": "Cover"
+        }
+      ],
+      "default": "contain"
+    },
+    {
       "type": "image_picker",
       "id": "container_bg_image_mobile",
       "label": "Container background image mobile"
+    },
+    {
+      "type": "select",
+      "id": "container_bg_image_mobile_postion",
+      "label": "Container background image mobile postion",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "right"
     },
     {
       "type": "range",
@@ -385,7 +471,7 @@
       "id": "container_padding_bottom_desktop",
       "label": "Container padding bottom desktop",
       "min": 0,
-      "max": 200,
+      "max": 400,
       "step": 5,
       "unit": "px",
       "default": 0
@@ -574,6 +660,26 @@
       "step": 5,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "select",
+      "id": "text_box_alignment",
+      "label": "Text box alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
     },
     {
       "type": "header",
@@ -765,6 +871,13 @@
       "type": "richtext",
       "id": "text",
       "label": "Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "text_align_center",
+      "label": "Text align center",
+      "default": false,
+      "info": "It's only apply if image is blank"
     },
     {
       "type": "range",

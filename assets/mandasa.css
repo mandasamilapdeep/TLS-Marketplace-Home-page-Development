@@ -105,6 +105,25 @@
     display: none;
 }
 
+.swiper-slide.icon_with_text_single.swiper-slide-active .icon_with_text_single_inner {
+    border: none !important;
+}
+
+.icon_with_text_main .swiper-arrow {
+    display: none;
+}
+
+.icon_with_text_main .icon_with_text_content h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon_with_text_main .icon_with_text_content h3 .heading_badge {
+    display: inline-flex;
+    align-items: center;
+}
+
 @media(max-width:768px) {
     .background-image-with-text-section span.line {
         width: 100%

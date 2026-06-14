@@ -1,108 +1,165 @@
-{{ 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' | stylesheet_tag }}
-
 <style>
-  #shopify-section-{{ section.id }} .icon_with_text_main {
-    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    #shopify-section-{{ section.id }} .icon_with_text_main {
+      padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    }
+
+    #shopify-section-{{ section.id }} .container_inner {
+      background: {{ section.settings.container_bg }};
+      border: 1px solid {{ section.settings.container_border }};
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #shopify-section-{{ section.id }} .icon_with_text_inner {
+      padding: 20px;
+    }
+    #shopify-section-{{ section.id }} .icon_with_text_single_outer {
+      padding: 0 5px
+    }
+    #shopify-section-{{ section.id }} .icon_with_text_single_inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      height: 100%;
+    }
+    #shopify-section-{{ section.id }} .swiper-wrapper {
+      align-items: center;
   }
 
-  #shopify-section-{{ section.id }} .container {
-    background: {{ section.settings.container_bg }};
-    border: 1px solid {{ section.settings.container_border }};
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-  }
+    #shopify-section-{{ section.id }} .icon_with_text_icon {
+      flex-shrink: 0;
+    }
 
-  #shopify-section-{{ section.id }} .icon_with_text_inner {
-    padding: 20px;
-  }
+    #shopify-section-{{ section.id }} .icon_with_text_icon img {
+      max-width: {{ section.settings.icon_desktop_width }}px;
+      display: block;
+      height: auto;
+    }
 
-  #shopify-section-{{ section.id }} .icon_with_text_single {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    height: 100%;
-  }
+    #shopify-section-{{ section.id }} .icon_with_text_content h3 {
+      margin: 0;
+      font-size: {{ section.settings.heading_font_size_desktop }}px;
+    }
 
-  #shopify-section-{{ section.id }} .icon_with_text_icon {
-    flex-shrink: 0;
-  }
+    #shopify-section-{{ section.id }} .icon_with_text_content p {
+      margin: 5px 0 0;
+      font-size: {{ section.settings.text_font_size_desktop }}px;
+    }
 
-  #shopify-section-{{ section.id }} .icon_with_text_icon img {
-    max-width: 40px;
-    display: block;
-  }
+    #shopify-section-{{ section.id }} .swiper-button-prev,
+    #shopify-section-{{ section.id }} .swiper-button-next {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,.1);
+      border-radius: 50%;
+    }
 
-  #shopify-section-{{ section.id }} .icon_with_text_content h3 {
-    margin: 0;
-    font-size: 28px;
-    line-height: 1.2;
-  }
+    #shopify-section-{{ section.id }} .swiper-button-prev:after,
+    #shopify-section-{{ section.id }} .swiper-button-next:after {
+      font-size: 16px;
+      color: #fff;
+    }
 
-  #shopify-section-{{ section.id }} .icon_with_text_content p {
-    margin: 5px 0 0;
-    font-size: 16px;
-    line-height: 1.4;
-  }
-
-  #shopify-section-{{ section.id }} .swiper-button-prev,
-  #shopify-section-{{ section.id }} .swiper-button-next {
-    width: 40px;
-    height: 40px;
-    background: rgba(255,255,255,.1);
-    border-radius: 50%;
-  }
-
-  #shopify-section-{{ section.id }} .swiper-button-prev:after,
-  #shopify-section-{{ section.id }} .swiper-button-next:after {
-    font-size: 16px;
-    color: currentColor;
-  }
+    {% if section.blocks.size > section.settings.desktop_slides %}
+      #shopify-section-{{ section.id }} .swiper-arrow {
+        display: flex;
+      }
+    {% endif %}
+    @media(max-width: 1280px){
+      {% if section.blocks.size > section.settings.tablet_slides %}
+        #shopify-section-{{ section.id }} .swiper-arrow {
+          display: flex;
+        }
+      {% endif %}
+    }
+    @media(max-width: 1024px){
+      {% if section.blocks.size > section.settings.mobile_slides %}
+        #shopify-section-{{ section.id }} .swiper-arrow {
+          display: flex;
+        }
+      {% endif %}
+    }
+    @media(max-width: 768px){
+      #shopify-section-{{ section.id }} .icon_with_text_icon img {
+      max-width: {{ section.settings.icon_mobile_width }}px;
+    }
+    #shopify-section-{{ section.id }} .icon_with_text_content h3 {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+    }
+    #shopify-section-{{ section.id }} .icon_with_text_content p {
+      font-size: {{ section.settings.text_font_size_mobile }}px;
+    }
+    }
 </style>
 
 <div class="icon_with_text_main">
-  <div class="container">
-    <div
-      id="{{ section.id }}_icon_with_text_inner"
-      class="swiper icon_with_text_inner"
-      data-desktop="{{ section.settings.desktop_slides }}"
-      data-tablet="{{ section.settings.tablet_slides }}"
-      data-mobile="{{ section.settings.mobile_slides }}"
-    >
-      <div class="swiper-wrapper">
-        {% for block in section.blocks %}
-          <div
-            class="swiper-slide icon_with_text_single"
-            {{ block.shopify_attributes }}
-          >
-            {% if block.settings.icon != blank %}
-              <div class="icon_with_text_icon">
-                {{ block.settings.icon | image_url: width: 100 | image_tag: loading: 'lazy' }}
+  <div class="container {% if section.settings.full_width_container %} container_full {% endif %}">
+    <div class="container_inner">
+      <div
+        id="{{ section.id }}_icon_with_text_inner"
+        class="swiper icon_with_text_inner"
+        data-desktop="{{ section.settings.desktop_slides }}"
+        data-tablet="{{ section.settings.tablet_slides }}"
+        data-mobile="{{ section.settings.mobile_slides }}"
+      >
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div
+              class="swiper-slide icon_with_text_single"
+              {{ block.shopify_attributes }}
+            >
+              <div class="icon_with_text_single_outer">
+                <div
+                  class="icon_with_text_single_inner"
+                  style="
+                    {% unless forloop.first %}
+                      border-left: 1px solid {{ section.settings.block_left_border }}
+                    {% endunless %}
+                  "
+                >
+                  {% if block.settings.icon != blank %}
+                    <div class="icon_with_text_icon">
+                      {{ block.settings.icon | image_url: width: 100 | image_tag: loading: 'lazy' }}
+                    </div>
+                  {% endif %}
+
+                  <div class="icon_with_text_content">
+                    {% if block.settings.heading != blank %}
+                      <h3>
+                        {% if block.settings.badge_icon != blank %}
+                          <span class="heading_badge heading_badge_{{ section.id }}_{{ block.id }}">
+                            <style>
+                              .heading_badge_{{ section.id }}_{{ block.id }} img {
+                                max-width: {{ block.settings.badge_icon_width }}px;
+                                width: 100%;
+                                height: auto;
+                              }
+                            </style>
+                            {{ block.settings.badge_icon | image_url: width: 200 | image_tag: loading: 'lazy' }}
+                          </span>
+                        {% endif %}
+                        {{ block.settings.heading }}
+                      </h3>
+                    {% endif %}
+
+                    {% if block.settings.text != blank %}
+                      <p style="text-align: {{ block.settings.text_align }}">{{ block.settings.text }}</p>
+                    {% endif %}
+                  </div>
+                </div>
               </div>
-            {% endif %}
-
-            <div class="icon_with_text_content">
-              {% if block.settings.heading != blank %}
-                <h3>{{ block.settings.heading }}</h3>
-              {% endif %}
-
-              {% if block.settings.text != blank %}
-                <p>{{ block.settings.text }}</p>
-              {% endif %}
             </div>
-          </div>
-        {% endfor %}
-      </div>
+          {% endfor %}
+        </div>
 
-      {% if section.blocks.size > section.settings.desktop_slides %}
-        <div class="swiper-button-prev {{ section.id }}-prev"></div>
-        <div class="swiper-button-next {{ section.id }}-next"></div>
-      {% endif %}
+        <div class="swiper-button-prev {{ section.id }}-prev swiper-arrow"></div>
+        <div class="swiper-button-next {{ section.id }}-next swiper-arrow"></div>
+      </div>
     </div>
   </div>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -121,19 +178,16 @@
       spaceBetween: 20,
       speed: 600,
 
-      navigation:
-        totalSlides > desktopSlides
-          ? {
-              nextEl: '.{{ section.id }}-next',
-              prevEl: '.{{ section.id }}-prev',
-            }
-          : false,
+      navigation: {
+        nextEl: '.{{ section.id }}-next',
+        prevEl: '.{{ section.id }}-prev',
+      },
 
       breakpoints: {
-        768: {
+        1024: {
           slidesPerView: tabletSlides,
         },
-        1024: {
+        1280: {
           slidesPerView: desktopSlides,
         },
       },
@@ -175,6 +229,74 @@
       "default": 1
     },
     {
+      "type": "header",
+      "content": "Blocks settings"
+    },
+    {
+      "type": "range",
+      "id": "icon_desktop_width",
+      "label": "Icon Desktop Width",
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "icon_mobile_width",
+      "label": "Icon Mobile Width",
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "label": "Heading Font Size Desktop",
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "label": "Heading Font Size Mobile",
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "text_font_size_desktop",
+      "label": "Text font size desktop",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "text_font_size_mobile",
+      "label": "Text font size mobile",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Container settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width_container",
+      "label": "Full width container",
+      "default": true
+    },
+    {
       "type": "color",
       "id": "container_bg",
       "label": "Container Background",
@@ -185,6 +307,16 @@
       "id": "container_border",
       "label": "Container Border Color",
       "default": "#3a215c"
+    },
+    {
+      "type": "color",
+      "id": "block_left_border",
+      "label": "Block Left Border Color",
+      "default": "#3a215c"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
     },
     {
       "type": "range",
@@ -216,16 +348,50 @@
           "label": "Icon"
         },
         {
+          "type": "image_picker",
+          "id": "badge_icon",
+          "label": "Badge Icon"
+        },
+        {
+          "type": "range",
+          "id": "badge_icon_width",
+          "label": "Badge Icon Width",
+          "min": 0,
+          "max": 150,
+          "step": 5,
+          "default": 40
+        },
+        {
           "type": "text",
           "id": "heading",
           "label": "Heading",
           "default": "100,000+"
         },
         {
-          "type": "text",
+          "type": "textarea",
           "id": "text",
           "label": "Text",
           "default": "Happy Customers"
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left",
+          "label": "Text Align"
         }
       ]
     }

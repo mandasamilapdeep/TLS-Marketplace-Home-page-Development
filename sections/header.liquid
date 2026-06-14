@@ -68,35 +68,39 @@
   	{% if section.settings.header_backround_transparent_only_home_page %}
 
   	{% if template == 'index' %}
+
       @media screen and (min-width: 1100px) {
   		.shopify-section-header {
-  		background: transparent !important;
+  	   	background: transparent !important;
   		}
 
   		.header-wrapper {
-  		background: transparent !important;
+  		  background: transparent !important;
+  		}
+      #MainContent {
+  		  position: relative;
+  		  top: -104px;
+        margin-bottom: -104px;
   		}
     }
-  		#MainContent {
-  		position: relative;
-  		}
+
   	{% endif %}
 
   	{% else %}
 
-  	.shopify-section-header {
-  		background: transparent !important;
-  	}
 
-  	.header-wrapper {
-  		background: transparent !important;
-  	}
+  		.shopify-section-header {
+  	   	background: transparent !important;
+  		}
 
-  	#MainContent {
-  		position: relative;
-  top: -100px;
-  	}
-
+  		.header-wrapper {
+  		  background: transparent !important;
+  		}
+      #MainContent {
+  		  position: relative;
+  		  top: -104px;
+        margin-bottom: -104px;
+  		}
   	{% endif %}
 
   {% endif %}
@@ -119,8 +123,8 @@
             }
           }
 
-          document.addEventListener('DOMContentLoaded', updateMainContentPosition);
-          window.addEventListener('resize', updateMainContentPosition);
+          // document.addEventListener('DOMContentLoaded', updateMainContentPosition);
+          // window.addEventListener('resize', updateMainContentPosition);
 
           document.addEventListener('DOMContentLoaded', function () {
             const header = document.querySelector('.shopify-section-header');
@@ -150,8 +154,8 @@
           }
         }
 
-        document.addEventListener('DOMContentLoaded', updateMainContentPosition);
-        window.addEventListener('resize', updateMainContentPosition);
+        // document.addEventListener('DOMContentLoaded', updateMainContentPosition);
+        // window.addEventListener('resize', updateMainContentPosition);
 
         document.addEventListener('DOMContentLoaded', function () {
           const header = document.querySelector('.shopify-section-header');
